@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+       <title>Immport Flu Vaccine</title>
+    </head>
+
+<body>
+  <div layout:fragment="content">
+   <div class="container">
+	<div class="row">
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+	<h1>Example re-analysis of an Influenza Vaccine Response Study using HAI (hemagglutination inhibition) assays</h1>
+
+<h3>In this tutorial we will show you how to acquire, analyze, and display the demographic and HAI assay data from one study in ImmPort using <em>R</em> and <em>Python</em> analysis code.  The code is freely available.</h3>
+
+ <img src="/images/fluVaccine/Rplot_070215b.png" alt="Age vs gender"></img>
+ 
+ <h4>The demographic data can be graphically rendered to facilitate exploration of age, gender and population characteristics of the study subjects. </h4>
+ 
+
+<img src="/images/fluVaccine/Rplot_070215d.png" alt="HAI response vs Virus Strain"></img>
+<h4> HAI results can be grouped by titer pre- and post-vaccination in a single overview plot. </h4>
+
+ <img src="/images/fluVaccine/Rplot_070215g.png" alt="HAI response vs Age and Virus Strain"></img>
+ <h4> HAI results can be displayed according to subject age and viral strain.</h4>
+ 
+ <br></br>
+
+<h2>There are two versions of the analysis code, one written in R and the other in Python. Both versions complete the same analysis steps and render graphic summaries of the results.</h2>
+
+<h3>Analysis using R</h3>
+The analysis code was developed to use either the MySQL or the Tab version of the data.
+<br></br>
+The details of the code that uses the MySQL data format and the graphics it produces are available 
+<a href="/docs/reference/InfluenzaVaccination_SDY212_MySQL.html">here.</a>
+<br></br>
+An example HTML output from running the Tab version of the code is available
+<a href="/docs/reference/InfluenzaVaccination_SDY212_Tab.html">here.</a>
+<br></br>
+The <em>R</em> code for running the analysis using the MySQL version is available  for download
+<a target="_blank" href="/docs/reference/InfluenzaVaccination_SDY212_MySQL.R">InfluenzaVaccination_SDY212_MySQL.R.</a>
+<br></br>
+The <em>R Markdown</em> code for running the analysis using the MySQL version is available for download
+<a target="_blank" href="/docs/reference/InfluenzaVaccination_SDY212_MySQL.Rmd">InfluenzaVaccination_SDY212_MySQL.Rmd.</a>
+<br></br>
+The <em>R</em> code for running the analysis using the Tab version is available  for download
+<a target="_blank" href="/docs/reference/InfluenzaVaccination_SDY212_Tab.R">InfluenzaVaccination_SDY212_Tab.R.</a>
+<br></br>
+The <em>R Markdown</em> code for running the analysis using the Tab version is available  for download
+<a target="_blank" href="/docs/reference/InfluenzaVaccination_SDY212_Tab.Rmd">InfluenzaVaccination_SDY212_Tab.Rmd.</a>
+<br></br>
+The code was written using RMarkdown and was developed and executed using the 
+<a href="http://www.rstudio.com/">RStudio</a> software.
+<h3>Analysis using Jupyter Notebook</h3>
+The code was written and executed using <a href="http://jupyter.org">Jupyter Notebook</a>.
+<br></br>
+The <em>Python</em> code for running the analysis using the Tab version is available for download
+<a target="_blank" href="/docs/reference/InfluenzaVaccination_SDY212_Tab-v2.2017.ipynb">InfluenzaVaccination_SDY212_Tab-v2.2017.ipynb</a>
+<br></br>
+An example HTML output from running the Tab version of the code is available
+<a target="_blank" href="/docs/reference/InfluenzaVaccination_SDY212_Tab-v2.2017.html">here.</a>
+<br></br>
+Instructions on how to install Jupyter Notebook
+<a target="_blank" href="/docs/reference/jupyter_install.txt">here.</a>
+	</div>
+	</div>
+	<br></br>
+	</div>
+  </div>	
+</body>
+</html>

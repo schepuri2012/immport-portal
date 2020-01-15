@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+        <title>Accelerating Medicines Partnership(AMP)-RA/SLE</title>
+        <script type="text/javascript" src="/js/script.js"></script>
+        <script type="text/javascript" src="/js/BigPicture.min.js"></script>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
+        
+        <script th:inline="javascript">
+    		var sharedDataStudyDetailUrl = [[${@ecosystemProperties.getSharedDataStudyDetailUrl()}]];
+    		var immportS3ApiBaseUrl = [[${@ecosystemProperties.getImmportS3ApiBaseUrl()}]];
+    		var useLocalFileSystemForS3Data = [[${@ecosystemProperties.getUseLocalFileSystemForS3Data()}]];    		
+		</script>
+        
+        
+        <script type="text/javascript" src="/js/AmpDataSets.js"></script>
+        
+    <script>  
+    		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    	  ga('create', 'UA-59005155-1', 'auto');
+    	  ga('send', 'pageview');
+	</script>
+        
+    </head>
+
+    <body>
+        <div layout:fragment="content">
+        		<br/><br/><br/>
+				<div class="col-md-12 col-xs-12">
+						<h2 class="text-center">Accelerating Medicines Partnership (AMP)-RA/SLE</h2><h3 class="text-center"><i>Powered by <img src="/images/mod/immport-logo-image-32.png" height="20"></img>ImmPort</i></h3>
+				</div>
+			<br/><br/><br/>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-newspaper-o"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${contractStudyCnt}" data-speed="2000"></span>
+						<span class="number-label">Studies</span>
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-flask"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${expMeasureTechCnt}" data-speed="2000"></span>
+						<span class="number-label">Types of Measurements</span>
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-user"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${subjectCnt}" data-speed="2000"></span>
+						<span class="number-label">Participants</span>
+					</div>
+					<div class="col-md-2 col-xs-6 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-search"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${expSmplCnt}" data-speed="2000"></span>
+						<span class="number-label">Experimental Samples</span>
+					</div>
+					<div class="col-md-2 col-xs-6" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-download"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" data-to="4576" data-speed="2000"></span>
+						<span class="number-label">Downloads</span>
+					</div>
+					<div class="col-md-1">
+					</div>
+				</div>
+			</div>
+				<br/><br/>
+
+				<div class="row">
+					<div class="col-md-3"></div>
+					<div class="col-md-8">
+						<div class="col-sm-4 applicationDiv">
+							<div class="panel panel-default resources-panel">
+									<div class="panel-heading text-center">
+										<a href="#AMP_datasets">
+												<i class="fa fa-files-o homeIcon" aria-hidden="true" style="font-size:35px"></i>
+										</a>
+									</div>
+									<div class="panel-body panel-body-prc text-center">
+											<a href="#AMP_datasets">
+													<span class="home-heading">AMP Shared Datasets</span><br />
+											</a>
+									</div>
+							</div>
+						</div>
+				
+							<div class="col-sm-4 applicationDiv">
+							<div class="panel panel-default resources-panel">
+									<div class="panel-heading text-center">
+										<a href="#PRC_research_highlights">
+												<i class="fa fa-star homeIcon" aria-hidden="true" style="font-size:35px"></i>
+												<i class="fa fa-star homeIcon" aria-hidden="true" style="font-size:35px"></i>
+												<i class="fa fa-star homeIcon" aria-hidden="true" style="font-size:35px"></i>
+											 </a>
+									</div>
+									<div class="panel-body panel-body-prc text-center">
+											<a href="#AMP_research_highlights">
+													<span class="home-heading">AMP Research Highlights</span><br />
+											</a>
+									</div>
+							</div>
+						</div>
+.
+				</div>
+						</div>
+
+				<br/><br/>
+
+				<div class="row text-justify" style="margin-right: 6px; margin-left: 6px;">
+					<div class="col-md-12 col-xs-12"><br />
+						<p>NIAMS. NIAID, pharmaceutical companies and nonprofit organizations have formed the <a href="http://www.amprasle.org/">Accelerating Medicines Partnership (AMP) Rheumatoid Arthritis – Lupus Program</a> to develop new ways of identifying and validating promising biological targets for diagnostics and drug development.  An overview of the <a href="https://www.niams.nih.gov/grants-funding/funded-research/accelerating-medicines">AMP Rheumatoid Arthritis – Lupus Program and its three research phases </a> and a <a href="https://amp-ralupus.stanford.edu/about/ra-lupus-amp-project">listing of the academic groups collaborating on the work</a> are available.</p>
+					</div>
+				</div>
+				
+				 <div class="row">
+	        	   <div class="col-md-12 col-xs-12" style="margin-top: 15px;">
+						<div class="col-md-6 col-xs-12">
+									<div class="row">
+	        	 						<div class="col-md-12 col-xs-12 sideTextDiv">
+	        	 						    <p>The overall aim of the rheumatoid arthritis collaborative project is to collect synovial tissue from research biopsies and elective surgical procedures and blood specimens from individuals with RA to perform analytics for molecular deconstruction of RA and to compare with clinical phenotype and disease course.</p>
+				                        				                        
+				                    	<div class="">
+				                    		<p>The RA clinical sites include:</p>
+				                    		<a href="http://www.smd.qmul.ac.uk/" >Barts and the London School of Medicine and Dentistry</a>
+				                    		<br></br>
+											<a href="https://www.hss.edu/">Hospital for Special Surgery </a>
+											<br></br>
+											<a href="https://www.northwestern.edu/">Northwestern University</a>
+											<br></br>
+											<a href="http://www.uab.edu/home/">University of Alabama Birmingham</a>
+											<br></br>
+											<a href="https://www.birmingham.ac.uk/index.aspx">University of Birmingham</a>
+											<br></br>
+											<a href="https://ucsd.edu/">University of California San Diego</a>
+											<br></br>
+											<a href="http://www.ucdenver.edu/pages/ucdwelcomepage.aspx">University of Colorado</a>
+											<br></br>
+											<a href="https://www.umass.edu/">University of Massachusetts</a>
+											<br></br>
+											<a href="https://www.pitt.edu/">University of Pittsburgh</a>
+											<br></br>
+											<a href="https://www.rochester.edu/">University of Rochester</a>
+				                    	</div>	
+		
+									</div>    
+								</div>
+				         </div>    
+				         <div class="col-md-6 col-xs-12">	
+			                        <div class="row">
+				                       <div class="col-md-12 col-xs-12 sideTextDiv">
+	        	 						    <p>The primary objective of the lupus collaborative project is to analyze kidney, blood, urine, and skin specimens from subjects with lupus nephritis and from control subjects to achieve molecular deconstruction of disease mechanisms.  Specifically, the objectives are to identify disease-specific pathways that could serve as targets for novel therapies, to correlate cellular and molecular patterns in the kidney with clinical response to standard of care, and to identify blood, urine, and skin surrogates for renal profiles.</p>
+	        	 						    
+	        	 						    <div class="">
+				                    			<p>The Lupus clinical sites include:</p>
+				                    			<a href="http://www.einstein.yu.edu/" >Albert Einstein College of Medicine</a>
+				                    			<br></br>
+												<a href="https://www.brighamandwomens.org/">Brigham and Women’s Hospital</a>
+												<br></br>
+												<a href="https://www.jhu.edu/">Johns Hopkins University</a>
+												<br></br>
+												<a href="http://academicdepartments.musc.edu/musc/">Medical University of South Carolina</a>
+												<br></br>
+												<a href="https://www.nyu.edu/">New York University</a>
+												<br></br>
+												<a href="https://www.northwell.edu/">Northwell Health</a>
+												<br></br>
+												<a href="https://omrf.org/">Oklahoma Medical Research Foundation</a>
+												<br></br>
+												<br></br>
+										   </div>	
+				                       </div>
+				                   </div>   
+				         </div>
+				         <br></br>
+                     <div class="row text-justify" style="margin-right: 6px; margin-left: 6px;">
+							<div class="col-md-12 col-xs-12"><br />
+								<p>For both rheumatoid arthritis and lupus analyses the technical sites for tissue dissociation and analysis include Brigham and Women’s Hospital, and Broad Institute</p>
+							</div>
+					</div>
+				   </div>
+				   <div class="col-md-12 col-xs-12" style="margin-top: 15px;">
+				   	<div class="col-md-6 col-xs-12">
+									<div class="row">
+	        	 						<div class="col-md-12 col-xs-12 sideTextDiv">
+	        	 						    <p>The pharmaceutical company partners include:</p>
+	        	 						    <a href="https://www.abbvie.com/" >AbbVie</a>
+	        	 						    <br></br>
+											<a href="https://www.bms.com/" >Bristol-Myers Squibb</a>
+											<br></br>
+											<a href="https://www.janssen.com/us" >Janssen</a>
+											<br></br>
+											<a href="https://www.merck.com/index.html" >Merck</a>
+											<br></br>
+											<a href="https://www.pfizer.com/" >Pfizer</a>
+											<br></br>
+											<a href="https://www.sanofi.com/en/" >Sanofi</a>
+											<br></br>
+											<a href="https://www.takeda.com/en-us/" >Takeda</a>
+				                    	</div>	
+		
+									</div>    
+				         </div> 
+				     <div class="col-md-6 col-xs-12">
+									<div class="row">
+	        	 						<div class="col-md-12 col-xs-12 sideTextDiv">
+	        	 						    <p>The non-profit organization partners include:</p>
+	        	 						    <a href="https://www.lupusresearch.org/" >Lupus Research Alliance</a>
+	        	 						    <br></br>
+											<a href="https://www.arthritis.org/" >Arthritis Foundation</a>
+											<br></br>
+											<a href="https://www.lupus.org/" >Lupus Foundation of America</a>
+											<br></br>
+											<a href="https://www.rheumresearch.org/" >Rheumatology Research Foundation</a>
+											<br></br>
+											<br></br>
+											<br></br>
+											<br></br>
+				                    	</div>	
+		
+									</div>    
+				      </div> 
+				      </div>
+				      <div class="row text-justify" style="margin-right: 6px; margin-left: 6px;">
+							<div class="col-md-12 col-xs-12"><br />
+								<p>The Foundation for the NIH facilitated the partnership of the academic, pharma, and non-profit organizations.</p>
+							</div>
+					</div>
+				  </div>                      
+
+				<div class="row justify-content-md-center">
+					<div class="col-md-12">
+						<div class="col-sm-4"></div>
+						<div class="col-md-4 applicationDiv resourcesDiv">
+									<div class="panel-heading panel-heading-prc text-center">
+										<a href="https://fnih.org/what-we-do/current-research-programs/amp-ra-sle" target="_blank">
+											<img src="/images/amp_ra_sle/amp1.png" style="height:200px;" />
+										</a>
+									</div>
+						</div>
+						
+					</div>
+				</div>
+	
+
+				<div class="mod-margin-left" style="background-color:white;">
+		
+				<div class="row" id="AMP_datasets" style="margin-right: 6px; margin-left: 6px;"><br /><br /><br />
+					<h3 class="text-center">AMP Shared Data<br /></h3><h4 class="text-center"><i>Powered by <img src="/images/mod/immport-logo-image-32.png" height="20"></img>ImmPort</i></h4>
+				</div>
+				<br />
+				<p> Download the <a th:href="${@ecosystemProperties.getImmportS3ApiBaseUrl() +'/resources/portal/ampStudies?download=true'}" onclick="javascript:ga('send', 'event', 'amp', 'click', 'download');">AMP Data Set Summary</a> </p>
+				<br /><br />
+				
+
+				<div class="">
+					<table id="AmpDataSet" class="table table-hover table-bordered table-sm mod-margin-left mod-table">
+						<thead>
+							<tr >
+								<th>Study</th>
+								<th>Study Information</th>
+								<th>Data Counts</th>
+								<th>PIs</th>
+								<th>Publications</th>
+								<th>Pubmed ID</th>
+								<th>DOI</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				
+				<br /><br /><br />
+
+				<div class="row" id="AMP_research_highlights"  style="margin-right: 6px; margin-left: 6px;">
+					<h3 class="text-center">AMP Research Highlights</h3>
+				</div>
+				<br /><br />
+				<div class="mod-margin-left" style="background-color:white;"> 
+				     	<div class="row justify-content-md-center">
+						  <div class="col-md-8 col-xs-12">
+						    <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6042350/">Methods for high-dimensional analysis of cells dissociated from cyropreserved synovial tissue.</a><br />
+						    		   Donlin LT, Rao DA, Wei K, Slowikowski K, McGeachy MJ, Turner JD, Meednu N, Mizoguchi F, Gutierrez-Arcelus M, Lieb DJ, Keegan J, Muskat K, Hillman J, Rozo C, Ricker E, Eisenhaure TM, Li S, Browne EP, Chicoine A, Sutherby D, Noma A; Accelerating Medicines Partnership RA/SLE Network, Nusbaum C, Kelly S, Pernis AB, Ivashkiv LB, Goodman SM, Robinson WH, Utz PJ, Lederer JA, Gravallese EM, Boyce BF, Hacohen N, Pitzalis C, Gregersen PK, Firestein GS, Raychaudhuri S, Moreland LW, Holers VM, Bykerk VP, Filer A, Boyle DL, Brenner MB, Anolik JH
+						               Arthritis Res Ther. 2018 Jul 11;20(1):139. doi: 10.1186/s13075-018-1631-y.; 
+						               <br />PMID:<a href="https://www.ncbi.nlm.nih.gov/pubmed/29996944"><b>29996944</b></a><br /> 
+						            Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() + '/SDY999'}">SDY999</a></p>
+						  </div>
+						   <div class="col-md-4">
+							    <img class="highlight_fig table-img" src="/images/amp_ra_sle/amp_research.jpg" height="200px"></img>
+						  </div>
+						    <div class="col-md-8 col-xs-12">
+						    <p><a href="https://www.ncbi.nlm.nih.gov/pubmed/29468833">Identification of Three Rheumatoid Arthritis Disease Subtypes by Machine Learning Integration of Synovial Histologic Features and RNA Sequencing Data.</a><br />
+ 						    		    Orange DE, Agius P, DiCarlo EF, Robine N, Geiger H, Szymonifka J, McNamara M, Cummings R, Andersen KM, Mirza S, Figgie M, Ivashkiv LB, Pernis AB, Jiang CS, Frank MO, Darnell RB, Lingampali N, Robinson WH, Gravallese E; Accelerating Medicines Partnership in Rheumatoid Arthritis and Lupus Network, Bykerk VP, Goodman SM, Donlin LT.
+										Arthritis Rheumatol. 2018 May;70(5):690-701. doi: 10.1002/art.40428. Epub 2018 Apr 2.  
+						               <br />PMID:<a href="https://www.ncbi.nlm.nih.gov/pubmed/29468833"><b>29468833</b></a><br /> 
+						            Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() + '/SDY1299'}">SDY1299</a></p>
+						  </div>
+						  <div class="col-md-8 col-xs-12">
+						    <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5414553/">Single cell RNA sequencing to dissect the molecular heterogeneity in lupus nephritis.</a><br />
+ 						    		    Der E, Ranabothu S, Suryawanshi H, Akat KM, Clancy R, Morozov P, Kustagi M, Czuppa M, Izmirly P, Belmont HM, Wang T, Jordan N, Bornkamp N, Nwaukoni J, Martinez J, Goilav B, Buyon JP, Tuschl T, Putterman C.
+										JCI Insight. 2017 May 4;2(9). pii: 93009. doi: 10.1172/jci.insight.93009.  
+						               <br />PMID:<a href="https://www.ncbi.nlm.nih.gov/pubmed/28469080"><b>28469080</b></a><br /> 
+						            Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() + '/SDY997'}">SDY997</a></p>
+						  </div>
+						    <div class="col-md-4">
+							    <img class="highlight_fig table-img" src="/images/amp_ra_sle/jciinsight-2-93009-g003.jpg" height="200px"></img>
+						  </div>
+						</div>
+				
+				</div>
+				<div class="mod-margin-left" style="background-color:white;">
+				
+				<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+				<br /><br />
+
+		        </div>
+			</div>
+        </div>
+    </body>
+</html>

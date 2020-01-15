@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+       <title>Immport Cite</title>
+    </head>
+
+<body>
+  <div layout:fragment="content">
+   <div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h2>Citing Immport</h2>
+    	</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<p>Authors citing data sets that they uploaded to ImmPort to support a publication, please consider including the following example text in your Acknowledgements: 'The data supporting this publication is available at ImmPort (<a href="https://www.immport.org">https://www.immport.org</a>) under study accession SDY1234."</p>			
+			<p>
+			When referencing ImmPort as a resource for publication, please cite
+			<a href="https://www.ncbi.nlm.nih.gov/pubmed/29485622" target="_blank">ImmPort, toward repurposing of open access immunological assay data for translational and clinical research. Bhattacharya S, Dunn P, Thomas CG, Smith B, Schaefer H, Chen J, Hu Z, Zalocusky KA, Shankar RD, Shen-Orr SS, Thomson E, Wiser J, Butte AJ. Sci Data. 2018 Feb 27;5:180015. doi: 10.1038/sdata.2018.15.</a>
+			</p>
+			<p>When using specific ImmPort data sets for publication, please cite the ImmPort Shared Data web site, Study Accession, and Study Title (e.g. 'The data supporting this publication is available at ImmPort (immport.org) under study accession SDY1444 Immunology study of interest' )
+			</p>
+			<p>When using ImmPort Galaxy as an analysis platform, please cite <b>Galaxy Community Conference 2016</b>:
+			Thomas C, Thomson E, Dunn P et al. ImmPortGalaxy: developing a workflow for flow Cytometry analysis in Galaxy v1; not peer reviewed. F1000Research 2016, 5:1546 (slides)<br />
+			doi: 10.7490/f1000research.1112455.1
+			</p>
+			<p>
+			We encourage you to collaborate with the scientific team who generated that data in future publications; at minimum, please cite
+			the originators of the data by citing the listed publication or contacting the data provider for the most appropriate publication
+			to reflect their work. When citing one of the novel or integrated open source tools, please reference the publication listed in
+			the tool description or the website for the integrated, open source tool. If you have any questions, please contact the ImmPort
+			Helpdesk or one of the individuals listed on the Contacts page. 
+			</p>
+		</div>
+	</div>
+	<br></br>
+	</div>
+  </div>	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'shared'">
+
+    <head>
+       <title>Immport Help Navigation</title>
+    </head>
+
+<body>
+  <div layout:fragment="content">
+   <div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h2>Navigation</h2>
+    	</div>
+	</div>
+	
+<div class="row">
+  <div class="col-md-12">
+  <p>
+  The ImmPort home page presents study
+  access or study search options.
+  </p>
+  <p>
+  <img src="/images/help/Navigate_sharedData.png" class="img-responsive help_image" title="Featured Studies"/>
+  <br></br>
+  <strong>Study Filter</strong>, a search feature, presents a comprehensive search display for refining study data searches. 
+  As category selections are made counts for each reflect the available number of studies fitting the criteria.
+  </p><br></br>
+  <img src="/images/help/Navigate_sharedData2.png" class="img-responsive help_image" title="Study Filter"/>
+  <p style="margin-top:20px;">
+  The free-text search field is combined with Auto-Suggest which begins returning results as you type.  Possible search-term matches
+  are displayed in a drop-down list.  While ImmPort does not strictly support ID searches, string matching with PubMed IDs will
+  return studies with that specific numeric string.
+  </p>
+  <img src="/images/help/Navigate_filterSharedStudy.png" class="img-responsive help_image" title="Study Search"/>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+  &nbsp;
+  </div>
+</div>
+<br></br>
+	</div>
+  </div>	
+</body>
+</html>

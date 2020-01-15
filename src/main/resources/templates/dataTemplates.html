@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+       <title>Immport Templates</title>
+    </head>
+
+<body>
+  <div layout:fragment="content">
+   <div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h2>Data Templates</h2>
+    	</div>
+	</div>
+	
+<div class="row">
+<div class="col-md-12" >
+<ol>
+
+	<li>Which Data Upload Templates do you need? Please contact us by email at <a class="buttonlink" href="mailto: BISC_Helpdesk@niaid.nih.gov">BISC_Helpdesk@niaid.nih.gov</a></li>
+	<li>An <a target="_blank" th:href="${@ecosystemProperties.getDataUploadTemplateDescriptionInteractiveUrl()}">online description of the upload templates</a> is available to explain the format and content of the templates and the order with which to upload the templates.</li>
+	<li>The complete set of <a href="/downloads/data/upload/templates/ImmPortTemplates.zip" target="_new">ImmPort Upload Templates and the User Guide</a> is available as a zip file.</li>	
+	<li>Descriptions and specifications of the <a href="/downloads/data/upload/templates/ImmPort.Upload.Templates.Description.pdf" target="_new">ImmPort Upload Templates</a> are available as a pdf file.</li>
+	<li><a th:href="${@ecosystemProperties.getDataUploadUrl()}" target="_new">Example data upload packages</a> are available for review. </li>
+	<li>An interactive graphic of the ImmPort Data Model is available <a target="_blank" th:href="${@ecosystemProperties.getDataUploadDataModelViewerUrl()}"><img src="/images/home/DataModelGraphic.png" style="width:100px"></img></a></li>
+	<li>A set of decision tree diagrams is available <a href="/images/home/ImmPort.Data.Deposition.Decision.Tree.pdf" target="_new">here.</a></li>
+	<li>For transcription profiling data sets, the <a target="_new" href="/images/home/HIPC.Transcriptional_Profiling_Data_Standards.txt">HIPC Standards Working Group Transcription Profiling standards</a> are recommended.</li>
+	<li>For flow cytomtery, mass cytometry or CyToF data sets, please see the <a target="_new" href="/images/home/Cytometry_Data_Standard.pdf">standards</a> recommendation of the <a target="_new" href="https://www.immuneprofiling.org/hipc/page/showPage?pg=subcommittees">HIPC Bioinformatics Standards Working Group Cytometry guidelines</a>.</li>
+	<li>Please save spreadsheet .xlsx templates as tab delimited .txt files and upload the txt file version.</li>
+	<li>You may upload one or more files or a folder (directory) of files.</li>
+	<li>An example of a data provider's open source ImmPort upload preparation utility is available at the GitHub project <a th:href="${@ecosystemProperties.getImmploadUrl()}" target="_new">Immpload</a></li>
+</ol>
+	
+</div>
+<br></br>
+<div class="col-md-12" >
+<br></br>
+<table class="table table-hover table-bordered">
+	 <thead>
+	  	<tr>
+		<th >Data To Upload to ImmPort</th>
+		<th>Purpose</th>
+		<th >Spreadsheet Template</th>
+		<th >Required Data to Complete Metadata Form</th>
+		<th >Latest Version/<br></br>Date Available </th>
+		</tr>
+	</thead>
+
+ 	<tbody>
+	<tr>
+			<td rowspan="2">Basic Study</td>
+			<td >Describes a study in terms of title, goals, endpoints, criteria for study participation, subject grouping (arms or cohorts), personnel, planned visits or encounters and protocols using a single worksheet.<br></br> A study design and protocol should be uploaded first.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/basic_study_design.xlsx'}" target="_new">basic_study_design.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/basic_study_design.txt'}" target="_new">basic_study_design.txt</a></td>
+			<td >
+				<ul>
+					<li>Study User Defined ID</li>
+					<li>Title</li>
+					<li>Description</li>
+					<li>Endpoints</li>
+					<li>Actual Start Date</li>
+					<li>Inclusion and Exclusion Criteria</li>  
+					<li>Arms or Cohorts</li>
+					<li>Personnel</li>
+					<li>Planned Visit</li>
+					<li>Protocol</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the study. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+
+	</tr>
+	<tr>
+			<td >Edit Study Design</td>
+			<td >Update a study design, add files, publications, or subjects.<br></br> A study design should be uploaded first.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/study_design_edit.xlsx'}" target="_new">study_design_edit.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/study_design_edit.txt'}" target="_new">study_design_edit.txt</a></td>
+			<td >
+				<ul>
+					<li>Study ID</li>
+					<li>Study File Name</li>
+					<li>Pubmed ID</li>
+
+				</ul>
+			</td>
+
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+		<td  rowspan="2">Subjects</td>
+		<td >Subjects may be patients or animals from which samples are taken for analysis. Two .xlsx templates (one for human and one for animal subjects) are available for recording subject information. There is one .xml file that can be used for human and animal subjects. In these files, treatment protocols used on the subjects can also be listed as well as many other details.</td>
+		<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/subjectHumans.xlsx'}" target="_new">subjectHumans.xlsx</a><br></br>
+			<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/subjectAnimals.xlsx'}" target="_new">subjectAnimals.xlsx</a><br></br>
+			<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/subjectHumans.txt'}" target="_new">subjectHumans.txt</a><br></br>
+			<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/subjectAnimals.txt'}" target="_new">subjectAnimals.txt</a>
+		</td>
+		<td >Human
+			<ul>
+		        <li>User Defined ID </li>
+		        <li>Protocol</li>
+		        <li>Gender</li>
+		        <li>Age</li>
+		        <li>Age Unit</li>
+		        <li>Age Event</li>
+		        <li>Ethnicity</li>
+		        <li>Race</li>
+		        <li>Phenotype</li>
+		        <li>Study Arm or Cohort</li>
+		        <li>Population</li>
+			</ul>
+
+	    				Animal
+			<ul>
+		        <li>User Defined ID </li>
+		        <li>Species Name</li>
+		        <li>Strain Name</li>
+		        <li>Protocol</li>
+		        <li>Gender</li>
+		        <li>Age</li>
+		        <li>Age Unit</li>
+		        <li>Age Event</li>
+		        <li>Phenotype</li>
+		        <li>Study Arm or Cohort</li>
+			</ul>
+		</td>
+
+		<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the study subjects. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li> 
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td  rowspan="2">Clinical Lab Test</td>
+			<td >Captures the Lab Test User-Defined ID, Lab Panel ID, Biological Sample ID, Lab Test Name, Result Value and Result Unit for lab tests.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/labTests.xlsx'}" target="_new">labTests.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/labTests.txt'}" target="_new">labTests.txt</a></td>
+			<td >
+				<ul>
+					<li>Lab Test User Defined ID</li>
+					<li>Lab Panel ID</li>
+					<li>Biological Sample ID</li>
+					<li>Lab Test Name</li>
+					<li>Result Value</li>
+					<li>Result Unit</li>
+					<li>Lab Test</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			
+			<td >Lists the protocols associated with the lab tests. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td  rowspan="1">Assessment</td>
+			<td >Captures the Assessment Name, Type, Is Standard, Status, CRF File Names, and Assessment User-Defined ID for assessments.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/assessments.xlsx'}" target="_new">assessments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/assessments.txt'}" target="_new">assessments.txt</a></td>
+			<td >
+				<ul>
+				<li>Assessment Name</li>
+				<li>Type</li>
+				<li>Is Standard</li>
+				<li>Status</li>
+				<li>CRF File Names</li>
+				<li>Assessment User-Defined ID</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	
+		<tr>
+			<td  rowspan="1">Intervention</td>
+			<td >Captures the study indicated interventions, concomitant medications, and substance use for subjects in a study.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/interventions.xlsx'}" target="_new">interventions.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/interventions.txt'}" target="_new">interventions.txt</a></td>
+			<td >
+				<ul>
+					<li>Substance ID</li>
+					<li>Study ID</li>
+					<li>Subject ID</li>
+					<li>Compund Role</li>
+					<li>Dose</li>
+					<li>Start Day</li>
+					<li>End Day</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Adverse Events</td>
+			<td >Captures the adverse events reported during a study.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/adverseEvents.xlsx'}" target="_new">adverseEvents.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/adverseEvents.txt'}" target="_new">adverseEvents.txt</a></td>
+			<td >
+				<ul>
+					<li>Adverse Event User-Defined ID</li>
+					<li>Subject ID</li>
+					<li>Study ID</li>
+					<li>Name Reported</li>
+					<li>Severity</li>
+					<li>Outcome</li>
+					<li>Start Day</li>
+					<li>End Day</li>
+					<li>Relation to Study Treatment</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td  rowspan="6">CYTOF Assays</td>
+			<td >Describes the samples, reagents, and results from a CYTOF experiment.<br></br>May be used to describe experiments and biological samples.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.CYTOF.xlsx'}" target="_new">experimentSamples.<br></br>CYTOF.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.CYTOF.txt'}" target="_new">experimentSamples.<br></br>CYTOF.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>Result file</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a CyTOF (Mass cytometry) experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.CyTOF.xlsx'}" target="_new">reagents.CyTOF.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.CyTOF.txt'}" target="_new">reagents.CyTOF.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				<li>Analyte Name</li>
+				<li>Detector Name</li>
+				<li>Reporter Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Groups of reagents used together in an assay may be defined as a reagent set to simply referring to reagents.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/Reagent_Sets.xlsx'}" target="_new">reagent_sets.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/Reagent_Sets.txt'}" target="_new">reagent_sets.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Reagent Set Components ID</li>
+				<li>Description</li>
+				<li>Name</li>
+				<li>Type Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+		<td >Describe CyTOF (Mass Cytometry) results in a format to facilitate sharing of results.</td>
+		<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/CyTOF_Derived_data.xlsx'}" target="_new">CyTOF_Derived_data.xlsx</a><br></br>
+								<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/CyTOF_Derived_data.txt'}" target="_new">CyTOF_Derived_data.txt</a></td>
+		<td >
+			<ul>
+			<li>Experiment Sample ID</li>
+			<li>Population Name</li>
+			<li>Population Definition</li>
+			<li>Population Cell Number</li>
+			<li>Population Cell Number Unit</li>
+			<li>Workspace File</li>
+			</ul>
+		</td>
+		<td >3.19/May 2019</td>
+   </tr>		
+	<tr>
+			<td  rowspan="4">ELISA Assays</td>
+			<td >Captures the samples, reagents, and results from an ELISA experiment. <br></br>May be used to describe experiments, biological samples, and report results.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.ELISA.xlsx'}" target="_new">experimentSamples.<br></br>ELISA.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.ELISA.txt'}" target="_new">experimentSamples.<br></br>ELISA.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>ImmPort Template?</li>
+					<li>Result file</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in an ELISA experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.ELISA.xlsx'}" target="_new">reagents.ELISA.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.ELISA.txt'}" target="_new">reagents.ELISA.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				<li>Analyte Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td rowspan="4">ELISPOT Assays </td>
+			<td >Captures the samples, reagents, and results from an ELISPOT experiment. <br></br>May be used to describe experiments, biological samples, and report results.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.ELISPOT.xlsx'}" target="_new">experimentSamples.<br></br>ELISPOT.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.ELISPOT.txt'}" target="_new">experimentSamples.<br></br>ELISPOT.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>Result file</li>
+					<li>ImmPort Template?</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in an ELISPOT experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.ELISPOT.xlsx'}" target="_new">reagents.ELISPOT.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.ELISPOT.txt'}" target="_new">reagents.ELISPOT.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				<li>Analyte Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td  rowspan="6">Flow Cytometry Assays </td>
+			<td >Captures the samples, reagents, and results from a Flow Cytometry experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.Flow_Cytometry.xlsx'}" target="_new">experimentSamples.<br></br>Flow_Cytometry.xlsx</a><br></br>
+				<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.Flow_Cytometry.txt'}" target="_new">experimentSamples.<br></br>Flow_Cytometry.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>FCS Result file</li>
+					<li>FCS Compensation/Control file(s)</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in an Flow Cytometry experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Flow_Cytometry.xlsx'}" target="_new">reagents.Flow_Cytometry.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Flow_Cytometry.txt'}" target="_new">reagents.Flow_Cytometry.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				<li>Analyte Name</li>
+				<li>Detector Name</li>
+				<li>Reporter Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Groups of reagents used together in an assay may be defined as a reagent set to simply referring to reagents.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/Reagent_Sets.xlsx'}" target="_new">reagent_sets.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/Reagent_Sets.txt'}" target="_new">reagent_sets.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Reagent Set Components ID</li>
+				<li>Description</li>
+				<li>Name</li>
+				<li>Type Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+		<td >A form to describe Flow Cytometry results  in a format to facilitate sharing of results.</td>
+		<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/FCM_Derived_data.xlsx'}" target="_new">FCM_Derived_data.xlsx</a><br></br>
+								<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/FCM_Derived_data.txt'}" target="_new">FCM_Derived_data.txt</a></td>
+		<td >
+			<ul>
+			<li>Experiment Sample ID</li>
+			<li>Population Name</li>
+			<li>Population Definition</li>
+			<li>Population Cell Number</li>
+			<li>Population Cell Number Unit</li>
+			<li>Workspace File</li>
+			</ul>
+		</td>
+		<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td  rowspan="6">Gene Expression Assays</td>
+			<td >Captures the samples, reagents, and results from a Gene Expression experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.Gene_Expression_Array.xlsx'}" target="_new">experimentSamples.Gene_Expression_Array.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.Gene_Expression_Array.txt'}" target="_new">experimentSamples.Gene_Expression_Array.txt</a>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.RNA_Sequencing.xlsx'}" target="_new">experimentSamples.RNA_Sequencing.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.RNA_Sequencing.txt'}" target="_new">experimentSamples.RNA_Sequencing.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User ID</li>
+					<li>Experiment ID</li>
+					<li>Biological Sample ID</li>
+					<li>Reagent</li>
+					<li>Treatment</li>
+					<li>Repository Name</li>
+					<li>Repository Accession</li>
+			</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the results associated with the experiments. Results may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/RNA_SEQ_Results.xlsx'}" target="_new">RNA_SEQ_Results.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/RNA_SEQ_Results.txt'}" target="_new">RNA_SEQ_Results.txt</a></td>
+			<td >
+				<ul>
+				<li>Experiment Sample ID</li>
+				<li>Reference Transcript ID</li>
+				<li>Repository Name</li>
+				<li>Transcript Type Reported</li>
+				<li>Result Unit Reported</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a Gene Expression experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Array.xlsx'}" target="_new">reagents.Array.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Array.txt'}" target="_new">reagents.Array.txt</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Sequencing.xlsx'}" target="_new">reagents.Sequencing.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Sequencing.txt'}" target="_new">reagents.Sequencing.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	
+<tr>
+			<td >Captures information on the public repository name and accession linked to ImmPort data.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/publicRepositories.xlsx'}" target="_new">publicRepositories.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/publicRepositories.txt'}" target="_new">publicRepositories.txt</a></td>
+			<td >
+				<ul>
+				<li>ExperimentSample ID</li>
+				<li>Repository Name</li>
+				<li>Repository Accession</li>
+			</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	
+	<tr>
+			<td  rowspan="5">Genotyping Assays</td>
+			<td >Captures the samples, reagents, and results from a Genotyping experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.Genotyping_Array.xlsx'}" target="_new">experimentSamples.Genotyping_Array.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.Genotyping_Array.txt'}" target="_new">experimentSamples.Genotyping_Array.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User ID</li>
+					<li>Experiment ID</li>
+					<li>Biological Sample ID</li>
+					<li>Reagent</li>
+					<li>Treatment</li>
+					<li>Repository Name</li>
+					<li>Repository Accession</li>
+			</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a Genotyping experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Array.xlsx'}" target="_new">reagents.Array.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Array.txt'}" target="_new">reagents.Array.txt</a><br></br></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+<tr>
+			<td >Captures information on the public repository name and accession linked to ImmPort data.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/publicRepositories.xlsx'}" target="_new">publicRepositories.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/publicRepositories.txt'}" target="_new">publicRepositories.txt</a></td>
+			<td >
+				<ul>
+				<li>ExperimentSample ID</li>
+				<li>Repository Name</li>
+				<li>Repository Accession</li>
+			</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td  rowspan="4">Hemaglutinnation Inhibition Assays </td>
+			<td >Captures the samples, reagents, and results from a HAI experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.HAI.xlsx'}" target="_new">experimentSamples.HAI.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.HAI.txt'}" target="_new">experimentSamples.HAI.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>ImmPort Template?</li>
+					<li>Result file</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a HAI experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.HAI.xlsx'}" target="_new">reagents.HAI.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.HAI.txt'}" target="_new">reagents.HAI.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td  rowspan="5">HLA Typing Assays </td>
+			<td >Captures the samples, reagents, and results from a HLA typing experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.HLA.xlsx'}" target="_new">experimentSamples.HLA.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.HLA.txt'}" target="_new">experimentSamples.HLA.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>ImmPort Template?</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a HLA typing experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.HLA_Typing.xlsx'}" target="_new">reagents.HLA_Typing.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.HLA_Typing.txt'}" target="_new">reagents.HLA_Typing.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+		<td >A form to describe HLA typing results  in a format to facilitate sharing of results.</td>
+		<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/HLA_Typing.xlsx'}" target="_new">HLA_Typing.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/HLA_Typing.txt'}" target="_new">HLA_Typing.txt</a></td>
+		<td >
+				<ul>
+					<li>Experiment Sample ID</li>
+					<li>Population</li>
+				</ul>
+		</td>
+		<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td  rowspan="4">Image Histology </td>
+			<td >Captures the samples, reagents, and results from a Image Histology experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.Image_Histology.xlsx'}" target="_new">experimentSamples.<br></br>Image_Histology.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.Image_Histology.txt'}" target="_new">experimentSamples.<br></br>Image_Histology.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>Result file</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a Image Histology experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Other.xlsx'}" target="_new">reagents.Other.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Other.txt'}" target="_new">reagents.Other.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	
+
+	<tr>
+			<td  rowspan="5">KIR Assays </td>
+			<td >Captures the samples, reagents, and results from a KIR typing experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.KIR.xlsx'}" target="_new">experimentSamples.KIR.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.KIR.txt'}" target="_new">experimentSamples.KIR.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>ImmPort Template?</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a KIR typing experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.KIR_Typing.xlsx'}" target="_new">reagents.KIR_Typing.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.KIR_Typing.txt'}" target="_new">reagents.KIR_Typing.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	
+	<tr>
+		<td>A form to describe KIR typing results in a format to facilitate sharing of results.</td>
+		<td><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/KIR_Typing.xlsx'}" target="_new">KIR_Typing.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/KIR_Typing.txt'}" target="_new">KIR_Typing.txt</a></td>
+		<td>
+				<ul>
+					<li>Experiment Sample ID</li>
+					<li>KIR Haplotype</li>
+				</ul>
+		</td>
+		<td>3.19/May 2019</td>
+	</tr>
+		
+	<tr>
+			<td  rowspan="4">Mass spectrometry Assays </td>
+			<td >Captures the samples, reagents, and results from a mass spectrometry experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.Mass_Spectrometry.xlsx'}" target="_new">experimentSamples.<br></br>Mass_Spectrometry.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.Mass_Spectrometry.txt'}" target="_new">experimentSamples.<br></br>Mass_Spectrometry.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>Result file</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a Image Histology experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Other.xlsx'}" target="_new">reagents.Other.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Other.txt'}" target="_new">reagents.Other.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td  rowspan="7">Multiplex Bead Array Assays (MBAA) Assays</td>
+			<td >Captures the samples, reagents, treatments, and results from a MBAA experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.MBAA.xlsx'}" target="_new">experimentSamples.MBAA.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.MBAA.txt'}" target="_new">experimentSamples.MBAA.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>ImmPort Template?</li>
+					<li>Assay ID</li>
+					<li>Dilution Factor</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a MBAA experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.MBAA.xlsx'}" target="_new">reagents.MBAA.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.MBAA.txt'}" target="_new">reagents.MBAA.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				<li>Analyte Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+				<td >A form to describe control samples  in a structure that can be interpreted by ImmPort to facilitate searching and display of results.</td>
+				<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/controlSamples.xlsx'}" target="_new">controlSamples.xlsx</a><br></br>
+										<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/controlSamples.txt'}" target="_new">controlSamples.txt</a></td>
+				<td >
+					<ul>
+						<li>Control Sample User Defined ID</li>
+						<li>Experiment</li>
+						<li>Source</li>
+						<li>Catalog ID</li>
+						<li>Dilution Factor</li>
+						<li>Assay ID</li>
+						<li>ImmPort Template?</li>
+					</ul>
+				</td>
+				<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+					<td >A form to describe a standard curve  in a structure that can be interpreted by ImmPort to facilitate searching and display of results.</td>
+					<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/standardCurves.xlsx'}" target="_new">standardCurves.xlsx</a><br></br>
+											<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/standardCurves.txt'}" target="_new">standardCurves.txt</a></td>
+					<td >
+						<ul>
+							<li>Standard Curve User-Defined ID</li>
+							<li>Experiment</li>
+							<li>Formula</li>
+							<li>Analyte Name</li>
+							<li>Assay ID</li>
+							<li>Lower Limit</li>
+							<li>Lower Limit Unit</li>
+							<li>Upper Limit</li>
+							<li>Upper Limit Unit</li>
+							<li>ImmPort Template?</li>
+						</ul>
+					</td>
+					<td >3.19/May 2019</td>
+		</tr>
+
+
+	<tr>
+			<td >A form to describe MBAA results in a structure that can be interpreted by ImmPort to facilitate searching and display of results.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/MBAA_Results.xlsx'}" target="_new">MBAA_Results.xlsx</a><br></br>
+										<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/MBAA_Results.txt'}" target="_new">MBAA_Results.txt</a></td>
+			<td >
+				<ul>
+					<li>Source ID</li>
+					<li>Assay ID</li>
+					<li>Analyte Name</li>
+					<li>Calculated Concentration Value</li>
+					<li>Calculated Concentration Unit</li>
+					<li>Mfi</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td  rowspan="4">Neutralizing Antibody Titer Assays</td>
+			<td >Captures the samples, reagents, and results from a Neutralizing Antibody Titer experiment. The literature uses a number of terms to describe similar assay methods and ImmPort employs some of these assay names.</td>
+				<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.Neutralizing_Antibody_Titer.xlsx'}" target="_new">experimentSamples.<br></br>Neutralizing_Antibody_Titer.xlsx</a><br></br>
+										<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.Neutralizing_Antibody_Titer.txt'}" target="_new">experimentSamples.<br></br>Neutralizing_Antibody_Titer.txt</a></td>
+				<td >
+					<ul>
+						<li>Experiment Sample User Defined ID</li>
+						<li>Experiment</li>
+						<li>Reagent</li>
+						<li>Biological Sample</li>
+						<li>Treatment</li>
+						<li>ImmPort Template?</li>
+					</ul>
+				</td>
+				<td >3.19/May 2019</td>
+		</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a Neutralizing Antibody Titer experiment.</td>
+				<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Neutralizing_Antibody_Titer.xlsx'}" target="_new">reagents.<br></br>Neutralizing_Antibody_Titer.xlsx</a><br></br>
+										<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Neutralizing_Antibody_Titer.txt'}" target="_new">reagents.<br></br>Neutralizing_Antibody_Titer.txt</a></td>
+				<td >
+					<ul>
+						<li>Reagent User Defined ID</li>
+						<li>Manufacturer</li>
+						<li>Catalog Number</li>
+					</ul>
+				</td>
+				<td >3.19/May 2019</td>
+		</tr>	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+
+	<tr>
+			<td  rowspan="4">QRT-PCR Assays </td>
+			<td >Captures the samples, reagents, and results from a quantitative PCR experiment.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.QRT-PCR.xlsx'}" target="_new">experimentSamples.QRT-PCR.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.QRT-PCR.txt'}" target="_new">experimentSamples.QRT-PCR.txt</a></td>
+			<td >
+			    <ul>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>ImmPort Template?</li>
+				</ul>
+				</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures detailed information about the reagents used in a PCR experiment.</td>
+				<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.PCR.xlsx'}" target="_new">reagents.<br></br>PCR.xlsx</a><br></br>
+										<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.PCR.txt'}" target="_new">reagents.<br></br>PCR.txt</a></td>
+				<td >
+					<ul>
+						<li>Reagent User Defined ID</li>
+						<li>Manufacturer</li>
+						<li>Catalog Number</li>
+					</ul>
+				</td>
+				<td >3.19/May 2019</td>
+		</tr>
+		<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td  rowspan="4">Other Assays </td>
+			<td >Captures the samples, reagents, and results from an experiment type not characterized by ImmPort.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experimentSamples.Other.xlsx'}" target="_new">experimentSamples.Other.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experimentSamples.Other.txt'}" target="_new">experimentSamples.Other.txt</a></td>
+			<td >
+				<ul>
+					<li>Experiment Sample User Defined ID</li>
+					<li>Experiment</li>
+					<li>Reagent</li>
+					<li>Biological Sample</li>
+					<li>Treatment</li>
+					<li>Result file</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>	<tr>
+			<td >Captures detailed information about the reagents used in an experiment. Since different analysis platforms employ very different reagents, the reagents.xlsx file contains several tabs for entering platform specific details of the reagents that were used.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Other.xlsx'}" target="_new">reagents.Other.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Other.txt'}" target="_new">reagents.Other.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Captures  information about the treatments applied in vitro to experiment samples or biological samples. Three types of treatments are supported: amount of agent, duration, and temperature.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/treatments.xlsx'}" target="_new">treatments.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/treatments.txt'}" target="_new">treatments.txt</a></td>
+			<td >
+				<ul>
+				<li>Treatment User Defined ID</li>
+				<li>Treatment Name</li>
+				<li>Treatment?</li>
+				<li>Treatment Specific Details</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	</tbody>
+</table>
+<br></br>
+<br></br>
+<table class="table table-hover table-bordered">
+	<thead>
+	<tr>
+		<td >Standalone Templates</td>
+		<td>Purpose</td>
+		<td >Spreadsheet Template</td>
+		<td >Required Data to Complete Metadata Form</td>
+		<td >Latest Version/<br></br>Date Available </td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td  rowspan="2">Biological Samples</td>
+		<td >Describe the samples used for experiments or lab tests. <br></br>  N.B. Samples may also be described in the experiment sample template.</td>
+		<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/bioSamples.xlsx'}" target="_new">bioSamples.xlsx</a><br></br>
+								<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/bioSamples.txt'}" target="_new">bioSamples.txt</a></td>
+		<td >
+			<ul>
+		        <li>Biological Sample User Defined ID</li>
+		        <li>Sample Type</li>
+		        <li>Subject</li>
+		        <li>Protocol</li>
+		     	<li>Study </li>
+		     	<li>Planned Visit</li>
+		        <li>Study Time Collected</li>
+		        <li>Study Time Event</li>
+			</ul>
+	    </td>
+		<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+
+			<td >Lists the protocols associated with the biological samples. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+		<td  rowspan="2">Experiments</td>
+		<td >Describes the type of experiment, measurement technique and protocols used in the experiment.<br></br>  N.B. Experiments may also be described in the experiment sample templates.</td>
+		<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/experiments.xlsx'}" target="_new">experiments.xlsx</a><br></br>
+								<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/experiments.txt'}" target="_new">experiments.txt</a></td>
+		<td >
+			<ul>
+				<li>Experiment User Defined ID</li>
+				<li>Experiment Name</li>
+				<li>Purpose</li>
+				<li>Measurement Technique</li>
+		     	<li>Protocol</li>
+		    </ul>
+
+		</td>
+		<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td >ELISA Derived and Interpreted Results </td>
+			<td >A form to describe ELISA results in a structure that can be interpreted by ImmPort to facilitate searching and display of results.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/ELISA_Results.xlsx'}" target="_new">ELISA_Results.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/ELISA_Results.txt'}" target="_new">ELISA_Results.txt</a></td>
+			<td >
+			<ul>
+		        <li>Experiment Sample ID</li>
+		        <li>Analyte</li>
+		        <li>Calculated Concentration Value</li>
+		        <li>Calculated Concentration Unit</li>
+		        <li>Parent Specimen</li>
+			</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td >ELISPOT Derived and Interpreted Results </td>
+			<td >A form to describe ELISPOT results in a structure that can be interpreted by ImmPort to facilitate searching and display of results.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/ELISPOT_Results.xlsx'}" target="_new">ELISPOT_Results.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/ELISPOT_Results.txt'}" target="_new">ELISPOT_Results.txt</a></td>
+			<td >
+			<ul>
+		        <li>Experiment Sample ID</li>
+		        <li>Analyte</li>
+		        <li>Number of Spots per Well</li>
+		        <li>Base/Parent Population value</li>
+		        <li>Base/Parent Population unit</li>
+				<li>Autogenerated Descriptive Phrase</li>
+			</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+		<td >Hemaglutinnation Inhibition Derived and Interpreted Results</td>
+		<td >A form to describe HAI results in a structure that can be interpreted by ImmPort to facilitate searching and display of results.</td>
+		<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/HAI_Results.xlsx'}" target="_new">HAI_Results.xlsx</a><br></br>
+								<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/HAI_Results.txt'}" target="_new">HAI_Results.txt</a></td>
+		<td >
+				<ul>
+					<li>Experiment Sample</li>
+					<li>Virus Strain</li>
+					<li>Titration Dilution Value</li>
+				</ul>
+		</td>
+		<td >3.19/May 2019</td>
+	</tr>
+<tr>
+			<td>Immune Exposure </td>
+			<td >Captures information about the type of process through which a host is exposed and the type of evidence for that exposure.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/immuneExposure.xlsx'}" target="_new">immuneExposure.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/immuneExposure.txt'}" target="_new">immuneExposure.txt</a></td>
+			<td >
+				<ul>
+				<li>Arm Or Cohort ID</li>
+				<li>Exposure Process Reported</li>
+				<li>Exposure Material Reported</li>
+				<li>Exposure Material ID</li>
+				<li>Disease Reported</li>
+				<li>Disease Ontology ID</li>
+				<li>Disease Stage Reported</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+
+	<tr>
+			<td rowspan="2">Lab Test Panels</td>
+			<td >Captures the Lab Panel Name, Study ID and Protocol ID for lab tests.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/labTestPanels.xlsx'}" target="_new">labTestPanels.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/labTestPanels.txt'}" target="_new">labTestPanels.txt</a></td>
+			<td >
+				<ul>
+					<li>Lab Test User Defined ID</li>
+					<li>Name</li>
+					<li>Study ID</li>
+					<li>Protocol ID</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+	<tr>
+			<td >Lists the protocols associated with the experiments. Protocols may be PDF files, Word documents, Excel or other file types.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/protocols.xlsx'}" target="_new">protocols.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/protocols.txt'}" target="_new">protocols.txt</a></td>
+			<td >
+				<ul>
+				<li>Protocol User Defined ID</li>
+				<li>Protocol File Name</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+			<td >Reagents Sequencing</td>
+			<td >Captures detailed information about the reagents used in an experiment. Since different analysis platforms employ very different reagents, the reagents.xlsx file contains several tabs for entering platform specific details of the reagents that were used.</td>
+			<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/reagents.Sequencing.xlsx'}" target="_new">reagents.Sequencing.xlsx</a><br></br>
+									<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/reagents.Sequencing.txt'}" target="_new">reagents.Sequencing.txt</a></td>
+			<td >
+				<ul>
+				<li>Reagent User Defined ID</li>
+				<li>Manufacturer</li>
+				<li>Catalog Number</li>
+				</ul>
+			</td>
+			<td >3.19/May 2019</td>
+	</tr>
+
+	<tr>
+				<td >PCR Derived and Interpreted Results</td>
+				<td >A form to describe PCR results in a structure that can be interpreted by ImmPort to facilitate searching and display of results.</td>
+				<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/PCR_Results.xlsx'}" target="_new">PCR_Results.xlsx</a><br></br>
+										<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/PCR_Results.txt'}" target="_new">PCR_Results.txt</a></td>
+				<td >
+					<ul>
+						<li>Experiment Sample</li>
+						<li>Entrez Gene ID</li>
+					</ul>
+				</td>
+				<td >3.19/May 2019</td>
+	</tr>
+
+<tr>
+					<td >Virus Neutralization Titers Derived and Interpreted Results</td>
+					<td >A form to describe the interpeted results of sample (e.g. serum) dilution series to quantitate the viral neutralizing activity of a sample. The Virus Neutralization Results capture the interpreted titer results in a commonly used format that can be interpreted by ImmPort to facilitate searching and display of results.</td>
+					<td ><a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/excel-templates/Virus_Neutralization_Results.xlsx'}" target="_new">Virus_Neutralization_Results.xls</a><br></br>
+											<a class="buttonlink" th:href="${@ecosystemProperties.getDataUploadTemplatesUrl() + '/txt-templates/Virus_Neutralization_Results.txt'}" target="_new">Virus_Neutralization_Results.txt</a></td>
+					<td >
+						<ul>
+							<li>Experiment Sample</li>
+							<li>Virus Strain</li>
+							<li>Titration Dilution Value</li>
+						</ul>
+					</td>
+					<td >3.19/May 2019</td>
+	</tr>
+ </tbody>
+
+
+</table>
+</div></div>
+<br></br>
+<span class="tipmessage">
+	Need help?  Please feel free to contact us by email at <a class="buttonlink" href="mailto: BISC_Helpdesk@niaid.nih.gov">BISC_Helpdesk@niaid.nih.gov</a>
+</span>	
+
+<br></br>
+</div>
+  </div>	
+</body>
+</html>		

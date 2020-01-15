@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html s:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="containerClass = 'no-container', applicationHeader = 'resources', applicationFooter = 'marchofdimes'">
+
+    <head>
+        <title>March of Dimes - ImmPort</title>
+        <script type="text/javascript" src="/js/script.js"></script>
+        <script type="text/javascript" src="/js/BigPicture.min.js"></script>
+        <script type="text/javascript" src="/js/scrollTop.js"></script>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
+        
+        <script th:inline="javascript">
+        	var sharedDataStudyDetailUrl = [[${@ecosystemProperties.getSharedDataStudyDetailUrl()}]];
+    		var immportS3ApiBaseUrl = [[${@ecosystemProperties.getImmportS3ApiBaseUrl()}]];
+    		var useLocalFileSystemForS3Data = [[${@ecosystemProperties.getUseLocalFileSystemForS3Data()}]];
+		</script>
+        
+        <script type="text/javascript" src="/js/modDataCenters.js"></script>
+        
+    </head>
+
+    <body>
+        <div layout:fragment="content">
+			<div class="mod-top-banner">
+				<img src="/images/mod/top-banner-compressed.jpg" class="img-responsive" alt="image"    width="100%" height="auto"></img>
+			</div>
+			<br/><br/><br/>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-newspaper-o"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${contractStudyCnt}" data-speed="2000"></span>
+						<span class="number-label">Studies</span>
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-flask"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${expMeasureTechCnt}" data-speed="2000"></span>
+						<span class="number-label">Types of Measurements</span>
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-user"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${subjectCnt}" data-speed="2000"></span>
+						<span class="number-label">Participants</span>
+					</div>
+					<div class="col-md-2 col-xs-6 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-search"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${expSmplCnt}" data-speed="2000"></span>
+						<span class="number-label">Experimental Samples</span>
+					</div>
+					<div class="col-md-2 col-xs-6" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-download"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" data-to="2042" data-speed="2000"></span>
+						<span class="number-label">Downloads</span>
+					</div>
+					<div class="col-md-1">
+					</div>
+				</div>
+
+				<br/><br/>
+
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div class="col-sm-4 applicationDiv">
+							<div class="panel panel-default resources-panel">
+									<div class="panel-heading text-center">
+										<a href="#PRC_datasets">
+												<i class="fa fa-files-o homeIcon" aria-hidden="true" style="font-size:35px"></i>
+										</a>
+									</div>
+									<div class="panel-body panel-body-prc text-center">
+											<a href="#PRC_datasets">
+													<span class="home-heading">MOD PRC Datasets</span><br />
+											</a>
+									</div>
+							</div>
+						</div>
+						<div class="col-sm-4 applicationDiv">
+							<div class="panel panel-default resources-panel">
+									<div class="panel-heading text-center">
+										<a href="#PRC_research_highlights">
+												<i class="fa fa-star homeIcon" aria-hidden="true" style="font-size:35px"></i>
+												<i class="fa fa-star homeIcon" aria-hidden="true" style="font-size:35px"></i>
+												<i class="fa fa-star homeIcon" aria-hidden="true" style="font-size:35px"></i>
+											 </a>
+									</div>
+									<div class="panel-body panel-body-prc text-center">
+											<a href="#PRC_research_highlights">
+													<span class="home-heading">MOD PRC Research Highlights</span><br />
+											</a>
+									</div>
+							</div>
+						</div>
+
+						<div class="col-sm-4 applicationDiv">
+							<div class="panel panel-default resources-panel">
+									<div class="panel-heading text-center">
+										<a href="#Other_relevant_resources">
+												<i class="fa fa-puzzle-piece homeIcon" aria-hidden="true" style="font-size:35px"></i>
+											 </a>
+									</div>
+									<div class="panel-body panel-body-prc text-center">
+											<a href="#Other_relevant_resources">
+													<span class="home-heading">Other Relevant Resources</span><br />
+											</a>
+									</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+
+				<br/><br/><br/>
+
+				<div class="row text-justify" style="margin-right: 6px; margin-left: 6px;">
+					<div class="col-md-12 col-xs-12">
+						<h2 class="text-center">March Of Dimes Database for Preterm Birth Research </h2><h3 class="text-center"><i>Powered by <img src="/images/mod/immport-logo-image-32.png" height="20"></img>ImmPort</i></h3>
+					</div>
+					<br />
+					<div class="col-md-12 col-xs-12"><br />
+						<p>Preterm birth (PTB), or the delivery of an infant prior to 37 weeks of gestation, is a significant cause of infant morbidity and mortality. Globally, about 11% of infants are born prematurely every year, totaling nearly 15 million births. Infants born preterm are at risk for a variety of adverse outcomes, such as respiratory illness, blindness, and cerebral palsy, with associated complications resulting in nearly one million deaths each year. The <a href="https://www.marchofdimes.org/" target="_blank">March of Dimes</a> (MOD), the leading nonprofit for pregnancy and baby health, is dedicated to improving the health of moms and babies by preventing birth defects, premature birth and infant mortality. Only modest progress has been made in identifying the underlying causes of preterm birth so the March of Dimes has now made this a top research priority. To foster a new model of collaboration with the hope of leading to transformative discoveries, five March of Dimes <a href="#PRC_datasets">Prematurity Research Centers</a> were launched. The goals are to integrate scientists from individual disciplines and to form innovative collaborations that can accelerate research discoveries.</p>
+						<p>The MOD Database for Preterm Birth Research, led by <a href="http://profiles.ucsf.edu/marina.sirota">Marina Sirota</a>, PhD and <a href="http://profiles.ucsf.edu/atul.butte">Atul Butte</a>, MD, PhD from the Institute for Computational Health Sciences at UCSF as part of the March of Dimes Prematurity Research Center at Stanford aims to organize scientific data and research across the five MOD-funded Prematurity Research Centers with the goal of enhancing research collaboration and coordination to accelerate the overall pace of discovery in this field. The data in the repository is diverse and includes genomic, transcriptomic, immunological and microbiome data. In addition, we are augmenting relevant datasets from participating laboratories with public and government databases and private data sources. Our data-sharing efforts combined with powerful bioinformatics tools provide an unprecedented opportunity to apply precision medicine strategies to preterm birth research. We hope this work will lead to discovery of novel diagnostic biomarkers and ultimately aid in formulating more effective interventional strategies for the management and prevention of preterm birth.</p>
+					</div>
+				</div>
+				<br />
+
+				<div class="row justify-content-md-center">
+					<div class="col-md-12">
+						<div class="col-md-3 applicationDiv resourcesDiv">
+							<div class="panel panel-default resources-panel">
+									<div class="panel-heading panel-heading-prc text-center">
+										<a href="https://as.vanderbilt.edu/rokaslab/tools/" target="_blank">
+											<img src="/images/mod/genestation-logo-background.png" style="height:50px;" />
+										</a>
+									</div>
+									<div class="panel-body-prc text-center">
+										<a href="https://as.vanderbilt.edu/rokaslab/tools/" target="_blank">
+											<span class="prc-tools-heading">hosted @ Ohio</span><br />
+										</a>
+									</div>
+							</div>
+						</div>
+						<div class="col-md-3 sideTextDiv sideTextDiv-prc">
+							<p>GEneSTATION, part of the MOD funded Ohio Collaborative, is a gene specific data portal that aims to synthesize diverse genomic, transcriptomic and evolutionary data for pregnancy-related tissues and phenotypes.</p>
+						</div>
+
+						<div class="col-md-3 applicationDiv resourcesDiv">
+							<div class="panel panel-default resources-panel">
+									<div class="panel-heading panel-heading-prc text-center">
+										<a href="https://redcap.med.upenn.edu/" target="_blank">
+											<img src="/images/mod/upennlogo.png" style="height:50px;" />
+										</a>
+									</div>
+									<div class="panel-body-prc text-center">
+										<a href="https://redcap.med.upenn.edu/" target="_blank">
+											<span class="prc-tools-heading">Penn Medecine REDCap Database</span><br />
+										</a>
+									</div>
+							</div>
+						</div>
+						<div class="col-md-3 sideTextDiv sideTextDiv-prc">
+							<p>The goal of this effort, which is established and managed at the Penn MOD Center, is to house clinical data and carry out biospecimen tracking for MOD funded studies. Login is needed in order to access the data.</p>
+						</div>
+					</div>
+				</div>
+
+				<br /><br /><br />
+				
+				<div id="PRC_datasets" class="row" style="margin-right: 6px; margin-left: 6px;">
+				    <div class="col-md-2 col-xs-3"><p><img src="/images/mod/mod_icon.jpg" width="185"></img></p></div>
+					<h3 class="text-center">March of Dimes Prematurity Research Center (PRC) Datasets</h3><br />
+				</div>
+
+				<br />
+				<div>
+					<table id="modDataCenters" class="table table-hover table-bordered table-sm mod-margin-left">
+						<thead>
+							<tr >
+								<th>Center Names</th>
+								<th>Center Themes</th>
+								<th>Center Studies</th>		
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				<br />
+			
+				<br /><br /><br />
+
+				<div class="row" id="PRC_research_highlights"  style="margin-right: 6px; margin-left: 6px;">
+					<h3 class="text-center">March of Dimes Prematurity Research Centers (PRC) Research Highlights</h3>
+				</div>
+				<br /><br />
+				<div class="mod-margin-left" style="background-color:white;">
+				
+
+					<div class="row justify-content-md-center">
+					  <div class="col-md-8 col-xs-12">
+					    <p><a href="https://www.ncbi.nlm.nih.gov/pubmed/29277631">A proteomic clock of human pregnancy.</a><br />
+					               Aghaeepour N, Lehallier B, Baca Q, Ganio EA, Wong RJ, Ghaemi MS, Culos A, El-Sayed YY, Blumenfeld YJ, Druzin ML, Winn VD, Gibbs RS, Tibshirani R, Shaw GM, Stevenson DK, Gaudilliere B, Angst MS.
+					            <br /><u>AJOG</u> <i>March, 2018</i> <br />PMID: <b>29277631</b><br />
+					            Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1326'}">SDY1326</a></p>
+					  </div>
+					  <div class="col-md-4">
+					    <img class="highlight_fig table-img" src="/images/mod/SDY1326_figure.png" height="200px"></img>
+					  </div>
+					</div>
+					<br />
+					
+					<div class="row justify-content-md-center">
+						  <div class="col-md-8 col-xs-12">
+						    <p><a href="https://www.ncbi.nlm.nih.gov/pubmed/29317701">A genome-wide association study identifies only two ancestry specific variants associated with spontaneous preterm birth.</a><br />
+						               Rappoport N, Toung J, Hadley D, Wong RJ, Fujioka K, Reuter J, Abbott CW, Oh S, Hu D, Eng C, Huntsman S, Bodian DL, Niederhuber JE, Hong X, Zhang G, Sikora-Wohfeld W, Gignoux CR, Wang H, Oehlert J, Jelliffe-Pawlowski LL, Gould JB, Darmstadt GL, Wang X, Bustamante CD, Snyder MP, Ziv E, Patsopoulos NA, Muglia LJ, Burchard E5, Shaw GM, O'Brodovich HM, Stevenson DK, Butte AJ, Sirota M
+						            <br /><u>Sci Rep.</u> <i>January, 2018</i> <br />PMID: <b>29317701</b><br />
+						            Relevant study: <a href="http://comphealth.ucsf.edu/ptb_gwas/">Visualization</a> and <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1205'}">SDY1205</a></p>
+						  </div>
+						  <div class="col-md-4">
+							    <img class="highlight_fig table-img" src="/images/mod/SDY1205_fig.png" height="200px"></img>
+						  </div>
+						</div>
+					<br />
+
+				
+				  <div class="row justify-content-md-center">
+						<div class="col-md-8 col-xs-12">
+							<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/28549981">Early pregnancy vaginal microbiome trends and preterm birth.</a><br />
+										     Stout MJ, Zhou Y, Wylie KM, Tarr PI, Macones GA, Tuuli MG.
+											<br /><u>AJOG</u> <i>December, 2017</i> <br />PMID: <b>28549981</b><br />
+											Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1206'}">SDY1206</a></p>
+						</div>
+						<div class="col-md-4">
+							<img class="highlight_fig table-img" src="/images/mod/stout_fig.jpg" height="200px"></img>
+						</div>
+				  </div>
+					<br />
+					
+				  <div class="row justify-content-md-center">
+						<div class="col-md-8 col-xs-12">
+							<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/29249523">Divergent Patterns of Mitochondrial and Nuclear Ancestry Are Associated with the Risk for Preterm Birth.</a><br />
+										     Crawford N, Prendergast D, Oehlert JW, Shaw GM, Stevenson DK, Rappaport N, Sirota M, Tishkoff SA, Sondheimer N.
+											<br /><u>J Pediatr.</u> <i>December, 2017</i> <br />PMID: <b>29249523</b><br />
+											Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1215'}">SDY1215</a></p>
+						</div>
+						<div class="col-md-4">
+							<img class="highlight_fig table-img" src="/images/mod/sondheimer_fig.png" height="200px"></img>
+						</div>
+				  </div>
+					<br />
+					
+					<div class="row justify-content-md-center">
+						  <div class="col-md-8 col-xs-12">
+						    <p><a href="https://www.ncbi.nlm.nih.gov/pubmed/28864494">An immune clock of human pregnancy.</a><br />
+						               Aghaeepour N, Ganio EA, Mcilwain D, Tsai AS, Tingle M, Van Gassen S, Gaudilliere DK, Baca Q, McNeil L, Okada R, Ghaemi MS, Furman D, Wong RJ, Winn VD, Druzin ML, El-Sayed YY, Quaintance C, Gibbs R, Darmstadt GL, Shaw GM, Stevenson DK, Tibshirani R, Nolan GP, Lewis DB, Angst MS, Gaudilliere B.
+						            <br /><u>Sci Immunol.</u> <i>September, 2017</i> <br />PMID: <b>28864494</b><br />
+						            Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1157'}">SDY1157</a></p>
+						  </div>
+						  <div class="col-md-4">
+						    <img class="highlight_fig table-img" src="/images/mod/image001_SDY1157.gif" height="200px"></img>
+						  </div>
+					</div>
+					<br />
+					
+					
+					<div class="row justify-content-md-center">
+						<div class="col-md-8 col-xs-12" >
+							<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/28877031">Genetic associations with gestational duration and spontaneous preterm birth.</a><br />
+										     Zhang G, Feenstra B, Bacelis J, Liu X, Muglia LM, Juodakis J, Miller DE, Litterman N, Jiang PP, Russell L, Hinds DA, Hu Y, Weirauch MT, Chen X, Chavan AR, Wagner GP, Pavličev M, Nnamani MC, Maziarz J, Karjalainen MK, Rämet M, Sengpiel V, Geller F, Boyd HA, Palotie A1, Momany A, Bedell B, Ryckman KK, Huusko JM, Forney CR, Kottyan LC, Hallman M, Teramo K, Nohr EA, Davey Smith G, Melbye M, Jacobsson B, Muglia LJ.
+											<br /><u>N Engl J Med.</u> <i>September, 2017</i> <br />PMID: <b>28877031</b><br />
+											Relevant study: <a target="_blank" href="https://as.vanderbilt.edu/rokaslab/tools/">GeneStation</a> and  <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1173'}">SDY1173</a></p>
+						</div>
+						<div class="col-md-4 col-xs-12">
+							<img class="highlight_fig table-img" src="/images/mod/NEJMoa1612665-Muglia-Manuscript_fig2.jpg" height="200px"></img>
+						</div>
+				  </div>
+					<br />
+					
+				  <div class="row justify-content-md-center">
+						<div class="col-md-8 col-xs-12">
+							<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/28904056">Simultaneously Monitoring Immune Response and Microbial Infections During Pregnancy through Plasma cfRNA Sequencing.</a><br />
+										     Pan W, Ngo TTM, Camunas-Soler J, Song CX, Kowarsky M, Blumenfeld YJ, Wong RJ, Shaw GM, Stevenson DK, Quake SR.
+											<br /><u>Clin Chem</u> <i>September, 2017</i> <br />PMID: <b>28904056</b><br />
+											Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY673'}">SDY673</a></p>
+						</div>
+						<div class="col-md-4">
+							<img class="highlight_fig table-img" src="/images/mod/Pan_et_al_fig2A.png" height="200px"></img>
+						</div>
+				  </div>
+					<br />
+					
+				  <div class="row justify-content-md-center">
+						<div class="col-md-8">
+							<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/28847941">Replication and refinement of a vaginal microbial signature of preterm birth in two racially distinct cohorts of US women.</a><br />
+										     Callahan BJ, DiGiulio DB, Goltsman DSA, Sun CL, Costello EK, Jeganathan P, Biggio JR, Wong RJ, Druzin ML, Shaw GM, Stevenson DK, Holmes SP, Relman DA
+											<br /><u>Proc Natl Acad Sci U S A.</u> <i>September, 2017</i> <br />PMID: <b>28847941</b><br />
+											Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1164'}">SDY1164</a></p>
+						</div>
+						<div class="col-md-4">
+							<img class="highlight_fig table-img" src="/images/mod/Replication_and_refinment.gif" height="200px"></img>
+						</div>
+				  </div>
+					<br />
+					
+				  <div class="row justify-content-md-center">
+						<div class="col-md-8">
+							<p><a href="http://www.pnas.org/content/early/2017/08/21/1707009114.abstract">Numerous uncharacterized and highly divergent microbes which colonize humans are revealed by circulating cell-free DNA</a><br />
+										     Kowarsky M, Camunas-Soler J, Kertesz M, De Vlaminck I, Koh W, Pan W, Martin L, Neff NF, Okamoto J, Wong JR, Kharbanda S, El-Sayed Y, Blumenfeld Y, Stevenson DK, Shaw GM, Wolfe ND, Quake SR
+											<br /><u>Proc Natl Acad Sci U S A.</u> <i>August, 2017</i> <br />PMID: <b>28830999</b><br />
+											Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1175'}">SDY1175</a></p>
+						</div>
+						<div class="col-md-4">
+							<img class="highlight_fig table-img" src="/images/mod/Numerous-microbes.gif" height="200px"></img>
+						</div>
+				  </div>
+				 <br/>
+
+				  <div class="row justify-content-md-center">
+						<div class="col-md-8">
+							<p><a href="http://www.sciencedirect.com/science/article/pii/S0143400416301059">Comprehensive RNA profiling of villous trophoblast and decidua basalis in pregnancies complicated by preterm birth following intra-amniotic infection</a><br />
+										Ackerman WE, Buhimschi IA, Eidem HR, Rinker DC, Rokas A, Rood K, Zhao G, Summerfield TL, Landon MB, Buhimschi CS
+										<br /><u>Placenta</u> <i>August, 2016</i> <br />PMID: <b>27452435</b><br />
+										Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY1155'}">SDY1155</a><br /></p>
+						</div>
+						<div class="col-md-4">
+							<img class="highlight_fig table-img" src="/images/mod/Ackerman-Variant2.png" height="200px"/>
+						</div>
+				  </div><br />
+				  
+				  <div class="row justify-content-md-center">
+						<div class="col-md-8">
+							<p><a href="http://www.pnas.org/content/112/35/11060.short">Temporal and spatial variation of the human microbiota during pregnancy</a><br />
+									     DiGiulio DB, Callahan BJ, McMurdie PJ, Costello EK, Lyell DJ, Robaczewska A, Sun CL, Goltsman DSA, Wong RJ, Shaw G, Stevenson DK, Holmes SP, Relman DA
+										<br /><u>Proc Natl Acad Sci U S A.</u> <i>August, 2015</i> <br />PMID: <b>26283357</b><br />
+										Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY465'}">SDY465</a> </p>
+						</div>
+						<div class="col-md-4">
+							<img class="highlight_fig table-img" src="/images/mod/Temporal_and_spatial.png" height="200px"/>
+						</div>
+				  </div><br />
+				  
+				  <div class="row justify-content-md-center">
+						<div class="col-md-8">
+							<p><a href="https://www.ncbi.nlm.nih.gov/pubmed/26190063">Implementing mass cytometry at the bedside to study the immunological basis of human diseases: distinctive immune features in patients with a history of term or preterm birth.</a><br />
+									Gaudillière B, Ganio EA, Tingle M, Lancero HL, Fragiadakis GK, Baca QJ, Aghaeepour N, Wong RJ, Quaintance C, El-Sayed YY, Shaw GM, Lewis DB, Stevenson DK, Nolan GP, Angst MS.
+									<br /><u>Cytometry A.</u> <i>July, 2015</i> <br />PMID: <b>26190063</b><br />
+									Relevant study: <a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY475'}">SDY475</a></p>
+						</div>
+						<div class="col-md-4">
+							<img class="highlight_fig table-img" src="/images/mod/Implementing_Mass_Cytometry.png" height="200px"/>
+						</div>
+				  </div>
+
+
+				<div class="row" id="Other_relevant_resources" style="margin-right: 6px; margin-left: 6px;"><br /><br /><br />
+					<h3 class="text-center">Relevant Resources for Preterm Birth Research<br />Publicly Available Data to Facilitate Future Discoveries</h3>
+				</div>
+				<br />
+
+				<div class="">
+					<table class="table table-hover table-bordered table-sm mod-margin-left mod-table">
+						<thead>
+							<tr >
+								<th>Title</th>
+								<th>Study ID</th>
+								<th>Database</th>
+								<th>Type</th>
+								<th>Number of Samples</th>
+								<th>Tissue</th>
+								<th>Paper ID</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr><th scope="row">Whole blood gene expression profile associated with spontaneous preterm birth</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE46510">GSE46510</a></td>
+								<td >GEO</td>
+								<td >Transcriptomics</td>
+								<td >154 samples</td>
+								<td >Maternal Blood</td>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/24828675">24828675</a></td>
+							</tr>
+							<tr><th  scope="row">Maternal Whole Blood Gene Expression at 18 and 28 weeks of Gestation Associated with Spontaneous Preterm Birth in Asymptomatic Women</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE59491">GSE59491</a></td>
+								<td >GEO</td>
+								<td >Transcriptomics</td>
+								<td >326 samples</td>
+								<td >Maternal Blood</td>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/27333071">27333071</a></td>
+							</tr>
+							<tr><th  scope="row">Unique inflammatory transcriptome profiles at the maternal fetal interface and onset of human preterm and term birth</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE73685">GSE73685</a></td>
+								<td >GEO</td>
+								<td >Transcriptomics</td>
+								<td >183 samples</td>
+								<td >Amion, Cord Blood, Desidua, Maternal Blood</td>
+								<td >Unpublished</td>
+							</tr>
+							<tr><th  scope="row">The vaginal microbiota of pregnant women who subsequently have spontaneous preterm labor and delivery and those with a normal delivery at term</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA242473/">PRJNA242473</a></td>
+								<td >SRA</td>
+								<td >Microbiome</td>
+								<td >349 samples</td>
+								<td >Vaginal Microbiome</td>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4066267/">PMC4066267</a></td>
+							</tr>
+							<tr><th  scope="row">Genome-Wide Association Study of Preterm Birth</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000332.v2.p2">phs000332.v2.p2</a></td>
+								<td >dbGAP</td>
+								<td >Genetics</td>
+								<td >1779 samples</td>
+								<td >Blood</td>
+								<td >Unpublished</td>
+							</tr>
+							<tr><th  scope="row">NICHD Genomic and Proteomic Network for Preterm Birth Research (GPN)</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000714.v1.p1">phs000714.v1.p1</a></td>
+								<td >dbGAP</td>
+								<td >Genetics</td>
+								<td >2928 samples</td>
+								<td >Blood</td>
+								<td >Unpublished</td>
+							</tr>
+							<tr><th  scope="row">Genome-Wide Association Studies of Prematurity and Its Complications (African American)</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000353.v1.p1">phs000353.v1.p1</a></td>
+								<td >dbGAP</td>
+								<td >Genetics</td>
+								<td >3478 samples</td>
+								<td >Blood</td>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/19336370">19336370</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/18787502">18787502</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/17855807">17855807</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/17805208">17805208</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/21145756">21145756</a></td>
+							</tr>
+							<tr><th  scope="row">Whole Genome Study for De Novo Mutation Rates</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001055.v1.p1">phs001055.v1.p1</a></td>
+								<td >dbGAP</td>
+								<td >Genetics</td>
+								<td >2397 samples</td>
+								<td ></td>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/27322544">27322544</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/26781218">26781218</a>, <a href="https://www.ncbi.nlm.nih.gov/pubmed/27322544">27322544</a></td>
+							</tr>
+							<tr><th  scope="row">The Placenta Harbors a Unique Microbiome</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000735.v1.p1">phs000735.v1.p1</a></td>
+								<td >dbGAP</td>
+								<td >Microbiome</td>
+								<td >48 samples</td>
+								<td >Placenta</td>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/24848255">24848255</a></td>
+							</tr>
+							<tr><th  scope="row">The Vaginal Microbiome: Disease, Genetics and the Environment</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000256.v3.p2">phs000256.v3.p2</a></td>
+								<td >dbGAP</td>
+								<td >Microbiome</td>
+								<td >3474 samples</td>
+								<td >Vaginal Microbiome</td>
+								<td >Unpublished</td>
+							</tr>
+							<tr><th  scope="row">Response of women during pregnancy to the inactivated influenza virus vaccine</th>
+								<td ><a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY37'}">SDY37</a></td>
+								<td >ImmPort</td>
+								<td >ELISA, Cytokines</td>
+								<td >55 samples</td>
+								<td >Maternal Blood</td>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/22198680">22198680</a></td>
+							</tr>
+							<tr><th  scope="row">Immune response of patients during pregnancy</th>
+								<td ><a th:href="${@ecosystemProperties.getSharedDataStudyDetailUrl() +'/SDY36'}">SDY36</a></td>
+								<td >ImmPort</td>
+								<td >Vaccine Response</td>
+								<td >300 samples</td>
+								<td >Maternal Blood</td>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/pubmed/22353963">22353963</a></td>
+							</tr>
+							<tr><th  scope="row">Investigating Human Placentation and Pregnancy Using First Trimester Chorionic Villi</th>
+								<td ><a href="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs001320.v1.p1">phs001320.v1.p1</a></td>
+								<td >dbGAP</td>
+								<td >Transcriptomics</td>
+								<td >58 samples</td>
+								<td >Chorionic villus sampling</td>
+								<td >Unpublished</td>
+							</tr>
+							<tr><th scope="row">STAMPEED: Northern Finland Birth Cohort 1966 (NFBC1966)</th>
+								<td ><a target="_blank" href="https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000276.v2.p1">phs000276.v2.p1</a></td>
+								<td >dbGAP</td>
+								<td >Genetics</td>
+								<td >5415 samples</td>
+								<td >Blood</td>
+								<td ><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pubmed/19060910">19060910</a></td>
+							</tr>
+							<tr><th scope="row">Database for Preterm Birth</th>
+								<td >NA</td>
+								<td ><a target="_blank" href="https://physionet.org/">dbPTB</a></td>
+								<td >Genetic Associations</td>
+								<td >NA</td>
+								<td >Blood</td>
+								<td ><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3275764/">PMC3275764</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+				<br /><br />
+
+		        </div>
+			</div>
+        </div>
+    </body>
+</html>

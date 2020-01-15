@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+        <title>ImmPort Data Browser</title>
+        <script type="text/javascript" src="/js/script.js"></script>
+        <script type="text/javascript" src="/js/BigPicture.min.js"></script>
+        <script type="text/javascript" src="/js/scrollTop.js"></script>
+    </head>
+
+    <body>
+        <div layout:fragment="content">
+        
+        <h2>Instructions for the ImmPort Data Browser</h2>
+	    <ul>
+	    	<li><a href="/installAsperaHelp" class="buttonlink">Instructions for Aspera Connect Installation</a></li>
+	    	<li><a href="#databrowser" class="buttonlink">Downloading data with the ImmPort data browser</a></li>
+	    	<li><a href="#further" class="buttonlink">Further Aspera Connect Installation Information on Windows</a></li>
+	    </ul>
+
+		<h3><span class="label"><a name="databrowser">Downloading data with the ImmPort data browser</a></span></h3>
+		<ul> 
+			<li>Once the Aspera Connect Client is installed the ImmPort data browser will briefly display the Aspera banner with the message &quot;Aspera Connect is running&quot;.</li>
+			<li>You are required to login using your ImmPort account credentials and accept the NIAID user agreement to begin using the data browser</li>
+			<li class="list-unstyled"><img src="/images/browser/aspera_connect_client_plugin_firefox_47.png" alt="login" height="350"/></li>
+			<li class="list-unstyled"><br></br></li>
+			<li>Once logged in you will be able to browse and download all of the public ImmPort data. The first three columns of the data browser perform three distinct functions</li>
+			<li>The first column containing the gray checkmark allows you to download multiple files and/or directories at once. Select the items you would like and select "Download".</li>
+			<li>The second column containing the page and folder with blue arrow icons allows you to download a single file or directory. Select the item you would like and the download will begin immediately.</li>
+			<li>The third column containing the blue directory names allows you to see the contents of a directory.</li>
+			<li class="list-unstyled"><br></br></li>
+			<li class="list-unstyled"><img src="/images/browser/aspera_connect_client_plugin_firefox_38b.png" alt="first three columns" height="420"/></li>
+			<li class="list-unstyled"><br></br></li>
+			<li>Upon your first download you will be prompted to confirm the connection when you begin</li>
+			<li class="list-unstyled"><img src="/images/browser/aspera_connect_client_plugin_firefox_36.png" alt="confirm the connection" height="200" /></li>
+			<li class="list-unstyled"><br></br></li>
+			<li>When the download begins the Aspera Connect Transfers window will open. You can open the Transfer Monitor window to get more information by selecting the line-plot icon</li>
+			<li class="list-unstyled"><img src="/images/browser/aspera_connect_client_plugin_firefox_40.png" alt="Transfers window" height="240"/></li>
+			<li class="list-unstyled"><br></br></li>
+			<li>The target directory of your download is not configured in Firefox. The target directory is configured by selecting the cog icon at the bottom of the Aspera Connect Transfers window and selecting the second Transfers tab</li>
+			<li class="list-unstyled"><img src="/images/browser/aspera_connect_client_plugin_firefox_23.png" alt="target directory" height="400"/></li>
+			<li class="list-unstyled"><br></br></li>			
+		</ul> 			
+		
+		<h3><span class="label"><a name="further">Further Aspera Connect Installation Information on Windows</a></span></h3>
+		<ul>
+			<li>If you navigate to <a href="http://downloads.asperasoft.com/connect2/">the Aspera Connect download page</a> regardless of internet browser you should see this message if the browser cannot find the Aspera Connect plugin</li>
+			<li class="list-unstyled"><img src="/images/browser/aspera_connect_uninstall_5.png" alt="aspera test" height="80"/></li>
+			<li class="list-unstyled"><br></br></li>
+			<li>After installing Aspera Connect you should see this message</li>
+			<li class="list-unstyled"><img src="/images/browser/aspera_connect_client_plugin_firefox_7_b.png" alt="aspera confirmation" height="70"/></li>
+			<li class="list-unstyled"><br></br></li>
+			<li>After installing Aspera Connect you can see it displayed in your Program list at Control Panel\Programs\Programs and Features. The specifics of the date and version number may be different</li>
+			<li class="list-unstyled"><img src="/images/browser/aspera_connect_client_plugin_firefox_18_b.png" alt="program list" height="30"/></li>
+			<li class="list-unstyled"><br></br></li>
+		</ul>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+       </div>
+    </body>
+</html>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" >
+<channel>
+<title>ImmPort Open Feed</title>
+<link>http://immport.org</link>
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+June 2016 - ImmPort Data Release 19 is out with 11 new studies.  6 studies from Clinical Trials in Organ Transplantation (CTOT) project contain parsed clinical lab test data, adverse events data and rejection and graft loss assessments - see studies SDY479, SDY557, SDY571, SDY670 and SDY689.  Another transplantation study of interest, SDY788, submitted by Dr. Julie Yabu of Stanford University School of Medicine is a retrospective immune profile evaluation of sensitized kidney transplant candidates with flow cytometry, CyTOF and array assay data. Data Release notes can be accessed at <link>http://www.immport.org</link>.
+]]></description> 
+<link>http://www.immport.org </link>
+<pubDate>Fri, 17 Jun 2016 13:00:00 EDT</pubDate>
+<pubDate>Fri, 17 Jun 2016 13:00:00 EDT</pubDate>
+</item>
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+June 2016 - Heading to GCC2016 or FOCIS2016 this June? ImmPort team members will be presenting at both conferences presenting new ways to access and analyze clinical data.  Cristel Thomas will be presenting "FlowGalaxy: Developing a workflow for Flow Cytometry Analysis in Galaxy https://gcc16.sched.org/event/745G/flowgalaxy-developing-a-workflow-for-flow-cytometry-analysis-in-galaxy. Chethan Jujjavarapu and Sanchita Bhattacharya will be a FOCIS2016 presenting "A Framework for Meta-Analysis of Cytometry Data" and "RImmPort: an R/Bioconductor package enabling ready-for-analysis immunology research data" respectively.  <link>http://www.focisnet.org/2013-03-08-07-07-18/179-focis-2016-program</link>.
+]]></description> 
+<link>http://www.immport.org </link>
+<pubDate>Fri, 17 Jun 2016 13:00:00 EDT</pubDate>
+<pubDate>Fri, 17 Jun 2016 13:00:00 EDT</pubDate>
+</item>
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+March 2016 - Data Deluge - 48 Studies released!  Human Immunology Project Consortium (HIPC) teams from Stanford, Baylor, Dana Farber, Yale, Emory and Seattle have contributed extensively.  ImmPort is also sharing March of Dimes microbiome study data (SDY465)and data from 5 RELIVE clinical trials (SDY289, SDY290, SDY291, SDY292, SDY294). Combined with human T cell distribution data from the Donna Farber team of Columbia Center for Translational Immunology (SDY702) and you have a MAJOR data deluge!  What data can you expect to find? Multi-year flu vaccine studies, HAI, ELISPOT, CyTOF, flow cytometry, clinical assessments and much more.  Get the scoop on all the new data in ImmPort Data Release 18 notes <link>http://www.immport.org</link>.
+]]></description> 
+<link>http://www.immport.org </link>
+<pubDate>Fri, 18 Mar 2016 13:00:00 EDT</pubDate>
+<pubDate>Fri, 18 Mar 2016 13:00:00 EDT</pubDate>
+</item>
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+February 2016 - Data Release 17 is out.  <link>http://www.immport.org</link> New data includes parsed clinical assessments, HAI, flow cytometry, and more from Human Immunology Project Consortium (HIPC) multi-year flu vaccine studies from Baylor (SDY296, SDY301), Yale (SDY63, SDY400, SDY404) teams.
+]]></description> 
+<link>http://www.immport.org </link>
+<pubDate>Fri, 12 Feb 2016 13:00:00 EDT</pubDate>
+<pubDate>Fri, 12 Feb 2016 13:00:00 EDT</pubDate>
+</item>
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+December 2015 - ImmPort released 20 studies. SDY475 <link>http://www.immport.org</link>from the March of Dimes using CyToF to define immune features of patients with a history of pre-term birth. 15 studies from ITN Trialshare.org include parsed adverse events, concomitant medications and lab tests for transplantation, autoimmune and allergy studies.
+]]></description> 
+<link>http://www.immport.org </link>
+<pubDate>Fri, 11 Dec 2015 13:00:00 EDT</pubDate>
+<pubDate>Fri, 11 Dec 2015 13:00:00 EDT</pubDate>
+</item>
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+September 2015 - ImmPort released 19 new studies. SDY420, from the <link>http://fathmanlab.stanford.edu </link>Charles Fathman lab's  <link>http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4509650</link>PLoS One publication. This study examined the effects age, gender and CMV status on the aging human adult.
+]]></description> 
+<link>http://fathmanlab.stanford.edu </link>
+<link>http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4509650</link>
+<pubDate>Fri, 18 Sept 2015 13:00:00 EDT</pubDate>
+<pubDate>Fri, 18 Sept 2015 13:00:00 EDT</pubDate>
+</item>
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+June 2015 - ImmPort released 6 studies. SDY67 from <link>http://www.mayo.edu/research/faculty/poland-gregory-a-m-d/bio-00078220</link> Gregory Poland looked at 2010-2011 flu vaccine humoral immunity and age suggesting immunosenescence markers have the potential to be used as vaccine immunogenicity predictors. SDY524, SDY565, SDY567,SDY568, SDY569, from Immune Tolerance Network's <link>https://www.itntrialshare.org/</link> Trialshare evaluate treatments for patients newly diagnosed with type 1 diabetes.  Details and data available at <link>http://www.immport.org/immport-open/public/home/home</link>www.immport.org. 
+]]></description> 
+<link>http://www.mayo.edu/research/faculty/poland-gregory-a-m-d/bio-00078220</link>
+<link>https://www.itntrialshare.org/</link>
+<pubDate>Fri, 19 Jun 2015 13:00:00 EDT</pubDate>
+<pubDate>Fri, 19 Jun 2015 13:00:00 EDT</pubDate>
+</item>
+
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+March 2015 - Get the Twin study data you saw in the Jan 2015 issue of Cell! <link>http://www.ncbi.nlm.nih.gov/pubmed/25594173?dopt=Abstract</link> P.Brodin, M. Davis et.al., measured 204 parameters in a systems-level analysis of 210 twins assessing human immune system variation and heritability. See SDY514, SDY515, SDY519 to access the data!. For more details see Data Release 13 
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Fri, 27 Mar 2015 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+February 2015 - 7 new studies released! Five studies (SDY75, SDY144, SDY183, SDY202, SDY387) focus on the human immune response to influenza vaccine
+and include flow cytometry, HAI, virus neutralization and ELISA assay data. For details see Data Release 12. 
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Wed, 18 Feb 2015 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+ImmPort Data Release August 2014 - Looking for flow cytometry data? Over 3400 flow cytometry files were just released from the University of Washington TLR/ligand studies (SDY281, SDY282, SDY283, SDY284). Interested in assessment data?  Six CCTPT pediatric transplantation studies in this release include adverse events, hematology and serum chemistries (SDY352, SDY354, SDY355, SDY356, SDY357, SDY358). For details see Data Release 11. 
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Fri, 1 Aug 2014 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+ImmPort Data Release June 2014 - ImmPort released 2 new studies with updates to 8. SDY218 Oral immunotherapy against egg allergy now has over 2300 FCS files.  
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Mon, 2 Jun 2014 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+ImmPort Data Release April 2014 - What do human protease genes and flu virus replication have to do with each other?  Check out SDY261 at ImmPort.niaid.nih.gov for details.  
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Thu, 4 Apr 2014 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+ImmPort Data Release January 2014 - ImmPort has 10 new studies just released by the National Institute of Allergy and Infectious Diseases (NIAID).  SDY224, results published in Scientific Reports 
+<link>http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3728595</link>, included ELISA, ELISPOT and flow cytometry data from daily sampling of 14 subjects post-vaccination.  FLOCK, flow cytometry automated population identification algorithm in ImmPort, was used to identify population clusters across time points.  <br><br>
+Nine other studies in this release (SDY21, SDY29-32, SDY256, SDY258-260) looked at TH2 responses post immunization with papain and antigen induced reactive oxygen species (ROS) and data is highlighted in Nature Immunology.
+]]></description>
+<link>http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3728595</link>
+<pubDate>Tue, 21 Jan 2014 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+ImmPort Data Release December 2013 - The National Institute of Allergy and Infectious Diseases (NIAID) has released 2 new studies and updates to 4 additional studies in ImmPort. The new studies investigated human and murine responses to influenza or pneumococcal vaccines using ELISA, ELISPOT, gene expression, virus neutralization and flow cytometry.
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Fri, 20 Dec 2013 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+ImmPort Data Release November 2013 - The National Institute of Allergy and Infectious Diseases (NIAID) has released 8 new studies and updates to 6 additional studies in ImmPort.  Research areas include:<br>
+1.  NK phenotypic diversity assessed by CyTOF <br>
+2.  T cell expansion and aging CD8 memory repertoires  <br>
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Fri, 8 Nov 2013 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+New ImmPort Labs Beta site provides an early peek at new tools under development by the BISC team.  Take a test drive of the latest features and provide feedback to help refine future ImmPort releases.  Know of any cool tools to use with ImmPort data?  Let us know!
+]]></description>
+<link>http://www.immport-labs.org</link>
+<pubDate>Fri, 8 Nov 2013 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+ImmPort Data Release September 30, 2013 - The National Institute of Allergy and Infectious Diseases (NIAID) has released 9 clinical studies and updates to 2 additional studies in ImmPort.  Research areas include: <br>
+1.  Childhood asthma anti-IgE therapy <br>
+2.  Recombinant DNA plasmid vaccine immunogencity <br>
+3.  CD8+ T cell analysis using CyTOF-cytometry time-of-flight. <br>
+
+For data downloads: <link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link> 
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Mon, 30 Sept 2013 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+August 16, 2013 - The National Institute of Allergy and Infectious Diseases (NIAID) released to the ImmPort user community new data from 6 clinical studies or trials and updates to 7 additional studies available here.  Research areas include predictive influenza biomarkers, antibody responses to pH1N1 and oral immunotherapy for childhood allergies. This release brings the total number of shared studies to 60. 
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Aug, 30 Aug 2013 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+June 20, 2013 - Congratulations to Dr. Atul Butte!  Dr. Butte, ImmPort PI and Stanford University pediatrician, computer scientist and geneticist, is being honored with the White House Open Science Champions of Change award today. The "Champions of Change" program is intended to spotlight individuals, businesses, and organizations whose extraordinary accomplishments positively impact our communities.   
+]]></description>
+<link>http://www.whitehouse.gov/champions/open-science/atul-butte,-m.d.,-ph.d.</link>
+<pubDate>Thu, 20 June 2013 13:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+June 13, 2013 - The National Institute of Allergy and Infectious Diseases (NIAID) is releasing to the ImmPort user community new data from
+12 studies or trials. Research areas include immune response for immunocompromised populations (lupus, rheumatoid arthritis),
+immune response to Hepatitis C Virus infection, recombinant DNA Plasmid Vaccine development for influenza, and immune system
+modeling and systems biology. This data release involves deidentified clinical and molecular data from over 600 study 
+subjects. This brings the total number of shared human studies to 48 and the total number of experiments to 566
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Thu, 13 June 2013 16:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+June 8, 2013 - The NIAID network will be unavailable on Saturday, June 8, from 8 a.m. to 8 p.m. to allow for scheduled maintenance.  As a result, ImmPort will also be unavailable during this time.  Please make sure to plan your data submission or analysis tasks accordingly to minimize disruptions. Thank  you for your patience.
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Thu, 6 June 2013 03:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+May 31, 2013 - We are pleased to provide to registered ImmPort users the full content of clinical and research data from the 43 shared studies in MySQL output here, http://immport.niaid.nih.gov/ along with the Data Definition Language (DDL) files and a fully described data dictionary and schema diagrams.   This will allow users to create local copies of the ImmPort database for one or more studies. 
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/home/display.do?content=Downloads</link>
+<pubDate>Fri, 31 May 2013 03:00:00 EDT</pubDate>
+</item>
+
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description><![CDATA[
+The National Institute of Allergy and Infectious Disease (NIAID) released de-identified data from 11 clinical studies or trials encompassing data from over 1400 subjects. Data includes flow cytometry, protein and gene expression data combined with clinical assessments.
+Studies represented in this release include Cooperative Clinical Trials in Pediatric Transplantation (kidney transplantation), Immune Tolerance Network RAVE study (vasculitis) along with virus and vaccine response of special populations (pregnant or transplant subjects).
+Data can be accessed from the ImmPort website: http://immport.niaid.nih.gov/ Data will soon be available as tab delimited and MySQL download formats to facilitate data re-use.
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/display.do?content=News</link>
+<pubDate>Fri, 3 May 2013 11:30:00 EDT</pubDate>
+</item>
+<item>
+<category>Announcements</category>
+<title>Announcements</title>
+<description>
+		We are excited to announce that NIAID has awarded a new base year plus four option years contract to our team led by Dr. Atul Butte (Stanford University) as our new Principal Investigator. This award underscores NIAID's continued commitment to research data sharing and the importance of ImmPort in providing NIAID-funded study data and analytical tools to the scientific community.
+</description>
+<link>https://immport.niaid.nih.gov/immportWeb/display.do?content=News</link>
+<pubDate>Thu, 21 Feb 2013 20:30:05 EDT</pubDate>
+</item>
+
+<item>
+<category>Meetings</category>
+<title>Upcoming Meetings</title>
+<description><![CDATA[
+		HIPC Meeting<br>
+		Atul Butte, M.D., Ph.D. will be presenting at the HIPC Meeting held in Potomac, MD
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/display.do?content=News</link>
+<pubDate>Thu, 21 Feb 2013 20:50:05 EDT</pubDate>
+</item>
+
+<item>
+<category>News</category>
+<title>News and Events</title>
+<description><![CDATA[
+		HIPC Meeting<br>
+		Atul Butte, M.D., Ph.D. will be presenting at the HIPC Meeting held in Potomac, MD
+]]></description>
+<link>https://immport.niaid.nih.gov/immportWeb/display.do?content=News</link>
+<pubDate>Thu, 21 Feb 2013 20:30:05 EDT</pubDate>
+</item>
+
+</channel>
+</rss>

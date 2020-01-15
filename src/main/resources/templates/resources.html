@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+        <title>ImmPort Resources</title>
+    </head>
+
+    <body>
+        <div layout:fragment="content" class="container">
+        <br/>
+	        <div class="row">
+	        	<div class="col-md-4 col-xs-12 ">	        
+	    			<div class="immport-about">
+	    				<p>
+	            			<img src="/images/immport-resources.png" style="height:150px"></img>
+	            		</p>
+					</div>
+			    </div>
+			    <div class="col-md-8 col-xs-12 ">
+			    					<div class="col-sm-3 applicationDiv">
+			                            <div class="panel panel-default resources-panel">
+			                                <div class="panel-heading logo-panel-heading text-center">
+			                                 	<a th:href="${@ecosystemProperties.getPublicationsUrl()}">
+			                                    	<i class="fa fa-newspaper-o homeIcon" aria-hidden="true" style="font-size:35px"></i>
+			                                     </a>
+			                                </div>
+			                                <div class="panel-body text-center">
+			                                    <a th:href="${@ecosystemProperties.getPublicationsUrl()}">
+			                                        <span class="home-heading">Publications</span><br/>
+			                                    </a>
+			                                </div>
+			                            </div>
+			                        </div>
+			    					<div class="col-sm-3 applicationDiv">
+			                            <div class="panel panel-default resources-panel">
+			                                <div class="panel-heading logo-panel-heading text-center">
+			                                 	<a th:href="${@ecosystemProperties.getDocumentationUrl()}">
+			                                    	<i class="fa fa-files-o homeIcon" aria-hidden="true" style="font-size:35px"></i>
+			                                     </a>
+			                                </div>
+			                                <div class="panel-body text-center">
+			                                    <a th:href="${@ecosystemProperties.getDocumentationUrl()}">
+			                                        <span class="home-heading">Documentation</span><br/>
+			                                    </a>
+			                                </div>
+			                            </div>
+			                        </div>
+									<div class="col-sm-3 applicationDiv">
+			    	 					<div class="panel panel-default resources-panel">
+			                                <div class="panel-heading logo-panel-heading text-center">
+			                                 	 <a href="/resources/tutorials">
+			                                    	<i class="fa fa-book homeIcon" aria-hidden="true" style="font-size:35px"></i>
+			                                     </a>
+			                                </div>
+			                                <div class="panel-body text-center">
+			                                 	 <a href="/resources/tutorials">
+			                                        <span class="home-heading">Tutorials</span><br/>
+			                                    </a>
+			                                </div>
+			                            </div>
+			    					</div>			                        
+			    					<div class="col-sm-3 applicationDiv">
+			                            <div class="panel panel-default resources-panel">
+			                                <div class="panel-heading logo-panel-heading text-center">
+			                                 	<a href="http://blog.immport.org/"
+			                                 		th:href="${@ecosystemProperties.getImmPortBlogUrl()}">
+			                                    	<i class="fa fa-rss-square homeIcon" aria-hidden="true" style="font-size:35px"></i>
+			                                     </a>
+			                                </div>
+			                                <div class="panel-body text-center">
+			                                    <a href="http://blog.immport.org/"
+			                                    	th:href="${@ecosystemProperties.getImmPortBlogUrl()}">
+			                                        <span class="home-heading">ImmPort Blog</span><br/>
+			                                    </a>
+			                                </div>
+			                            </div>
+			                        </div>			     	        
+			    </div>
+	        </div>
+	        
+	        <hr/>
+	        <div class="row">
+	        	<div class="col-md-12 col-xs-12" style="margin-top: 15px;">
+						<div class="col-md-6 col-xs-12">
+									<div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="/resources/hipc" >
+					                                 	<img src="/images/hipc/hero_01.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="/resources/hipc" >
+				                                        <span class="tools-heading">HIPC</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv ">
+				                            <p>Through HIPC Program, well-characterized human cohorts are studied using a variety of modern analytic tools, eg., multiplex transcriptional, cytokine, and proteomic assays. </p>
+			                            </div>
+			                        </div>	
+	        						<div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a th:href="${@ecosystemProperties.getTenThousandImmunomeUrl()}" target="_blank">
+					                                 	<img src="/images/10k-immunome-logo.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a th:href="${@ecosystemProperties.getTenThousandImmunomeUrl()}" target="_blank">
+				                                        <span class="tools-heading">10k Immunome</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>The 10,000 Immunomes Project is a reference dataset for human immunology, derived from over 10,000 control subjects in the NIAID ImmPort Database .</p>
+			                            </div>
+			                        </div>
+	        						<div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="/resources/mod" >
+					                                 	<img src="/images/mod/mod_image1.jpg" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="/resources/mod" >
+				                                        <span class="tools-heading">March of Dimes</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>March Of Dimes Database for Preterm Birth Research.</p>
+			                            </div>
+			                        </div>							                        	                        
+			                        <div class="row">
+				                        <div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="http://www.immunexpresso.org" 
+				                                 		th:href="${@ecosystemProperties.getImmuneXpressoUrl()}" target="_blank">
+				                                    	<img src="/images/immuneXpresso-logo.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="http://www.immunexpresso.org" 
+				                                 		th:href="${@ecosystemProperties.getImmuneXpressoUrl()}" target="_blank">
+				                                        <span class="tools-heading">immuneXpresso</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>	
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>immuneXpresso (iX) allows to learn about reported literature interactions between various cell types and regulatory molecules (cytokines and chemokines).</p>
+			                            </div>			                            			                            
+			                        </div>
+			                         <div class="row">
+				                        <div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="http://www.docs.immport.org/" 
+				                                 		th:href="${@ecosystemProperties.getImmPortApiDocsUrl()}" target="_blank">
+				                                    	<img src="/images/api-logo.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="http://www.docs.immport.org/" 
+				                                 		th:href="${@ecosystemProperties.getImmPortApiDocsUrl()}" target="_blank">
+				                                        <span class="tools-heading">ImmPort API's</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				                            
+				    					</div>
+				    					<div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>Application Program Interface to query the shared data and a tool to download result files.</p>
+			                            </div>			    					
+			                        </div>	
+			                        <div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="http://immcantation.readthedocs.io/en/version-1.5.0/" 
+				                                 		th:href="${@ecosystemProperties.getImmcantationUrl()}" target="_blank">
+					                                 	<img src="/images/immcantation-logo.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="http://immcantation.readthedocs.io/en/version-1.5.0/" 
+				                                 		th:href="${@ecosystemProperties.getImmcantationUrl()}" target="_blank">
+				                                        <span class="tools-heading">Immcantation</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>Immcantation framework provides a start-to-finish analytical ecosystem for high-throughput B cell and T cell receptor repertoire sequencing (AIRR-Seq) datasets. </p>
+			                            </div>
+			                        </div>	
+			                        <div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="http://icahn.mssm.edu/immuneregulation"> 
+<!-- 				                                 	th:href="${@ecosystemProperties.getImmcantationUrl()}" target="_blank"> --> 
+					                                 	<img src="/images/immuno_regulation_transparent.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="http://icahn.mssm.edu/immuneregulation">
+<!-- 				                                 		th:href="${@ecosystemProperties.getImmcantationUrl()}" target="_blank"> -->
+				                                        <span class="tools-heading">ImmunoRegulation</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>ImmunoRegulation identifies regulators of the immune system gene of interest. </p>
+			                            </div>
+			                        </div>
+			                         	<div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="/resources/uh2-yale" >
+					                                 	<img src="/images/uh2-yale/linkedImm_logo_tranparent.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="/resources/uh2-yale" >
+				                                        <span class="tools-heading">LinkedImm</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv">
+				                            <p>LinkedImm integrates ImmPort vaccine resources to other public resources to support hypothesis driven queries</p>
+			                            </div>
+			                        </div>
+			               
+			                        
+	        	</div>
+	        	
+	        	<div class="col-md-6 col-xs-12">	
+			                        <div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="/resources/amp-ra-sle" >
+					                                 	<img src="/images/amp_ra_sle/amp1.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="/resources/amp-ra-sle" >
+				                                        <span class="tools-heading">AMP RA/SLE</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv">
+				                            <p>The NIH, NIAMS. NIAID, pharmaceutical companies and nonprofit organizations have together created the Accelerating Medicines Partnership (AMP) to develop new ways of identifying and validating promising biological targets for diagnostics and drug development.</p>
+			                            </div>
+			                        </div>	
+			                        
+			                         <div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="/resources/immtransplant" >
+					                                 	<img src="/images/TTN/fig3_small.jpg" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="/resources/immtransplant" >
+				                                        <span class="tools-heading">ImmTransplant</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv">
+				                            <p>Post-donation outcome trajectory network for Living Kidney Donors.</p>
+			                            </div>
+			                        </div>	
+			                        			        	
+			                        <div class="row">
+ 										<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="http://www.immport-labs.org/immport-ontology/public/home/home" 
+				                                 		th:href="${@ecosystemProperties.getCellOntologyUrl()}" target="_blank">
+				                                    	<img src="/images/immport-ontology-icon.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="http://www.immport-labs.org/immport-ontology/public/home/home" 
+				                                 		th:href="${@ecosystemProperties.getCellOntologyUrl()}" target="_blank">
+				                                        <span class="tools-heading">Cell Ontology Browser</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+				    					<div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>An interactive visualization and query tool for the Cell Ontology.</p>
+			                            </div>
+			                        </div>	        	
+	        	      
+									<div class="row">	        	  	
+				                        <div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default  resources-panel">
+				                                <div class="panel-heading text-center">
+				                                 	<a th:href="${@ecosystemProperties.getSharedDataGeneListsUrl()}" >
+				                                    	<img src="/images/antibody-logo.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a th:href="${@ecosystemProperties.getSharedDataGeneListsUrl()}" >
+				                                        <span class="tools-heading">Gene Lists</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>	
+				    					<div class="col-md-7 col-xs-12 taller-sideTextDiv">
+				                            <p>Immunologically relevant list of genes curated with functions and Gene Ontology terms.</p>
+			                            </div>				    					
+			                        </div>
+			                        <div class="row">
+				                        <div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a th:href="${@ecosystemProperties.getCytokineRegistryUrl()}">
+				                                    	<img src="/images/cytokines-icon.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a th:href="${@ecosystemProperties.getCytokineRegistryUrl()}">
+				                                        <span class="tools-heading">Cytokine Registry</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>	
+				    					<div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>The Cytokine registry is a master list of cytokines, chemokines and receptors generated for the purpose of collecting, integrating and mapping between entity names and synonyms.</p>
+			                            </div>				    					
+			                        </div>
+			                        <div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="http://antibodymap.org/"> 
+<!-- 				                                 	th:href="${@ecosystemProperties.getImmcantationUrl()}" target="_blank"> --> 
+					                                 	<img src="/images/oas_transparent.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="http://antibodymap.org/">
+<!-- 				                                 		th:href="${@ecosystemProperties.getImmcantationUrl()}" target="_blank"> -->
+				                                        <span class="tools-heading">Observed Antibody Space</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv  ">
+				                            <p>A Resource for Data Mining Next-Generation Sequencing of Antibody Repertoires </p>
+			                            </div>
+			                        </div>
+			                         <div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="/resources/uh2-emory" >
+					                                 	<img src="/images/uh2-emory/mmin_transparent.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="/resources/uh2-emory" >
+				                                        <span class="tools-heading">MMIN</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv">
+				                            <p>MMIN will be applied to the investigation of hemebiosynthesis in immune responses.</p>
+			                            </div>
+			                        </div>	
+			                         <div class="row">
+	        	 						<div class="col-md-5 col-xs-12 applicationDiv resourcesDiv">
+				                            <div class="panel panel-default resources-panel">
+				                                <div class="panel-heading  text-center">
+				                                 	<a href="/resources/deeplearning">
+					                                 	<img src="/images/deeplearning/icon_transparent.png" style="height:50px;"></img>
+				                                     </a>
+				                                </div>
+				                                <div class="panel-body taller-panel-body text-center">
+				                                    <a href="/resources/deeplearning">
+				                                        <span class="tools-heading">Deep learning for Cytometry Data</span><br/>
+				                                    </a>
+				                                </div>
+				                            </div>
+				    					</div>
+			                            <div class="col-md-7 col-xs-12 taller-sideTextDiv">
+				                            <p>An end-to-end, interpretable deep learning model for analyzing Cytometry data.</p>
+			                            </div>
+			                        </div>				                        
+	                            
+					</div>						
+
+	        </div>
+	        	
+			</div>												
+	        
+	        
+	        <br/>
+        </div>
+    </body>
+</html>

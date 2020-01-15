@@ -1,0 +1,181 @@
+#
+# Spring Properties
+#
+spring:
+    #
+    # Application Properties
+    #
+    application:
+        name: immport-portal
+    #
+    # JSON Formatting Properties
+    #
+    jackson:
+        serialization:
+            INDENT_OUTPUT: true
+    #
+    # Thymeleaf Properties
+    #
+    thymeleaf:
+        mode: LEGACYHTML5
+        cache: false
+    #
+    # Resource Properties
+    #
+    resources:
+        chain:
+            enabled: true
+
+#
+# Server Properties
+#
+server:
+    port: ${IMMPORT_PORTAL_SERVER_PORT:8080}
+    contextPath: ${IMMPORT_PORTAL_SERVER_CONTEXT_PATH:/}
+    requireSsl: true
+    ssl:
+        enabled: ${SERVER_SSL_ENABLED:false}
+        keyStore: ${SERVER_SSL_KEYSTORE:${user.home}/.keystore}
+        keyStorePassword: ${IMMPORT_PORTAL_SSL_KEYSTORE_PASSWORD:changeit}
+        protocol: ${SERVER_SSL_PROTOCOL:TLSv1.2}
+        ciphers: ${SERVER_SSL_CIPHERS:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256}
+
+#
+# Management Properties
+#
+management:
+    contextPath: /admin
+
+#
+# Endpoint Properties
+#
+endpoints:
+    mappings:
+        enabled: true
+
+#
+# ImmPort Properties
+#
+immport:
+    #
+    # Application Properties
+    #
+    application:
+        name: immport-portal
+        label: PORTAL
+    
+    #
+    # Authentication Properties
+    #
+    authentication:
+        apiAccessUsername: ${IMMPORT_API_ACCESS_USERNAME:REPLACE_WITH_USERNAME}
+        apiAccessPassword: ${IMMPORT_API_ACCESS_PASSWORD:REPLACE_WITH_PASSWORD} 
+        
+    #
+    # Authorization Server Properties (used for obtaining tokens for testing purposes only)
+    #
+    authorizationServer:
+        baseUrl: ${IMMPORT_AUTH_SERVER_BASE_URL:https://auth.dev.immport.org/auth}
+        immportTokenPath: /token
+        tokenPath: /oauth/token
+        immportTokenClient: immport-auth-token-client 
+    
+    #
+    # Data Query API Properties
+    #
+    data:
+        query:
+            api:
+                baseUrl: ${IMMPORT_DATA_QUERY_API_BASE_URL:https://api.immport.org/data/query}
+    #
+    # Portal Properties
+    portal:
+        hipcDataCentersJsonPath: ${IMMPORT_PORTAL_HIPC_DATA_CENTERS_JSON_PATH:${user.home}/git/immport-portal/src/main/data/hipcCenters.json}
+        hipcDataSetsJsonPath: ${IMMPORT_PORTAL_HIPC_DATA_SETS_JSON_PATH:${user.home}/git/immport-portal/src/main/data/hipcStudies.json}
+        ampStudiesDataJsonPath: ${IMMPORT_PORTAL_AMP_STUDIES_DATA_JSON_PATH:${user.home}/git/immport-portal/src/main/data/ampStudies.json}
+        modDataCentersJsonPath: ${IMMPORT_PORTAL_MOD_DATA_CENTERS_JSON_PATH:${user.home}/git/immport-portal/src/main/data/modCenters.json}
+
+        hipcProgramIds: ${IMMPORT_PORTAL_HIPC_PROGRAM_IDS:15,44}
+        ampProgramIds: ${IMMPORT_PORTAL_AMP_PROGRAM_IDS:41}
+        modProgramIds: ${IMMPORT_PORTAL_MOD_PROGRAM_IDS:38}
+    #
+    # Ecosystem Properties
+    #
+    ecosystem:
+        aboutUrl: ${IMMPORT_PORTAL_BASE_URL}/about
+        accessibilityUrl: ${IMMPORT_PORTAL_BASE_URL}/accessibility
+        agreementUrl: ${IMMPORT_PORTAL_BASE_URL}/agreement
+        asperaInstallHelpUrl: ${IMMPORT_PORTAL_BASE_URL}/installAsperaHelp
+        cellOntologyUrl: ${IMMPORT_ONTOLOGY_BROWSER_BASE_URL}
+        changePasswordUrl: ${IMMPORT_USER_ADMIN_BASE_URL}/updateuser/changepassword
+        citeUrl: ${IMMPORT_PORTAL_BASE_URL}/cite
+        cytokineRegistryUrl: ${IMMPORT_PORTAL_BASE_URL}/resources/cytokineRegistry
+        dataAnalysisTutorialsUrl: https://www.youtube.com/channel/UC8lQSx1Z7sMFm07wfqI-_kA
+        dataAnalysisUrl: ${IMMPORT_GALAXY_BASE_URL}
+        dataProvidersUrl: https://www.immport.org/shared/dataProviders
+        dataSummaryUrl: https://www.immport.org/shared/dataSummary
+        dataUploadDataModelViewerUrl: https://www.immport.org/shared/dataModel
+        dataUploadDocumentationUrl: ${IMMPORT_PORTAL_BASE_URL}/dataUpload
+        dataUploadExamplePackagesUrl: ${IMMPORT_PORTAL_BASE_URL}/downloads/data/upload/packages
+        dataUploadTemplateDescriptionInteractiveUrl: https://www.immport.org/shared/templateDocumentation
+        dataUploadTemplateDescriptionPdfUrl: ${IMMPORT_PORTAL_BASE_URL}/downloads/data/upload/templates/ImmPort.Upload.Templates.Description.pdf
+        # dataUploadTemplateHistoryUrl: ${IMMPORT_OPEN_BASE_URL}/immport-open/public/home/templateHistory
+        dataUploadTemplateListUrl: ${IMMPORT_PORTAL_BASE_URL}/resources/dataTemplates
+        dataUploadTemplatesUrl: ${IMMPORT_PORTAL_BASE_URL}/downloads/data/upload/templates
+        dataUploadUrl: ${IMMPORT_PORTAL_BASE_URL}/dataUpload
+        dataUploadUserGuideUrl: ${IMMPORT_PORTAL_BASE_URL}/documentation/data/upload/ImmPort_Data_Submission_Guide.pdf
+        dataUploadValidatorDocumentationUrl: ${IMMPORT_DATA_MANAGER_BASE_URL}/validate/data/validateDataMain
+        deepLearningCytometryDataUrl: ${IMMPORT_PORTAL_DEEP_LEARNING_CYTOMETRY_DATA_BASE_URL:https://github.com/hzc363/DeepLearningCyTOF/blob/master/DeepLearning_CyTOF.ipynb}
+        disclaimerUrl: ${IMMPORT_PORTAL_BASE_URL}/disclaimer
+        displayLoginButton: ${IMMPORT_ECOSYSTEM_DISPLAY_LOGIN_BUTTON:false}
+        documentationUrl: ${IMMPORT_PORTAL_BASE_URL}/resources/documentation
+        forgotPasswordUrl: ${IMMPORT_USER_ADMIN_BASE_URL}/forgotpassword/forgotpassword
+        helpdeskUrl: mailto:${IMMPORT_MAIL_FROM}
+        homeUrl: ${IMMPORT_PORTAL_BASE_URL}/home
+        immPortApiDocsUrl: ${IMMPORT_API_DOCS_BASE_URL}
+        immPortBlogUrl: ${IMMPORT_BLOG_BASE_URL}
+        immuneXpressoUrl: ${IMMUNE_XPRESSO_BASE_URL}
+        immportS3ApiBaseUrl: ${IMMPORT_S3_API_BASE_URL:https://s3.dev.immport.org}
+        immploadUrl: ${IMMPLOAD_BASE_URL:https://github.com/biodev/immpload#immpload---immport-upload-preparation}
+        immTransplantUrl: ${IMM_TRANSPLANT_BASE_URL:https://immtransplant.dev.immport.org}
+        immcantationUrl: ${IMMCANTATION_BASE_URL}
+        newsUrl: https://www.immport.org/shared/news
+        newsfeedUrl: ${IMMPORT_PORTAL_BASE_URL}/rss/newsfeed.xml
+        privacyPolicyUrl: ${IMMPORT_PORTAL_BASE_URL}/privacyPolicy
+        privateDataStudySearchUrl: ${IMMPORT_DATA_MANAGER_BASE_URL}/research/study/studysearchmain#/studysearch
+        privateDataUrl: ${IMMPORT_DATA_MANAGER_BASE_URL}
+        publicationsUrl: https://www.immport.org/shared/publications
+        registerUrl: ${IMMPORT_USER_ADMIN_BASE_URL}/registrationuser/registration
+        resourcesUrl: ${IMMPORT_PORTAL_BASE_URL}/resources        
+        resourcesTutorialsUrl: ${IMMPORT_PORTAL_BASE_URL}/resources/tutorials    
+        sharedDataCatalogsUrl: https://www.immport.org/shared/dataCatalogs    
+        sharedDataGeneListsUrl: https://www.immport.org/shared/genelists
+        sharedDataNavigationUrl: ${IMMPORT_PORTAL_BASE_URL}/navigation
+        sharedDataOverviewUrl: ${IMMPORT_PORTAL_BASE_URL}/overview
+        sharedDataStudySearchUrl: https://www.immport.org/shared/search?filters=
+        sharedDataTutorialsUrl: ${IMMPORT_PORTAL_BASE_URL}/resources/fluVaccine
+        sharedDataRegistrationUrl: ${IMMPORT_PORTAL_BASE_URL}/registration
+        sharedDataStudyDetailUrl: https://www.immport.org/shared/study
+        sharedDataUrl: https://www.immport.org/shared
+        teamUrl: https://www.immport.org/shared/teamCurrent
+        tenThousandImmunomeUrl: ${TEN_HOUSAND_IMMUNOME_BASE_URL}
+        updateProfileUrl: ${IMMPORT_USER_ADMIN_BASE_URL}/updateuser/updateselfprofile
+        useLocalFileSystemForS3Data: ${USE_LOCAL_FILE_SYSTEM_FOR_S3_DATA:false}
+        localFileSystemPathForS3Data: ${IMMPORT_PORTAL_LOCAL_FILE_SYSTEM_PATH_FOR_S3_DATA:${user.home}/git/immport-portal/src/main/data}
+
+#
+# Logging Properties
+#
+logging:
+    level:
+        com.gargoylesoftware.htmlunit.DefaultCssErrorHandler: FATAL
+        com.gargoylesoftware.htmlunit.IncorrectnessListenerImpl: FATAL
+        com.gargoylesoftware.htmlunit.javascript.host.css.CSSStyleSheet: FATAL
+        org.apache.http.client.protocol.ResponseProcessCookies: FATAL
+        org.springframework: ${LOGGING_LEVEL_ORG_SPRINGFRAMEWORK:WARN}
+        org.springframework.boot: ${LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_BOOT:WARN}
+        org.springframework.security: ${LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY:WARN}
+        org.springframework.security.oauth2: ${LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY_OAUTH2:WARN}
+        org.immport.core: ${LOGGING_LEVEL_ORG_IMMPORT_CORE:INFO}
+        org.immport.portal: ${LOGGING_LEVEL_ORG_IMMPORT_PORTAL:INFO}
+

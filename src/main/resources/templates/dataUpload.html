@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+       <title>Immport Data Upload</title>
+    </head>
+
+<body>
+  <div layout:fragment="content">
+   <div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h2>Data Upload</h2>
+    	</div>
+	</div>
+	
+<div class="row">
+<div class="col-md-12">
+<p>
+Do you want to upload data to ImmPort?
+</p>
+<p>
+If you are interested in using ImmPort as a means to share your data with the scientific community, please
+contact our NIAID Program officers Quan Chen (quan.chen@nih.gov), Gabriel Rosenfeld (rosenfeldge@niaid.nih.gov), or Dawei Lin (dawei.lin@nih.gov).
+</p>
+<p>
+Data is stored at a secure hosting facility within NIAID at <a href="https://immport.niaid.nih.gov" target="_blank">immport.niaid.nih.gov</a> and remains private
+until you inform our team that it is ready to be shared. At that time, the data is distributed to the wider
+community via this website (<a href="http://www.immport.org" target="blank">www.immport.org</a>) and Amazon AWS.
+</p>
+<p>
+For more information about our data upload process, please see our documentation and instructional videos below.
+Need help? Please feel free to contact us by email at <a href="mailto:BISC_Helpdesk@niaid.nih.gov">BISC_Helpdesk@niaid.nih.gov</a>
+and we are happy to provide a walkthrough.
+</p>
+<p>
+To start uploading data, you will need to register for an ImmPort account to create
+your private workspace 
+<a th:href="${@ecosystemProperties.getRegisterUrl()}" target="_blanK">
+<i class="fa fa-external-link"></i></a>.
+</p>
+<dt>Template Documentation</dt>
+
+<p>
+The ImmPort templates descriptions are available in interactive form 
+<a th:href="${@ecosystemProperties.getDataUploadTemplateDescriptionInteractiveUrl()}">here.</a>
+</p>
+<p>The ImmPort templates are available to download and fill 
+<a th:href="${@ecosystemProperties.getDataUploadTemplateListUrl()}">here.</a>
+</p>
+<!-- <p>The ImmPort template's history is available  
+<a th:href="${@ecosystemProperties.getDataUploadTemplateHistoryUrl()}">here.</a>
+</p> -->
+<p>
+The ImmPort templates descriptions in PDF form are available
+<a th:href="${@ecosystemProperties.getDataUploadTemplateDescriptionPdfUrl()}">here.</a>
+</p>
+<p>
+An interactive graphic of the ImmPort Data Model is available <a target="_blank" th:href="${@ecosystemProperties.getDataUploadDataModelViewerUrl()}"><img src="/images/home/DataModelGraphic.png" style="width:100px"></img></a>
+
+</p>
+<dt>Example Data Packages</dt>
+<p>The following examples of data upload packages are provided to illustrate the organization of metadata documents and associated files in a package and how to create links between entities declared in metadata documents or referenced in ImmPort.</p>
+<p>The example human and animal study data upload packages are organized to highlight ImmPort's support for incremental data upload.</p>
+<p>Load the study package first and then any or all of the assay result packages for that study.</p>
+<br></br>
+<ul>
+  <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_human_study_package.zip'}" title="example_human_study_package.zip">example_human_study_package.zip</a></li>
+     <ul>
+       <!-- <li><a href="${dataUploadExamplePackagesUrl}">/example_Gene_Expression_Affymetrix_human_study.zip" class="buttonlink" target="_new" title="example_Gene_Expression_Affymetrix_human_study.zip">example_Gene_Expression_Affymetrix_human_study.zip</a></li> -->
+       <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_HLA_Typing_human_study.zip'}" title="example_HLA_Typing_human_study.zip">example_HLA_Typing_human_study.zip</a></li>
+       <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_MBAA_human_study.zip'}" title="example_MBAA_human_study.zip">example_MBAA_human_study.zip</a></li>
+       <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_adverseEvents_human_study.zip'}" title="example_adverseEvents_human_study.zip">example_adverseEvents_human_study.zip</a></li>
+       <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_assessments_human_study.zip'}"  title="example_assessments_human_study.zip">example_assessments_human_study.zip</a></li>
+       <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_lab_tests_human_study.zip'}" title="example_lab_tests_human_study.zip">example_lab_tests_human_study.zip</a></li>
+       <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_interventions_human_study.zip'}" title="example_interventions_human_study.zip">example_interventions_human_study.zip</a></li>
+     </ul>
+<br></br>
+    <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_animal_study_package.zip'}"  title="example_animal_study_package.zip">example_animal_study_package.zip</a></li>
+    <ul>
+	<li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_ELISA_results_animal_study.zip'}" title="example_ELISA_results_animal_study.zip">example_ELISA_results_animal_study.zip</a></li>
+    <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_ELISPOT_results_animal_study.zip'}" title="example_ELISPOT_results_animal_study.zip" class="buttonlink">example_ELISPOT_results_animal_study.zip</a></li>
+    <li><a th:href="${@ecosystemProperties.getDataUploadExamplePackagesUrl()+ '/example_Flow_Cytometry_results_animal_study.zip'}" title="example_Flow_Cytometry_results_animal_study.zip">example_Flow_Cytometry_results_animal_study.zip</a></li>
+    </ul>
+</ul>
+<br></br> 
+<dl><dt>Data Package Validator</dt>
+<dd>The <a target="_blank" th:href="${@ecosystemProperties.getDataUploadValidatorDocumentationUrl()}">Validator</a> is an online tool that checks the format and content of the files in the data package and reports issues. </dd>
+<dd>If there are any errors in the validation report, fix the first errors that are indicated and rerun the validation process. </dd>
+<dd>The errors encountered first may have effects on later files that are validated.</dd>
+<dd>It is highly recommended to use the Validator before sending data into ImmPort as part of the data upload process.</dd>
+</dl>
+</div>
+</div>
+<br></br>
+</div>
+</div>	
+</body>
+</html>
+	

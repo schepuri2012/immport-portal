@@ -1,0 +1,1025 @@
+[
+    {
+        "Supporting Data": "SDY1108",
+        "Study Title": "Systemic Immunity for Cancer Immunotherapy",
+        "Num of Subjects": "13",
+        "Experiment Measurement Techniques": "CyTOF",
+        "Pis": "Matthew Spitzer (UCSF; Stanford University) Garry Nolan (Stanford University) Edgar Engleman (Stanford University)",
+        "Publications": "Systemic Immunity Is Required for Effective Cancer Immunotherapy.",
+        "Pubmed ID": "28111070"
+    },
+    {
+        "Supporting Data": "SDY111",
+        "Study Title": "VZV vaccination in the elderly",
+        "Num of Subjects": "48",
+        "Experiment Measurement Techniques": "ELISA,ELISPOT,Luminex xMAP,HLA Typing,DNA microarray",
+        "Pis": "Jorg Goronzy (Stanford University)",
+        "Publications": "B-cell repertoire responses to varicella-zoster vaccination in human identical twins.",
+        "Pubmed ID": "25535378"
+    },
+    {
+        "Supporting Data": "SDY113",
+        "Study Title": "Plasmablast response to inactivated and live attenuated influenza vaccines (TIV3/TIV3 ID/LAIV) in 2011",
+        "Num of Subjects": "70",
+        "Experiment Measurement Techniques": "ELISA,ELISPOT,Luminex xMAP,Hemagglutination Inhibition,Flow Cytometry,CyTOF,DNA microarray",
+        "Pis": "Harry Greenberg (Stanford University)",
+        "Publications": "Distinct cross-reactive B-cell responses to live attenuated and inactivated influenza vaccines.",
+        "Pubmed ID": "24676204"
+    },
+    {
+        "Supporting Data": "SDY144",
+        "Study Title": "Systems Biology Approach to Study Influenza Vaccine 2011-12 in Healthy Children (see companion studies SDY364, SDY368, SDY387)",
+        "Num of Subjects": "17",
+        "Experiment Measurement Techniques": "DNA microarray,Hemagglutination Inhibition,Flow Cytometry,Virus Neutralization",
+        "Pis": "Octavio Ramilo (Nationwide Children�s Hospital)",
+        "Publications": "Differences in antibody responses between trivalent inactivated influenza vaccine and live attenuated influenza vaccine correlate with the kinetics and magnitude of interferon signaling in children.",
+        "Pubmed ID": "24495909"
+    },
+    {
+        "Supporting Data": "SDY162",
+        "Study Title": "Immunologic and genomic signatures of response to Hepatitis C Virus infection.",
+        "Num of Subjects": "20",
+        "Experiment Measurement Techniques": "DNA microarray",
+        "Pis": "David Hafler (Yale University)",
+        "Publications": "Impaired toll-like receptor 3-mediated immune responses from macrophages of patients chronically infected with hepatitis C virus.",
+        "Pubmed ID": "23220997"
+    },
+    {
+        "Supporting Data": "SDY180",
+        "Study Title": "Systems scale interactive exploration reveals quantitative and qualitative differences in response to 2009-2010 Fluzone influenza vaccine and pneumococcal vaccine",
+        "Num of Subjects": "46",
+        "Experiment Measurement Techniques": "DNA microarray,Hemagglutination Inhibition,Flow Cytometry,Luminex xMAP,Virus Neutralization",
+        "Pis": "A.Karolina Palucka (Bailer Research Institute)",
+        "Publications": "Systems scale interactive exploration reveals quantitative and qualitative differences in response to influenza and pneumococcal vaccines.",
+        "Pubmed ID": "23601689"
+    },
+    {
+        "Supporting Data": "SDY183",
+        "Study Title": "Effect of age on 2008/2009 trivalent influenza vaccine response",
+        "Num of Subjects": "76",
+        "Experiment Measurement Techniques": "Protein microarray",
+        "Pis": "PJ Utz (Stanford University)",
+        "Publications": "Apoptosis and other immune biomarkers predict influenza vaccine responsiveness.",
+        "Pubmed ID": "23591775"
+    },
+    {
+        "Supporting Data": "SDY183",
+        "Study Title": "Effect of age on 2008/2009 trivalent influenza vaccine response",
+        "Num of Subjects": "76",
+        "Experiment Measurement Techniques": "Protein microarray",
+        "Pis": "PJ Utz (Stanford University)",
+        "Publications": "Characterization of influenza vaccine immunogenicity using influenza antigen microarrays.",
+        "Pubmed ID": "23734205"
+    },
+    {
+        "Supporting Data": "SDY202",
+        "Study Title": "Heterovariant cross-reactive B-cell responses induced by the 2009 pandemic influenza virus A subtype H1N1 vaccine",
+        "Num of Subjects": "79",
+        "Experiment Measurement Techniques": "ELISA,ELISPOT,Luminex xMAP,Hemagglutination Inhibition,Flow Cytometry",
+        "Pis": "Harry Greenberg (Stanford University)",
+        "Publications": "Heterovariant cross-reactive B-cell responses induced by the 2009 pandemic influenza virus A subtype H1N1 vaccine.",
+        "Pubmed ID": "23107783"
+    },
+    {
+        "Supporting Data": "SDY207",
+        "Study Title": "Cytometry by time-of-flight shows combinatorial cytokine expression and virus-specific cell niches within a continuum of CD8+ T cell phenotypes",
+        "Num of Subjects": "6",
+        "Experiment Measurement Techniques": "CyTOF",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Cytometry by time-of-flight shows combinatorial cytokine expression and virus-specific cell niches within a continuum of CD8+ T cell phenotypes.",
+        "Pubmed ID": "22265676"
+    },
+    {
+        "Supporting Data": "SDY212",
+        "Study Title": "Apoptosis and other immune biomarkers predict influenza vaccine (TIV 2008) responsiveness",
+        "Num of Subjects": "91",
+        "Experiment Measurement Techniques": "Hemagglutination Inhibition,Flow Cytometry,Luminex xMAP,DNA microarray,Protein microarray",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Apoptosis and other immune biomarkers predict influenza vaccine responsiveness.",
+        "Pubmed ID": "23591775"
+    },
+    {
+        "Supporting Data": "SDY212",
+        "Study Title": "Apoptosis and other immune biomarkers predict influenza vaccine (TIV 2008) responsiveness",
+        "Num of Subjects": "91",
+        "Experiment Measurement Techniques": "Hemagglutination Inhibition,Flow Cytometry,Luminex xMAP,DNA microarray,Protein microarray",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Effects of aging, cytomegalovirus infection, and EBV infection on human B cell repertoires.",
+        "Pubmed ID": "24337376"
+    },
+    {
+        "Supporting Data": "SDY212",
+        "Study Title": "Apoptosis and other immune biomarkers predict influenza vaccine (TIV 2008) responsiveness",
+        "Num of Subjects": "91",
+        "Experiment Measurement Techniques": "Hemagglutination Inhibition,Flow Cytometry,Luminex xMAP,DNA microarray,Protein microarray",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Defective Signaling in the JAK-STAT Pathway Tracks with Chronic Inflammation and Cardiovascular Risk in Aging Humans.",
+        "Pubmed ID": "27746093"
+    },
+    {
+        "Supporting Data": "SDY215",
+        "Study Title": "TIV 2008 vaccination of CD95-/- mice and ELISA for detection of influenza-specific antibodies",
+        "Num of Subjects": "17",
+        "Experiment Measurement Techniques": "ELISA",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Apoptosis and other immune biomarkers predict influenza vaccine responsiveness.",
+        "Pubmed ID": "23591775"
+    },
+    {
+        "Supporting Data": "SDY232",
+        "Study Title": "Determinants of human NK cell diversity by mass cytometry",
+        "Num of Subjects": "22",
+        "Experiment Measurement Techniques": "CyTOF",
+        "Pis": "Catherine Blish (Stanford University)",
+        "Publications": "Genetic and environmental determinants of human NK cell diversity revealed by mass cytometry.",
+        "Pubmed ID": "24154599"
+    },
+    {
+        "Supporting Data": "SDY232",
+        "Study Title": "Determinants of human NK cell diversity by mass cytometry",
+        "Num of Subjects": "22",
+        "Experiment Measurement Techniques": "CyTOF",
+        "Pis": "Catherine Blish (Stanford University)",
+        "Publications": "Coordinated regulation of NK receptor expression in the maturing human immune system.",
+        "Pubmed ID": "25288567"
+    },
+    {
+        "Supporting Data": "SDY312",
+        "Study Title": "T cell responses to H1N1v and a longitudinal study of seasonal influenza vaccination (TIV) - 2009 (See companion studies SDY315 2012 / SDY314 2008 / SDY311 2010 / SDY112 2011)",
+        "Num of Subjects": "84",
+        "Experiment Measurement Techniques": "DNA microarray,Hemagglutination Inhibition,Flow Cytometry,Luminex xMAP",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Defective Signaling in the JAK-STAT Pathway Tracks with Chronic Inflammation and Cardiovascular Risk in Aging Humans.",
+        "Pubmed ID": "27746093"
+    },
+    {
+        "Supporting Data": "SDY387",
+        "Study Title": "Systems Biology Approach to Study Influenza Vaccine 2010-11 in Healthy Children (see companion studies SDY144, SDY368, SDY387)",
+        "Num of Subjects": "22",
+        "Experiment Measurement Techniques": "DNA microarray,Hemagglutination Inhibition,Flow Cytometry,Virus Neutralization",
+        "Pis": "Octavio Ramilo (Nationwide Children�s Hospital)",
+        "Publications": "Induction of ICOS+CXCR3+CXCR5+ TH cells correlates with antibody responses to influenza vaccination.",
+        "Pubmed ID": "23486778"
+    },
+    {
+        "Supporting Data": "SDY404",
+        "Study Title": "Immunologic and genomic signatures of influenza vaccine response - 2011 (see companion studies SDY63, SDY400, SDY520)",
+        "Num of Subjects": "72",
+        "Experiment Measurement Techniques": "DNA microarray,Hemagglutination Inhibition,Flow Cytometry",
+        "Pis": "David Hafler (Yale University)",
+        "Publications": "Prolonged proinflammatory cytokine production in monocytes modulated by interleukin 10 after influenza vaccination in older adults.",
+        "Pubmed ID": "25367297"
+    },
+    {
+        "Supporting Data": "SDY422",
+        "Study Title": "DFCI HLA typing",
+        "Num of Subjects": "72",
+        "Experiment Measurement Techniques": "HLA Typing",
+        "Pis": "Ellis Reinherz (Dana Farber Cancer Institute)",
+        "Publications": "Human leukocyte antigen typing using a knowledge base coupled with a high-throughput oligonucleotide probe array analysis.",
+        "Pubmed ID": "25505899"
+    },
+    {
+        "Supporting Data": "SDY460",
+        "Study Title": "B and T Cell Determinants of Influenza Vaccine Responses in the Elderly 2008 (see companion study SDY773)",
+        "Num of Subjects": "27",
+        "Experiment Measurement Techniques": "Sequencing",
+        "Pis": "Scott Boyd (Stanford University School of Medicine)",
+        "Publications": "Effects of aging, cytomegalovirus infection, and EBV infection on human B cell repertoires.",
+        "Pubmed ID": "24337376"
+    },
+    {
+        "Supporting Data": "SDY514",
+        "Study Title": "Monozygotic and Dizygotic Twin Pair T-Cell Responses to Influenza Vaccination 2009",
+        "Num of Subjects": "74",
+        "Experiment Measurement Techniques": "Hemagglutination Inhibition,Flow Cytometry,Luminex xMAP",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Variation in the human immune system is largely driven by non-heritable influences.",
+        "Pubmed ID": "25594173"
+    },
+    {
+        "Supporting Data": "SDY515",
+        "Study Title": "Monozygotic and Dizygotic Twin Pair T-Cell Responses to Influenza Vaccination 2010",
+        "Num of Subjects": "84",
+        "Experiment Measurement Techniques": "Hemagglutination Inhibition,Flow Cytometry,Luminex xMAP,CyTOF",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Variation in the human immune system is largely driven by non-heritable influences.",
+        "Pubmed ID": "25594173"
+    },
+    {
+        "Supporting Data": "SDY519",
+        "Study Title": "Monozygotic and Dizygotic Twin Pair T-Cell Responses to Influenza Vaccination 2011",
+        "Num of Subjects": "63",
+        "Experiment Measurement Techniques": "Hemagglutination Inhibition,Flow Cytometry,Luminex xMAP,CyTOF",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Variation in the human immune system is largely driven by non-heritable influences.",
+        "Pubmed ID": "25594173"
+    },
+    {
+        "Supporting Data": "SDY522",
+        "Study Title": "Differences in Antibody Responses Between Trivalent Inactivated Influenza Vaccine and Live Attenuated Influenza Vaccine (2011-12) Correlate With the Kinetics and Magnitude of Interferon Signaling in Children  (see companion studies SDY144, SDY360)",
+        "Num of Subjects": "20",
+        "Experiment Measurement Techniques": "DNA microarray,Hemagglutination Inhibition,Flow Cytometry,Virus Neutralization",
+        "Pis": "Octavio Ramilo (Nationwide Children�s Hospital)",
+        "Publications": "Differences in antibody responses between trivalent inactivated influenza vaccine and live attenuated influenza vaccine correlate with the kinetics and magnitude of interferon signaling in children.",
+        "Pubmed ID": "24495909"
+    },
+    {
+        "Supporting Data": "SDY58",
+        "Study Title": "Defining signatures for immune responsiveness by functional systems immunology",
+        "Num of Subjects": "135",
+        "Experiment Measurement Techniques": "Meso Scale Discovery ECL,DNA microarray,ELISA,Flow Cytometry",
+        "Pis": "David Hafler (Yale University)",
+        "Publications": "The order of hepatic cytotoxicity of bile salts in vitro does not agree with that examined in vivo in rats.",
+        "Pubmed ID": "2355795"
+    },
+    {
+        "Supporting Data": "SDY58",
+        "Study Title": "Defining signatures for immune responsiveness by functional systems immunology",
+        "Num of Subjects": "135",
+        "Experiment Measurement Techniques": "Meso Scale Discovery ECL,DNA microarray,ELISA,Flow Cytometry",
+        "Pis": "David Hafler (Yale University)",
+        "Publications": "The natural killer cell response to West Nile virus in young and old individuals with or without a prior history of infection.",
+        "Pubmed ID": "28235099"
+    },
+    {
+        "Supporting Data": "SDY597",
+        "Study Title": "DC transcriptomics in response to vaccines",
+        "Num of Subjects": "20",
+        "Experiment Measurement Techniques": "DNA microarray",
+        "Pis": "Romaine Banchereau (Bailer Institute for Immunology Research)",
+        "Publications": "Transcriptional specialization of human dendritic cell subsets in response to microbial vaccines.",
+        "Pubmed ID": "25335753"
+    },
+    {
+        "Supporting Data": "SDY67",
+        "Study Title": "Bioinformatics Approach to 2010-2011 TIV Influenza A/H1N1 Vaccine Immune Profiling",
+        "Num of Subjects": "159",
+        "Experiment Measurement Techniques": "Virus Neutralization,RNA sequencing,Q-PCR,PCR,Meso Scale Discovery ECL,Mass Spectrometry,Hemagglutination Inhibition,Flow Cytometry,ELISPOT,DNA methylation profiling assay,Cell Culture",
+        "Pis": "Gregory Poland (Mayo Clinic)",
+        "Publications": "The impact of immunosenescence on humoral immune response variation after influenza A/H1N1 vaccination in older subjects.",
+        "Pubmed ID": "25816015"
+    },
+    {
+        "Supporting Data": "SDY67",
+        "Study Title": "Bioinformatics Approach to 2010-2011 TIV Influenza A/H1N1 Vaccine Immune Profiling",
+        "Num of Subjects": "159",
+        "Experiment Measurement Techniques": "Virus Neutralization,RNA sequencing,Q-PCR,PCR,Meso Scale Discovery ECL,Mass Spectrometry,Hemagglutination Inhibition,Flow Cytometry,ELISPOT,DNA methylation profiling assay,Cell Culture",
+        "Pis": "Gregory Poland (Mayo Clinic)",
+        "Publications": "System-Wide Associations between DNA-Methylation, Gene Expression, and Humoral Immune Response to Influenza Vaccination.",
+        "Pubmed ID": "27031986"
+    },
+    {
+        "Supporting Data": "SDY67",
+        "Study Title": "Bioinformatics Approach to 2010-2011 TIV Influenza A/H1N1 Vaccine Immune Profiling",
+        "Num of Subjects": "159",
+        "Experiment Measurement Techniques": "Virus Neutralization,RNA sequencing,Q-PCR,PCR,Meso Scale Discovery ECL,Mass Spectrometry,Hemagglutination Inhibition,Flow Cytometry,ELISPOT,DNA methylation profiling assay,Cell Culture",
+        "Pis": "Gregory Poland (Mayo Clinic)",
+        "Publications": "Gene signatures related to HAI response following influenza A/H1N1 vaccine in older individuals.",
+        "Pubmed ID": "27441275"
+    },
+    {
+        "Supporting Data": "SDY675",
+        "Study Title": "Heritable influence on the  B and T cell receptor repertoire",
+        "Num of Subjects": "10",
+        "Experiment Measurement Techniques": "RNA sequencing",
+        "Pis": "Mark.M.Davis (Stanford University)",
+        "Publications": "Individual heritable differences result in unique cell lymphocyte receptor repertoires of naive and antigen-experienced cells.",
+        "Pubmed ID": "27005435"
+    },
+    {
+        "Supporting Data": "SDY680",
+        "Study Title": "Human Elispot Assay with peptide.",
+        "Num of Subjects": "10",
+        "Experiment Measurement Techniques": "ELISPOT",
+        "Pis": "Ellis Reinherz (Dana Farber Cancer Institute)",
+        "Publications": "Physical detection of influenza A epitopes identifies a stealth subset on human lung epithelium evading natural CD8 immunity.",
+        "Pubmed ID": "25646416"
+    },
+    {
+        "Supporting Data": "SDY74",
+        "Study Title": "Systems Biology Approach to Analysis of 2010-11 TIV Fluzone Influenza Vaccine Response in Healthy Individuals (see companion studies SDY301, SDY296)",
+        "Num of Subjects": "12",
+        "Experiment Measurement Techniques": "Flow Cytometry, DNA microarray",
+        "Pis": "A.Karolina Palucka (Bailer Research Institute)",
+        "Publications": "Induction of ICOS+CXCR3+CXCR5+ TH cells correlates with antibody responses to influenza vaccination.",
+        "Pubmed ID": "23486778"
+    },
+    {
+        "Supporting Data": "SDY751",
+        "Study Title": "MS3 peptide detection",
+        "Num of Subjects": "1",
+        "Experiment Measurement Techniques": "Mass Spectrometry",
+        "Pis": "Dr. Reinhold (Harvard Medical School)",
+        "Publications": "Physical detection of influenza A epitopes identifies a stealth subset on human lung epithelium evading natural CD8 immunity.",
+        "Pubmed ID": "25646416"
+    },
+    {
+        "Supporting Data": "SDY773",
+        "Study Title": "B and T Cell Determinants of Influenza Vaccine Responses in the Elderly 2009 (see companion study SDY460)",
+        "Num of Subjects": "27",
+        "Experiment Measurement Techniques": "Sequencing",
+        "Pis": "Scott Boyd (Stanford University School of Medicine)",
+        "Publications": "Effects of aging, cytomegalovirus infection, and EBV infection on human B cell repertoires.",
+        "Pubmed ID": "24337376"
+    },
+    {
+        "Supporting Data": "SDY887",
+        "Study Title": "Defective signaling in aging",
+        "Num of Subjects": "26",
+        "Experiment Measurement Techniques": "Flow Cytometry",
+        "Pis": "Cornelia Dekker (Stanford University)",
+        "Publications": "Defective Signaling in the JAK-STAT Pathway Tracks with Chronic Inflammation and Cardiovascular Risk in Aging Humans.",
+        "Pubmed ID": "27746093"
+    },
+    {
+        "Supporting Data": "SDY984",
+        "Study Title": "Zoster Vaccine in Young and Elderly",
+        "Num of Subjects": "77",
+        "Experiment Measurement Techniques": "Array, Mass Spectrometry,Luminex xMAP,Flow Cytometry,ELISPOT,ELISA,Q-PCR",
+        "Pis": "Myron Levin (Vaccine Research Trials Center) Nadine Rouphael (Emory Hope Clinic)",
+        "Publications": "Metabolic Phenotypes of Response to Vaccination in Humans",
+        "Pubmed ID": "28502771"
+    },
+    {
+        "Supporting Data": "SDY1100",
+        "Study Title": "Project 3 - Optimization Experiments DCs DV2 and DV4 - CyTOF",
+        "Num of Subjects": "7",
+        "Experiment Measurement Techniques": "CyTOF",
+        "Pis": "Ana Fernandez-Sesma (Icahn School of Medicine at Mount Sinai)",
+        "Publications": "High-dimensional CyTOF analysis of dengue virus-infected human DCs reveals distinct viral signatures ",
+        "Pubmed ID": "28679950"
+    },
+    {
+        "Supporting Data": "SDY1149",
+        "Study Title": "Project 3 - Optimization Experiments DCs DV2 and DV4 - MBAA",
+        "Num of Subjects": "7",
+        "Experiment Measurement Techniques": "Multiplexed Beads Array Assay,Luminex xMAP",
+        "Pis": "Ana Fernandez-Sesma (Icahn School of Medicine at Mount Sinai)",
+        "Publications": "High-dimensional CyTOF analysis of dengue virus-infected human DCs reveals distinct viral signatures ",
+        "Pubmed ID": "28679950"
+    },
+    {
+        "Supporting Data": "SDY1324",
+        "Study Title": "Transcriptomic Analysis of CD4+ T Cells Reveals Novel Immune Signatures of Latent Tuberculosis",
+        "Num of Subjects": "60",
+        "Experiment Measurement Techniques": "RNA Sequencing",
+        "Pis": "Bjoern Peters (La Jolla Institute for Allergy and Immunology)",
+        "Publications": "Transcriptomic Analysis of CD4+ T Cells Reveals Novel Immune Signatures of Latent Tuberculosis.",
+        "Pubmed ID": "29602771"
+    },
+    {
+        "Supporting Data": "SDY820",
+        "Study Title": "Human Immune Signature (Flow Cytometry) of Latent TB infection",
+        "Num of Subjects": "60",
+        "Experiment Measurement Techniques": "Flow Cytometry,HLA Typing",
+        "Pis": "Bjoern Peters (La Jolla Institute for Allergy and Immunology)",
+        "Publications": "An Integrated Workflow to Assess Technical and Biological Variability of Cell Population Frequencies in Human Peripheral Blood by Flow Cytometry <BR></BR>Transcriptomic Analysis of CD4+ T Cells Reveals Novel Immune Signatures of Latent Tuberculosis",
+        "Pubmed ID": "28069807, 29602771"
+    },
+    {
+        "Supporting Data": "SDY888",
+        "Study Title": "Human Immune Signature of Dengue Virus Infection- Gene Expression of CD4 subsets",
+        "Num of Subjects": "92",
+        "Experiment Measurement Techniques": "RNA Sequencing,CyTOF,HLA Typing",
+        "Pis": "Alessandro Sette (La Jolla Institute for Allergy and Immunology)",
+        "Publications": "Unique phenotypes and clonal expansions of human CD4 effector memory T cells re-expressing CD45RA.",
+        "Pubmed ID": "29133794"
+    },
+    {
+        "Supporting Data": "SDY1288",
+        "Study Title": "Chikungunya virus infection immunoprofiling in pediatric cohort",
+        "Num of Subjects": "43",
+        "Experiment Measurement Techniques": "CyTOF(84), Luminex xMAP(90), RNA sequencing(172)",
+        "Pis": "Michlmayr D(1), Pak TR(2), Rahman AH(2)(3), Amir ED(2)(3), Kim EY(4), Kim-Schulze S(2)(3), Suprun M(5), Stewart MG(4), Thomas GP(4), Balmaseda A(6), Wang L(2), Zhu J(2), Suarz-Farias M(2)(5), Wolinsky SM(4), Kasarskis A(2), Harris E(7)",
+        "Publications": "Comprehensive innate immune profiling of chikungunya virus infection in pediatric cases.",
+        "Pubmed ID": "30150281"
+    },
+    {
+        "Supporting Data": "SDY1119",
+        "Study Title": "Systems Biology of 2011 trivalent Influenza vaccine (TIV) in young and elderly individuals, healthy or with T2D (see companion study SDY61 2007, SDY270 2009, SDY56 2010)",
+        "Num of Subjects": "78",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "Nakaya, H. I., Hagan, T., Duraisingham, S. S., Lee, E. K., Kwissa, M., Rouphael, N., Frasca, D., Gersten, M., Mehta, A. K., Gaujoux, R., Li, G. M., Gupta, S., Ahmed, R., Mulligan, M. J., Shen-Orr, S., Blomberg, B. B., Subramaniam, S. and Pulendran, B.",
+        "Publications": "Systems Analysis of Immunity to Influenza Vaccination across Multiple Years and in Diverse Populations Reveals Shared Molecular Signatures",
+        "Pubmed ID": "26682988",
+        "": "10.1016/j.immuni.2015.11.012"
+    },
+    {
+        "Supporting Data": "SDY1260",
+        "Study Title": "Correlation between human innate and adaptive immune responses to T-cell independent or dependent meningococcal vaccines.",
+        "Num of Subjects": "30",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "Li S(1), Rouphael N(2), Duraisingham S(1), Romero-Steiner S(3), Presnell S(4), Davis C(5), Schmidt DS(3), Johnson SE(3), Milton A(3), Rajam G(3), Kasturi S(6),  Carlone GM(3), Quinn C(4), Chaussabel D(4), Palucka AK(7), Mulligan MJ(8), Ahmed  R(9), Stephens DS(5), Nakaya HI(10), Pulendran B(10).",
+        "Publications": "Molecular signatures of antibody responses derived from a systems biology study of five human vaccines.",
+        "Pubmed ID": "24336226",
+        "": "10.1038/ni.2789. Epub 2013 Dec 15."
+    },
+    {
+        "Supporting Data": "SDY1389",
+        "Study Title": "Lymph node reservoirs for long-lived memory T cells",
+        "Num of Subjects": "51",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "Miron M, Kumar BV, Meng W, Granot T, Carpenter DJ, Senda T, Chen D, Rosenfeld AM, Zhang B, Lerner H, Friedman AL, Hershberg U, Shen Y, Rahman A, Luning Prak ET, Farber DL.",
+        "Publications": "Human Lymph Nodes Maintain TCF-1hi Memory T Cells with High Functional Potential and Clonal Diversity throughout Life.",
+        "Pubmed ID": "30111633",
+        "": "10.4049/jimmunol.1800716"
+    },
+    {
+        "Supporting Data": "SDY269",
+        "Study Title": "Systems Biology of 2008 Influenza Vaccination in Humans (See companion studies SDY61 2007 / SDY270 2009 / SDY271 Role for CaMKIV in the Regulation of Antibody Responses to Influenza Vaccine)",
+        "Num of Subjects": "63",
+        "Experiment Measurement Techniques": "6",
+        "Pis": "Nakaya HI(1), Wrammert J, Lee EK, Racioppi L, Marie-Kunze S, Haining WN, Means AR, Kasturi SP, Khan N, Li GM, McCausland M, Kanchan V, Kokko KE, Li S, Elbein R, Mehta AK, Aderem A, Subbarao K, Ahmed R, Pulendran B.",
+        "Publications": "Systems biology of vaccination for seasonal influenza in humans.",
+        "Pubmed ID": "21743478",
+        "": "10.1038/ni.2067."
+    },
+    {
+        "Supporting Data": "SDY269",
+        "Study Title": "Systems Biology of 2008 Influenza Vaccination in Humans (See companion studies SDY61 2007 / SDY270 2009 / SDY271 Role for CaMKIV in the Regulation of Antibody Responses to Influenza Vaccine)",
+        "Num of Subjects": "63",
+        "Experiment Measurement Techniques": "6",
+        "Pis": "Nakaya HI(1), Hagan T(2), Duraisingham SS(3), Lee EK(4), Kwissa M(5), Rouphael N(6), Frasca D(7), Gersten M(2), Mehta AK(8), Gaujoux R(9), Li GM(10), Gupta S(2), Ahmed R(10), Mulligan MJ(6), Shen-Orr S(9), Blomberg BB(7), Subramaniam S(11), Pulendran B(12).",
+        "Publications": "Systems Analysis of Immunity to Influenza Vaccination across Multiple Years and in Diverse Populations Reveals Shared Molecular Signatures.",
+        "Pubmed ID": "26682988",
+        "": "10.1016/j.immuni.2015.11.012."
+    },
+    {
+        "Supporting Data": "SDY270",
+        "Study Title": "Systems Biology of 2009 Influenza Vaccination in Humans (See companion studies SDY61 2007 / SDY269 2008 / SDY271 Role for CaMKIV in the Regulation of Antibody Responses to Influenza Vaccine)",
+        "Num of Subjects": "30",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "Nakaya HI(1), Wrammert J, Lee EK, Racioppi L, Marie-Kunze S, Haining WN, Means AR, Kasturi SP, Khan N, Li GM, McCausland M, Kanchan V, Kokko KE, Li S, Elbein R, Mehta AK, Aderem A, Subbarao K, Ahmed R, Pulendran B.",
+        "Publications": "Systems biology of vaccination for seasonal influenza in humans.",
+        "Pubmed ID": "21743478",
+        "": "10.1038/ni.2067."
+    },
+    {
+        "Supporting Data": "SDY270",
+        "Study Title": "Systems Biology of 2009 Influenza Vaccination in Humans (See companion studies SDY61 2007 / SDY269 2008 / SDY271 Role for CaMKIV in the Regulation of Antibody Responses to Influenza Vaccine)",
+        "Num of Subjects": "30",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "Nakaya HI(1), Hagan T(2), Duraisingham SS(3), Lee EK(4), Kwissa M(5), Rouphael N(6), Frasca D(7), Gersten M(2), Mehta AK(8), Gaujoux R(9), Li GM(10), Gupta S(2), Ahmed R(10), Mulligan MJ(6), Shen-Orr S(9), Blomberg BB(7), Subramaniam S(11), Pulendran B(12).",
+        "Publications": "Systems Analysis of Immunity to Influenza Vaccination across Multiple Years and in Diverse Populations Reveals Shared Molecular Signatures.",
+        "Pubmed ID": "26682988",
+        "": "10.1016/j.immuni.2015.11.012."
+    },
+    {
+        "Supporting Data": "SDY271",
+        "Study Title": "Role for CaMKIV in the Regulation of Antibody Responses to Influenza Vaccine (See companion studies SDY61 2007 / SDY269 2008 / SDY270 2009)",
+        "Num of Subjects": "36",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "Nakaya HI(1), Wrammert J, Lee EK, Racioppi L, Marie-Kunze S, Haining WN, Means AR, Kasturi SP, Khan N, Li GM, McCausland M, Kanchan V, Kokko KE, Li S, Elbein R, Mehta AK, Aderem A, Subbarao K, Ahmed R, Pulendran B.",
+        "Publications": "Systems biology of vaccination for seasonal influenza in humans.",
+        "Pubmed ID": "21743478",
+        "": "10.1038/ni.2067."
+    },
+    {
+        "Supporting Data": "SDY296",
+        "Study Title": "Systems Biology Approach to Analysis of 2011-12 TIV Fluzone Influenza Vaccine Response in Healthy Individuals (see companion studies SDY74, SDY301)",
+        "Num of Subjects": "45",
+        "Experiment Measurement Techniques": "6",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY299",
+        "Study Title": "Systems Biology Analysis of the response to Licensed Hepatitis B Vaccine (HEPLISAV) in Whole Blood (see companion studies SDY816 and SDY690)",
+        "Num of Subjects": "25",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "Sablan BP(1), Kim DJ, Barzaga NG, Chow WC, Cho M, Ahn SH, Hwang SG, Lee JH, Namini H, Heyward WL.",
+        "Publications": "Demonstration of safety and enhanced seroprotection against hepatitis B with investigational HBsAg-1018 ISS vaccine compared to a licensed hepatitis B vaccine.",
+        "Pubmed ID": "22342916",
+        "": "10.1016/j.vaccine.2012.02.001. Epub 2012 Feb 14."
+    },
+    {
+        "Supporting Data": "SDY299",
+        "Study Title": "Systems Biology Analysis of the response to Licensed Hepatitis B Vaccine (HEPLISAV) in Whole Blood (see companion studies SDY816 and SDY690)",
+        "Num of Subjects": "25",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "Heyward WL(1), Kyle M, Blumenau J, Davis M, Reisinger K, Kabongo ML, Bennett S, Janssen RS, Namini H, Martin JT.",
+        "Publications": "Immunogenicity and safety of an investigational hepatitis B vaccine with a Toll-like receptor 9 agonist adjuvant (HBsAg-1018) compared to a licensed hepatitis B vaccine in healthy adults 40-70 years of age.",
+        "Pubmed ID": "23727002",
+        "": "10.1016/j.vaccine.2013.05.068. Epub 2013  May 30."
+    },
+    {
+        "Supporting Data": "SDY299",
+        "Study Title": "Systems Biology Analysis of the response to Licensed Hepatitis B Vaccine (HEPLISAV) in Whole Blood (see companion studies SDY816 and SDY690)",
+        "Num of Subjects": "25",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "Janssen JM(1), Jackson S(1), Heyward WL(2), Janssen RS(3).",
+        "Publications": "Immunogenicity of an investigational hepatitis B vaccine with a toll-like receptor 9 agonist adjuvant (HBsAg-1018) compared with a licensed hepatitis B vaccine in subpopulations of healthy adults 18-70 years of age.",
+        "Pubmed ID": "26067185",
+        "": "10.1016/j.vaccine.2015.05.070. Epub 2015 Jun 9."
+    },
+    {
+        "Supporting Data": "SDY299",
+        "Study Title": "Systems Biology Analysis of the response to Licensed Hepatitis B Vaccine (HEPLISAV) in Whole Blood (see companion studies SDY816 and SDY690)",
+        "Num of Subjects": "25",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": "29289383"
+    },
+    {
+        "Supporting Data": "SDY300",
+        "Study Title": "Healthy Human DC and monocyte subsets transcriptional regulations in response to Fluzone 2010-2011 and pneumococcal vaccinations",
+        "Num of Subjects": "10",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY301",
+        "Study Title": "Systems Biology Approach to Analysis of 2012-13 TIV Fluzone Influenza Vaccine Response in Healthy Individuals (see companion studies SDY74, SDY296)",
+        "Num of Subjects": "40",
+        "Experiment Measurement Techniques": "6",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY364",
+        "Study Title": "Systems Biology Approach to Study Influenza Vaccine 2012-13 in Healthy Children (see companion studies SDY144, SDY368, SDY387)",
+        "Num of Subjects": "23",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY506",
+        "Study Title": "CD107 CTL assay",
+        "Num of Subjects": "1",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY523",
+        "Study Title": "Peptide display hierarchy protocol",
+        "Num of Subjects": "1",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY56",
+        "Study Title": "Systems Biology of 2010 trivalent Influenza vaccine (TIV) in young and elderly (see companion study SDY61 2007, SDY270 2009, SDY119 2011)",
+        "Num of Subjects": "70",
+        "Experiment Measurement Techniques": "Flow Cytometry,Hemagglutination Inhibition,Luminex xMAP,microRNA profiling assay,Transcription profiling by array",
+        "Pis": "Bali Pulendran(Emory University)",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY61",
+        "Study Title": "Systems Biology of 2007 Influenza Vaccination in Humans (See companion studies SDY269 2008 / SDY270 2009 / SDY271 Role for CaMKIV in the Regulation of Antibody Responses to Influenza Vaccine)",
+        "Num of Subjects": "12",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "Nakaya HI(1), Wrammert J, Lee EK, Racioppi L, Marie-Kunze S, Haining WN, Means AR, Kasturi SP, Khan N, Li GM, McCausland M, Kanchan V, Kokko KE, Li S, Elbein R, Mehta AK, Aderem A, Subbarao K, Ahmed R, Pulendran B.",
+        "Publications": "Systems biology of vaccination for seasonal influenza in humans.",
+        "Pubmed ID": "21743478",
+        "": "10.1038/ni.2067."
+    },
+    {
+        "Supporting Data": "SDY61",
+        "Study Title": "Systems Biology of 2007 Influenza Vaccination in Humans (See companion studies SDY269 2008 / SDY270 2009 / SDY271 Role for CaMKIV in the Regulation of Antibody Responses to Influenza Vaccine)",
+        "Num of Subjects": "12",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "Nakaya HI(1), Hagan T(2), Duraisingham SS(3), Lee EK(4), Kwissa M(5), Rouphael N(6), Frasca D(7), Gersten M(2), Mehta AK(8), Gaujoux R(9), Li GM(10), Gupta S(2), Ahmed R(10), Mulligan MJ(6), Shen-Orr S(9), Blomberg BB(7), Subramaniam S(11), Pulendran B(12).",
+        "Publications": "Systems Analysis of Immunity to Influenza Vaccination across Multiple Years and in Diverse Populations Reveals Shared Molecular Signatures.",
+        "Pubmed ID": "26682988",
+        "": "10.1016/j.immuni.2015.11.012."
+    },
+    {
+        "Supporting Data": "SDY753",
+        "Study Title": "Investigating Alterations to the Nasal Microbiome after Vaccination with LAIV",
+        "Num of Subjects": "47",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY756",
+        "Study Title": "Histology post influenza",
+        "Num of Subjects": "1",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY112",
+        "Study Title": "T cell responses to H1N1v and a longitudinal study of seasonal influenza vaccination (TIV) - 2011 (See companion studies SDY311 2010 / SDY312 2009 / SDY314 2008 / SDY315 2012)",
+        "Num of Subjects": "93",
+        "Experiment Measurement Techniques": "5",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY1368",
+        "Study Title": "Systems Biology of Varicella Zoster Vaccination",
+        "Num of Subjects": "18",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "Qian Qi, Mary M. Cavanagh, Sabine Le Saux,?Lisa E. Wagar, Sally Mackey,?Jinyu Hu, Holden Maecker,?Gary E. Swan,?Mark M. Davis,?Cornelia L. Dekker,?Lu Tian,?Cornelia M. Weyand,?J?rg J. Goronzy",
+        "Publications": "Defective T Memory Cell Differentiation after Varicella Zoster Vaccination in Older Individuals",
+        "Pubmed ID": "27764254",
+        "": "10.1371/journal.ppat.1005892"
+    },
+    {
+        "Supporting Data": "SDY305",
+        "Study Title": "Plasmablast response to inactivated and live attenuated influenza vaccines (TIV3/TIV3 ID) in 2012",
+        "Num of Subjects": "25",
+        "Experiment Measurement Techniques": "7",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY311",
+        "Study Title": "T cell responses to H1N1v and a longitudinal study of seasonal influenza vaccination (TIV) - 2010 (See companion studies SDY315 2012 / SDY312 2009 / SDY314 2008 / SDY112 2011)",
+        "Num of Subjects": "76",
+        "Experiment Measurement Techniques": "5",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY314",
+        "Study Title": "T cell responses to H1N1v and a longitudinal study of seasonal influenza vaccination (TIV) - 2008 (See companion studies SDY315 2012 / SDY312 2009 / SDY311 2010 / SDY112 2011)",
+        "Num of Subjects": "92",
+        "Experiment Measurement Techniques": "5",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY315",
+        "Study Title": "T cell responses to H1N1v and a longitudinal study of seasonal influenza vaccination (TIV) - 2012 (See companion studies SDY311 2010 / SDY312 2009 / SDY314 2008 / SDY112 2011)",
+        "Num of Subjects": "74",
+        "Experiment Measurement Techniques": "5",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY368",
+        "Study Title": "Systems Biology Approach to Study Influenza Vaccine 2013-14 in Healthy Children (see companion studies SDY364, SDY144, SDY387)",
+        "Num of Subjects": "22",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY369",
+        "Study Title": "Systems Biology Approach to Study Influenza Vaccine in Children with Autoimmunity (Juvenile Dermatomyositis JDM) 2011/2012 Cohort (see companion studies SDY376, SDY372, SDY645)",
+        "Num of Subjects": "4",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY372",
+        "Study Title": "Systems Biology Approach to Study Influenza Vaccine in Children with Autoimmunity (Juvenile Dermatomyositis JDM) 2012/2013 Cohort (see companion studies (SDY369, SDY376, SDY645)",
+        "Num of Subjects": "19",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY376",
+        "Study Title": "Systems Biology Approach to Study Influenza Vaccine in Children with Autoimmunity (Juvenile Dermatomyositis JDM) 2013/2014 Cohort (see companion studies SDY369, SDY372, SDY645)",
+        "Num of Subjects": "13",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY416",
+        "Study Title": "Study to measure the immune response to the influenza vaccine in patients with chronic plaque psoriasis",
+        "Num of Subjects": "45",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY645",
+        "Study Title": "Systems Biology Approach to Study Influenza Vaccine in Children with Autoimmunity (Juvenile Dermatomyositis JDM) 2014/2015 Cohort (see companion studies SDY369, SDY376, SDY372)",
+        "Num of Subjects": "11",
+        "Experiment Measurement Techniques": "4",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY667",
+        "Study Title": "The immune signature of palmoplantar pustulosis",
+        "Num of Subjects": "50",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY690",
+        "Study Title": "Systems Biology Study to Investigate Immune Correlates to Hepatitis B Vaccine Engerix-B comparing cellular responses and gene expression patterns between PBMCs (cell sorts) and whole blood samples (see companion studies SDY816 and SDY299)",
+        "Num of Subjects": "12",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "Sablan BP(1), Kim DJ, Barzaga NG, Chow WC, Cho M, Ahn SH, Hwang SG, Lee JH, Namini H, Heyward WL.",
+        "Publications": "Demonstration of safety and enhanced seroprotection against hepatitis B with investigational HBsAg-1018 ISS vaccine compared to a licensed hepatitis B vaccine.",
+        "Pubmed ID": "22342916",
+        "": "10.1016/j.vaccine.2012.02.001. Epub 2012 Feb 14."
+    },
+    {
+        "Supporting Data": "SDY690",
+        "Study Title": "Systems Biology Study to Investigate Immune Correlates to Hepatitis B Vaccine Engerix-B comparing cellular responses and gene expression patterns between PBMCs (cell sorts) and whole blood samples (see companion studies SDY816 and SDY299)",
+        "Num of Subjects": "12",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "Heyward WL(1), Kyle M, Blumenau J, Davis M, Reisinger K, Kabongo ML, Bennett S, Janssen RS, Namini H, Martin JT.",
+        "Publications": "Immunogenicity and safety of an investigational hepatitis B vaccine with a Toll-like receptor 9 agonist adjuvant (HBsAg-1018) compared to a licensed hepatitis B vaccine in healthy adults 40-70 years of age.",
+        "Pubmed ID": "23727002",
+        "": "10.1016/j.vaccine.2013.05.068. Epub 2013  May 30."
+    },
+    {
+        "Supporting Data": "SDY690",
+        "Study Title": "Systems Biology Study to Investigate Immune Correlates to Hepatitis B Vaccine Engerix-B comparing cellular responses and gene expression patterns between PBMCs (cell sorts) and whole blood samples (see companion studies SDY816 and SDY299)",
+        "Num of Subjects": "12",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "Janssen JM(1), Jackson S(1), Heyward WL(2), Janssen RS(3).",
+        "Publications": "Immunogenicity of an investigational hepatitis B vaccine with a toll-like receptor 9 agonist adjuvant (HBsAg-1018) compared with a licensed hepatitis B vaccine in subpopulations of healthy adults 18-70 years of age.",
+        "Pubmed ID": "26067185",
+        "": "10.1016/j.vaccine.2015.05.070. Epub 2015 Jun 9."
+    },
+    {
+        "Supporting Data": "SDY690",
+        "Study Title": "Systems Biology Study to Investigate Immune Correlates to Hepatitis B Vaccine Engerix-B comparing cellular responses and gene expression patterns between PBMCs (cell sorts) and whole blood samples (see companion studies SDY816 and SDY299)",
+        "Num of Subjects": "12",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": "29289383"
+    },
+    {
+        "Supporting Data": "SDY816",
+        "Study Title": "Systems Biology Analysis of the response to Licensed Hepatitis B Vaccine (HEPLISAV) in specific cell subsets (see companion studies SDY299 and SDY690)",
+        "Num of Subjects": "10",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "Sablan BP(1), Kim DJ, Barzaga NG, Chow WC, Cho M, Ahn SH, Hwang SG, Lee JH, Namini H, Heyward WL.",
+        "Publications": "Demonstration of safety and enhanced seroprotection against hepatitis B with investigational HBsAg-1018 ISS vaccine compared to a licensed hepatitis B vaccine.",
+        "Pubmed ID": "22342916",
+        "": "10.1016/j.vaccine.2012.02.001. Epub 2012 Feb 14."
+    },
+    {
+        "Supporting Data": "SDY816",
+        "Study Title": "Systems Biology Analysis of the response to Licensed Hepatitis B Vaccine (HEPLISAV) in specific cell subsets (see companion studies SDY299 and SDY690)",
+        "Num of Subjects": "10",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "Heyward WL(1), Kyle M, Blumenau J, Davis M, Reisinger K, Kabongo ML, Bennett S, Janssen RS, Namini H, Martin JT.",
+        "Publications": "Immunogenicity and safety of an investigational hepatitis B vaccine with a Toll-like receptor 9 agonist adjuvant (HBsAg-1018) compared to a licensed hepatitis B vaccine in healthy adults 40-70 years of age.",
+        "Pubmed ID": "23727002",
+        "": "10.1016/j.vaccine.2013.05.068. Epub 2013  May 30."
+    },
+    {
+        "Supporting Data": "SDY816",
+        "Study Title": "Systems Biology Analysis of the response to Licensed Hepatitis B Vaccine (HEPLISAV) in specific cell subsets (see companion studies SDY299 and SDY690)",
+        "Num of Subjects": "10",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "Janssen JM(1), Jackson S(1), Heyward WL(2), Janssen RS(3).",
+        "Publications": "Immunogenicity of an investigational hepatitis B vaccine with a toll-like receptor 9 agonist adjuvant (HBsAg-1018) compared with a licensed hepatitis B vaccine in subpopulations of healthy adults 18-70 years of age.",
+        "Pubmed ID": "26067185",
+        "": "10.1016/j.vaccine.2015.05.070. Epub 2015 Jun 9."
+    },
+    {
+        "Supporting Data": "SDY816",
+        "Study Title": "Systems Biology Analysis of the response to Licensed Hepatitis B Vaccine (HEPLISAV) in specific cell subsets (see companion studies SDY299 and SDY690)",
+        "Num of Subjects": "10",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": "29289383"
+    },
+    {
+        "Supporting Data": "SDY87",
+        "Study Title": "In-Depth Characterization of Immune Responses to Pneumovax Vaccination in Healthy Subjects",
+        "Num of Subjects": "5",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY89",
+        "Study Title": "Systems Biology Analysis of the response to  Licensed Hepatitis B Vaccine (Engerix-B) (see companion study SDY690)",
+        "Num of Subjects": "50",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "Sablan BP(1), Kim DJ, Barzaga NG, Chow WC, Cho M, Ahn SH, Hwang SG, Lee JH, Namini H, Heyward WL.",
+        "Publications": "Demonstration of safety and enhanced seroprotection against hepatitis B with investigational HBsAg-1018 ISS vaccine compared to a licensed hepatitis B vaccine.",
+        "Pubmed ID": "22342916",
+        "": "10.1016/j.vaccine.2012.02.001. Epub 2012 Feb 14."
+    },
+    {
+        "Supporting Data": "SDY89",
+        "Study Title": "Systems Biology Analysis of the response to  Licensed Hepatitis B Vaccine (Engerix-B) (see companion study SDY690)",
+        "Num of Subjects": "50",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "Heyward WL(1), Kyle M, Blumenau J, Davis M, Reisinger K, Kabongo ML, Bennett S, Janssen RS, Namini H, Martin JT.",
+        "Publications": "Immunogenicity and safety of an investigational hepatitis B vaccine with a Toll-like receptor 9 agonist adjuvant (HBsAg-1018) compared to a licensed hepatitis B vaccine in healthy adults 40-70 years of age.",
+        "Pubmed ID": "23727002",
+        "": "10.1016/j.vaccine.2013.05.068. Epub 2013  May 30."
+    },
+    {
+        "Supporting Data": "SDY89",
+        "Study Title": "Systems Biology Analysis of the response to  Licensed Hepatitis B Vaccine (Engerix-B) (see companion study SDY690)",
+        "Num of Subjects": "50",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "Janssen JM(1), Jackson S(1), Heyward WL(2), Janssen RS(3).",
+        "Publications": "Immunogenicity of an investigational hepatitis B vaccine with a toll-like receptor 9 agonist adjuvant (HBsAg-1018) compared with a licensed hepatitis B vaccine in subpopulations of healthy adults 18-70 years of age.",
+        "Pubmed ID": "26067185",
+        "": "10.1016/j.vaccine.2015.05.070. Epub 2015 Jun 9."
+    },
+    {
+        "Supporting Data": "SDY89",
+        "Study Title": "Systems Biology Analysis of the response to  Licensed Hepatitis B Vaccine (Engerix-B) (see companion study SDY690)",
+        "Num of Subjects": "50",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": "29289383"
+    },
+    {
+        "Supporting Data": "SDY1092",
+        "Study Title": "Transcriptional responses induced by controlled human malaria infection (CHMI)",
+        "Num of Subjects": "10",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "Shekalaghe S(1), Rutaihwa M(1), Billingsley PF(1), Chemba M(1), Daubenberger CA(1), James ER(1), Mpina M(1), Ali Juma O(1), Schindler T(1), Huber E(1), Gunasekera A(1), Manoj A(1), Simon B(1), Saverino E(1), Church LW(1), Hermsen CC(1), Sauerwein RW(1), Plowe C(1), Venkatesan M(1), Sasi P(1), Lweno O(1), Mutani P(1), Hamad A(1), Mohammed A(1), Urassa A(1), Mzee T(1), Padilla D(1), Ruben A(1), Sim BK(1), Tanner M(1), Abdulla S(1), Hoffman SL(2).",
+        "Publications": "Controlled human malaria infection of Tanzanians by intradermal injection of aseptic, purified, cryopreserved Plasmodium falciparum sporozoites.",
+        "Pubmed ID": "25070995",
+        "": "10.4269/ajtmh.14-0119. Epub 2014 Jul 28."
+    },
+    {
+        "Supporting Data": "SDY1190",
+        "Study Title": "Single-cell RNA-Seq analysis of MTB and DENV immune responses",
+        "Num of Subjects": "16",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY278",
+        "Study Title": "Optimization FACS panels",
+        "Num of Subjects": "1",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY395",
+        "Study Title": "Immune Responses to Influenza-Like Illness",
+        "Num of Subjects": "33",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY400",
+        "Study Title": "Immunologic and genomic signatures of influenza vaccine response - 2012 (see companion studies SDY63, SDY404, SDY520)",
+        "Num of Subjects": "98",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY406",
+        "Study Title": "Immune Responses to Influenza-Like Illness",
+        "Num of Subjects": "6",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY421",
+        "Study Title": "Clonal B cell response to naturally occurring pathogens causing tissue specific immune responses in human",
+        "Num of Subjects": "4",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY461",
+        "Study Title": "Monitoring of tissue-specific immune responses in man to naturally occurring pathogens using mass cytometric monitoring",
+        "Num of Subjects": "7",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY472",
+        "Study Title": "Plasmablast response to inactivated and live attenuated influenza vaccines (TIV3/TIV3 ID) in 2013",
+        "Num of Subjects": "24",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY478",
+        "Study Title": "T cell responses to H1N1v and a longitudinal study of seasonal influenza vaccination - 2013",
+        "Num of Subjects": "70",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY508",
+        "Study Title": "Humoral responses to West Nile virus",
+        "Num of Subjects": "12",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY517",
+        "Study Title": "Natural Killer cells in resistance to infection with West Nile virus",
+        "Num of Subjects": "14",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY520",
+        "Study Title": "Immunologic and genomic signatures of influenza vaccine response - 2013 (see companion studies SDY63, SDY404, SDY400)",
+        "Num of Subjects": "61",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY63",
+        "Study Title": "Immunologic and genomic signatures of influenza vaccine response - 2010 (see companion studies SDY400, SDY404, SDY520)",
+        "Num of Subjects": "49",
+        "Experiment Measurement Techniques": "2",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY640",
+        "Study Title": "Immunologic and genomic signatures of influenza vaccine response - 2014",
+        "Num of Subjects": "37",
+        "Experiment Measurement Techniques": "1",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY903",
+        "Study Title": "Human Immune Signature of Zika virus infection",
+        "Num of Subjects": "29",
+        "Experiment Measurement Techniques": "3",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY1390",
+        "Study Title": "CRISPR-Cas9 Engineering in Primary Cell Protocol",
+        "Num of Subjects": "",
+        "Experiment Measurement Techniques": "",
+        "Pis": "",
+        "Publications": "",
+        "Pubmed ID": ""
+    },
+    {
+        "Supporting Data": "SDY1256",
+        "Study Title": "Small Sample- Big Data: The Gambia",
+        "Num of Subjects": "30",
+        "Experiment Measurement Techniques": "Flow Cytometry,Luminex xMAP,Mass Spectrometry,RNA sequencing",
+        "Pis": "Ofer Levy (Boston Children's Hospital, Harvard Medical School)",
+        "Publications": "Dynamic molecular changes during the first week of human life follow a robust developmental trajectory. Nat Commun. Mar 2019. doi: 10.1038/s41467-019-08794-x.",
+        "Pubmed ID": "30862783"
+    }
+]

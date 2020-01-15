@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+    <head>
+
+        <title>Immport Ecosystem Footer Fragment</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+        <!-- Cache Control -->
+
+        <meta http-equiv="Cache-control" content="no-cache, no-store, private, pre-check=0, post-check=0, max-age=0, s-maxage=0, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <!-- Security -->
+
+        <meta http-equiv="Strict-Transport-Security" content="max-age=31536000 ; includeSubDomains" />
+
+        <!-- Scripts
+
+            IMPORTANT:
+
+            The last script tag listed before the styles must end with a </script> tag,
+            so for consistency sake, a closing </script> should be used for all scripts.
+        -->
+        <script type="text/javascript" src="../../static/js/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}">
+        </script>
+
+        <script type="text/javascript" src="../../static/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}">
+        </script>
+
+        <!-- Styles -->
+
+        <link rel="shortcut icon" href="../../static/images/immport-favicon.ico"
+            th:href="@{/images/immport-favicon.ico}" type="image/x-icon" />
+
+        <link rel="styleSheet" type="text/css" href="../../static/css/bootstrap.min.css"
+            th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" />
+
+        <link rel="stylesheet" type="text/css" href="../../static/css/ecosystem.css"
+            th:href="@{/css/ecosystem.css}" />
+
+    </head>
+
+    <body>
+        <div th:fragment="applicationFooter" class="container">
+
+            <div class="row row-footer">
+                <div class="col-md-10 col-xs-12">
+	      			<div class="row mod-margin-left">
+		                <div class="col-md-5 col-xs-12">
+		                    <div class="block-header">Sponsored by:</div>
+		                    <ul>
+		                        <li><a href="https://www.niaid.nih.gov/" target="_blank">National Institute of Allergy and Infectious Diseases (NIAID)</a></li>
+		                        <li><a href="http://www.nih.gov/" target="_blank">National Institutes of Health (NIH)</a></li>
+		                        <li><a href="http://www.hhs.gov/" target="_blank">Health and Human Services (HHS)</a></li>
+					            <li><a href="https://www.marchofdimes.org/" target="_blank">March of Dimes (MOD)</a></li>
+		                    </ul>
+		                </div>
+				        <div class="col-md-7 ">
+				          <div class="col-md-7 col-xs-6">
+				            <div class="block-header">
+				              <a href="https://www.marchofdimes.org/research/stanford-university-overview.aspx" target="_blank"><img class="table-img" src="/images/mod/mod-logo-background.png" height="120px"/></a>
+				            </div>
+				          </div>
+				          <div class="col-md-5 col-xs-6">
+				            <div class="block-header">
+				              <br/>
+				              <a href="https://www.ucsf.edu/" target="_blank"><img class="table-img" src="/images/mod/UCSF-logo-background.png" height="60px"/></a>
+				            </div>
+				          </div>
+				        </div> 
+			        </div>               
+
+                
+                </div>
+                <div class="col-md-2 col-xs-12">
+					<div id="socialmedia-block" class="socialmedia-block">
+                       	<div class="title" style="margin-bottom:7px;">Connect with Us</div>
+                        <div class="socialmedia-block-inner">
+                            <ul>
+                                <script>(function(d, s, id) {
+                                  var js, fjs = d.getElementsByTagName(s)[0];
+                                  if (d.getElementById(id)) return;
+                                  js = d.createElement(s); js.id = id;
+                                  js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";
+                                  fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));
+                                </script>
+                                <li class="fb-like" data-href="https://www.facebook.com/Immport" 
+                                    style="padding-bottom:3px;"
+                                    data-send="false" data-layout="button_count" data-width="650" 
+                                    data-show-faces="false" data-font="lucida grande"></li>
+                                <li class="socialmedia-link">
+                                    <img src="../../static/images/footer/twitter-icon.png"
+                                        th:src="@{/images/footer/twitter-icon.png}" />
+                                    <a class="twitter" href="https://twitter.com/#!/ImmPortDB" style="text-decoration: none" target="_blank">
+                                        <span>Twitter</span>
+                                    </a>
+                                </li>
+                                <li class="socialmedia-link">
+                                    <img src="../../static/images/footer/rss-icon.png"
+                                        th:src="@{/images/footer/rss-icon.png}" />
+                                    <a th:href="${@ecosystemProperties.getNewsfeedUrl()}"
+                                        style="text-decoration: none" target="_blank">
+                                        <span>RSS Feed</span>
+                                    </a>
+                                </li>
+                                <li class="socialmedia-link">
+                                    <img src="../../static/images/footer/google-groups-icon.png"
+                                        th:src="@{/images/footer/google-groups-icon.png}" />
+                                    <a href=" https://groups.google.com/d/forum/immport" style="text-decoration: none" target="_blank">
+                                        <span>Google Group</span>
+                                    </a>
+                                </li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+                <br/>
+            </div>
+   			<div class="row mod-margin-left row-footer">
+                <div class="col-md-5">
+                    <div class="block-header">
+                        <a href="mailto:BISC_Helpdesk@niaid.nih.gov"
+                            th:href="${@ecosystemProperties.getHelpdeskUrl()}">Contact Us</a> | 
+                        <a th:href="${@ecosystemProperties.getPrivacyPolicyUrl()}"
+                            target="_blank">Privacy Policy</a> | 
+                        <a th:href="${@ecosystemProperties.getDisclaimerUrl()}"
+                            target="_blank">Disclaimer</a> | 
+                        <a th:href="${@ecosystemProperties.getAccessibilityUrl()}"
+                            target="_blank">Accessibility</a>
+                    </div>
+				</div>
+				<div class="col-md-7">
+					<div class="block-header pull-right">
+		                       Recommended Browsers: Chrome, Firefox, Safari v7+, Internet Explorer v11+
+					</div>
+				</div>
+			</div>            
+        </div>
+    </body>
+</html>

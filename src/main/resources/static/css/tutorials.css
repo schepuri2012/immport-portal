@@ -1,0 +1,61 @@
+.page-title {
+	font-size: 45px;
+	color: #510d9e;
+	text-align: center;
+	background-color: #f5f5f5;
+	padding: 10px 10px 10px 10px;
+	margin: 30px 0px 20px 20px;
+}
+
+.title-div {
+	min-height: 150px;
+	display: block;
+	margin: auto;
+}
+
+.homeIcon {
+    display: inline-block;
+    margin: auto;
+    color: #9342f0;
+    opacity: 0.8;
+}
+
+.tutorial-highlight {
+	box-shadow: 0px 1px 12px 0px #9342f0;
+}
+
+.tutorial-highlight:hover {
+	box-shadow: 0px 1px 12px 0px #510d9e;
+}
+.tutoTitle {
+	font-size: 30px;
+	color: #9342f0;
+	text-align: center;
+	
+}
+.tutorialsListing {
+    background-color: #fff;
+    padding: 10px;
+    min-height: 250px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    border-color: #ddd;
+}
+
+.tutDiv {
+	cursor: pointer;
+}
+
+.vid {
+	color:#337ab7;
+	text-decoration:none;
+	cursor: pointer;
+}
+.vid:hover{
+	text-decoration:underline;
+}
+
+.tutoText {
+	padding: 10px;
+	
+}

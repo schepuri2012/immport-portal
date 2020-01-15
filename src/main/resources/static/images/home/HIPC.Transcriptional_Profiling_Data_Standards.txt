@@ -1,0 +1,17 @@
+HIPC (Human Immunology Project Consortium, https://www.niaid.nih.gov/research/human-immunology-project-consortium) Transcriptional Profiling Data Standard
+
+The HIPC Data Standards Working group proposes the following data standard for transcriptional profiling (microarray and RNA-seq) data standard:
+
+	Raw (e.g., .cel files) should be submitted to GEO
+		Processed data (expression values used in publication) should be submitted to GEO
+	For RNA-seq:
+		Raw data (FASTQ) should be submitted to SRA
+		Processed data (e.g., TPM values) should be submitted to GEO
+
+ImmPort will link to these data using the Experiment Sample templates, which will include:
+
+	Repository Name: GEO. 
+	Repository Accession: the GEO sample accession number (GSMxxx). 
+	For RNA-seq data, the GSM record in GEO should include a reference to the SRA accession for the raw data. Note that for next-generation sequencing, GEO can broker the complete set of raw data files (e.g., FASTQ) to the SRA database on your behalf (https://www.ncbi.nlm.nih.gov/geo/info/faq.html#rawdata).
+
+RECOMMENDATION: After ImmPort data submission, the GEO metadata in the SOFT file should be updated to include a link back to the data in ImmPort . This will make users of GEO aware that related data is available through ImmPort. This should be done by including the tag: !Sample_ImmPort_expsamp_acc = ImmPort ExperimentSample ID

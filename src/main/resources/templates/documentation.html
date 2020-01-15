@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+    
+<style>
+.dl-horizontal dt {
+    width: 200px;
+	margin-top: 20px;
+}
+.dl-horizontal dd {
+    margin-left: 220px;
+	margin-top: 20px;
+}
+</style>
+
+    <head>
+       <title>Immport Documentation</title>
+    </head>
+
+<body>
+  <div layout:fragment="content">
+   <div class="container">
+	<div class="row">
+    	<div class="col-md-12">
+        	<h2>Documentation</h2>
+    	</div>
+	</div>
+<div class="row">
+	<div class="col-md-10">
+	<dl class="dl-horizontal">
+		<dt style="margin-top:0px;">System Documentation</dt>
+		<dd>
+			<p>
+			<strong>Schema Documentation</strong><br></br>
+			The table and column documentation for the Public ImmPort Schema are available
+			<a target="_blank" th:href="${@ecosystemProperties.getSharedDataUrl() + '/dataModelDocumentation?table=study'}">here.</a>
+			</p>
+			<p>
+			Data Model Viewer is available
+			<a target="_blank" th:href="${@ecosystemProperties.getDataUploadDataModelViewerUrl()}">here.</a>
+			</p>
+<!-- 			<p>
+			Entity-Relationship diagrams are available
+			<a href="/public/schema/schemaDiagram/AllTables">here.</a>
+			</p> -->
+		</dd>
+		<dd>
+			<p>
+			<strong>Requirements and Design</strong><br></br>
+			The System Architecture and Software Design Specification (SASDS) v.5.0 defines the overall architecture and software design
+			for the ImmPort system as of March 2016. The SASDS addresses hardware, software, and database design. 
+			<a href="/docs/BISC_System_Architecture_and_Software_Design_Specification_v5.0.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+			</p>
+		</dd>
+	<dd>
+			<p>
+			<strong>Functional Requirements</strong><br></br>
+			The Functional Requirements defines the function of the Administrative section for the ImmPort system which includes creating, updating, sorting and deleting a program, contract grant and user.
+			<a href="/docs/Functional_Requirements_ImmPort_Admin_v1.0.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+			</p>
+		</dd>
+		<!-- <dt>Flyers</dt>
+		<dd>
+			<a href="http://immport-submission.niaid.nih.gov/downloads/documentation/ImmPortPoster_091114a.pptx" target="_blank" title="ImmPort Poster" class="buttonlink">ImmPort Poster</a>
+		</dd> -->
+		
+		<dt>Documentation</dt>
+		<dd>
+			<p>
+			<strong>Data Upload Documentation</strong><br></br>
+			A description of <a href="/downloads/data/upload/templates/ImmPort.Upload.Templates.Description.pdf" target="_new">ImmPort Data Upload resources</a> is available 
+			</p>
+			<p>
+			<strong>Data Upload Templates</strong><br></br>
+			The <a href="/downloads/data/upload/templates/ImmPortTemplates.zip" target="_new">ImmPort Data Upload Templates</a> can be downloaded
+			</p>
+			<p>
+			<strong>ImmPort De-identification Process</strong><br></br>
+			Download a copy of the ImmPort De-identification Process
+			<a href="/docs/BISC-Subject-De-identification.pdf" target="_blank"><i class="fa fa-file-pdf-o"></i>.</a>
+			</p>
+			<p>
+			<strong>Request Genotyping data</strong><br></br>
+			Download a Powerpoint describing the Genotyping Data Request Process
+			<a href="/docs/GT_Data_Request_Process.pptx" target="_blank"><i class="fa fa-file-powerpoint-o"></i>.</a>
+			<br></br>
+			Download the Genotyping Data Request form
+			<a href="/docs/GT_Data_Request_Form-v-3.docx" target="_blank"><i class="fa fa-file-word-o"></i>.</a>
+			</p>
+			<!-- <p>
+			<strong>Software Release Notes</strong><br></br>
+			View software release notes for the current version of ImmPort and past releases
+			<a href="/home/softwareReleaseNotes">View</a>
+			</p> -->
+			<p>
+			<strong>Data Release Notes</strong><br></br>
+			View data release notes for current and past releases.
+			<a th:href="${@ecosystemProperties.getNewsUrl()}">View</a>
+			</p>
+			<p>
+			<strong>Data Templates</strong><br></br>
+			 View the Data Templates page:
+			<a th:href="${@ecosystemProperties.getDataUploadTemplateListUrl()}">View</a>
+			</p>		
+			<p>
+			<strong>Template Documentation</strong><br></br>
+			 View the Template Documentation page:
+			<a th:href="${@ecosystemProperties.getDataUploadTemplateDescriptionInteractiveUrl()}">View</a>
+			</p>		
+		</dd>
+		<dt>Scientific Guidelines</dt>
+		<dd>
+			<strong>HLA Documentation and Analysis Methods Manuals</strong><br></br>
+			<p>
+			<a href="/docs/standards/AlleleValidationSpecification.doc" title="HLA Quality Control Pipeline" target="_blank">HLA Quality Control Pipeline Specifications</a>
+			</p>
+			<p>
+			<a href="/docs/standards/MethodsManual_HaplotypeFreqs+LD_v8.pdf" title="Haplotype Estimation and Linkage Disequilibrium Methods Manual" target="_blank">Haplotype Estimation and Linkage Disequilibrium Methods Manual</a>
+			</p>
+			<p><a href="/docs/standards/MM-HL-Adisease-version010.pdf" title="HLA Disease Associations Methods Manual Version 0.1.0 (July 25, 2011)" target="_blank">HLA Disease Associations Methods Manual Version 0.1.0 (July 25, 2011)</a>
+			</p>
+			<p>
+			<a href="/docs/standards/Proposal_For_HLA_Data_Validation_Version_2.doc" title="Proposal for HLA Data Validation" target="_blank">Proposal for HLA Data Validation</a>
+			</p>
+			<p>
+			<a href="/docs/standards/Hardy-Weinberg_Methods_Manual.pdf" title="Hardy-Weinberg Proportions Methods Manual" target="_blank">Hardy-Weinberg Proportions Methods Manual: Testing fit of genotype frequencies to Hardy-Weinberg proportions</a>
+			</p>
+			<p>
+			<a href="/docs/standards/SNP_Imputation_Methods_Manual.pdf" title="Genotype SNP Imputation Methods Manual" target="_blank">Genotype SNP Imputation Methods Manual</a>
+			</p>
+			<p>
+			<a href="https://www.niddkrepository.org/studies/t1dgc-special/" title="NIDDK Immunochip to HLA tool" target="_blank">T1DGC Immunochip HLA Reference Panel for Imputation with SNP2HLA</a>
+			</p>
+		</dd>
+	</dl>
+	</div>
+</div>
+<br></br>
+	</div>
+  </div>	
+</body>
+</html>

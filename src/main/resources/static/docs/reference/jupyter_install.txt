@@ -1,0 +1,22 @@
+Install Jupyter Notebooks:
+
+The easiest way to install Jupyter Notebooks is to do it with a package manager called miniconda. You will not need to worry about installing python, it comes with the conda install.
+Conda also allows you to install other libraries you might need for data analysis such as pandas or numpy.
+
+Instructions to install conda here:
+https://conda.io/docs/install/quick.html
+
+Once miniconda is installed and running on your system, install jupyter by typing in your terminal:
+$ conda install jupyter
+
+To install other libraries that you might need, type in your terminal:
+$ conda install pandas
+
+Note: An alternative is another package manager called Anaconda, which installs conda along with jupyter and a series of python libraries. Choose this option if you don't care which libraries come with your install. Miniconda is a more lightweight alternative which gives you a lot more control over what gets installed on your system.
+https://docs.continuum.io/anaconda/install
+
+To launch a jupyter notebook, type:
+$ jupyter notebook
+
+the interface to the notebook should open in your browser. If it doesn't, or if you would like to see it in another browser, open your favorite browser and go to
+http://localhost:8888/

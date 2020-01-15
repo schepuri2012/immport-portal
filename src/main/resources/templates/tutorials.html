@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+        <title>ImmPort Tutorials</title>
+		
+		<script th:inline="javascript">
+    		var asperaInstallHelpUrl = [[${@ecosystemProperties.getAsperaInstallHelpUrl()}]];
+    		var immPortApiDocsUrl = [[${@ecosystemProperties.getImmPortApiDocsUrl()}]];
+    		var sharedDataUrl = [[${@ecosystemProperties.getSharedDataUrl()}]];
+    		var dataUploadDataModelViewerUrl = [[${@ecosystemProperties.getDataUploadDataModelViewerUrl()}]];
+    		var dataUploadTemplateListUrl = [[${@ecosystemProperties.getDataUploadTemplateListUrl()}]];
+    		var dataUploadTemplateDescriptionInteractiveUrl = [[${@ecosystemProperties.getDataUploadTemplateDescriptionInteractiveUrl()}]];
+    		var dataUploadUrl = [[${@ecosystemProperties.getDataUploadUrl()}]];
+    		var homeUrl = [[${@ecosystemProperties.getHomeUrl()}]];
+    		var portalUrl = homeUrl.substring(0, homeUrl.lastIndexOf('/'));
+    		var deepLearningCytometryDataUrl = [[${@ecosystemProperties.getDeepLearningCytometryDataUrl()}]];
+		</script>
+
+        <script type="text/javascript" src="/js/tutorials.js"></script>
+        <script type="text/javascript" src="/js/BigPicture.min.js"></script>
+         
+        <link rel="stylesheet" type="text/css" href="/css/tutorials.css" />
+
+    </head>
+
+
+    <body>
+        <div layout:fragment="content">
+            <br />
+            <div class="row">
+                <div class="col-md-4 col-xs-12 ">
+                    <div class="immport-about">
+                        <p>
+                  			<img src="/images/immport-resources.png" style="height:150px" />
+                		</p>
+	                </div>
+    	        </div>
+            	<div class="col-md-8 col-xs-12 title-div">
+              		<div class="panel panel-default text-center page-title">
+                    	Tutorials and Links
+              		</div>
+            	</div>
+            </div>
+
+          <hr />
+          <div class="row">
+            <div class="col-md-12 col-xs-12" style="margin-top: 15px;">
+				<div class="col-md-6 col-xs-12 tutoCat">
+					<div class="row">
+					     <div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+					     	<div class="panel panel-default resources-panel apis">
+					        	<div class="panel-heading  text-center">
+					            	<img src="/images/api-logo.png" style="height:50px;" />
+					          	</div>
+					          	<div class="panel-body text-center">
+					            	<span class="tools-heading">Using ImmPort APIs</span><br />
+					          	</div>
+					      	</div>
+					    </div>
+					    <div class="col-md-6 col-xs-12 sideTextDiv toHideL">
+					    	<p>ImmPort Application Program Interfaces can be used to query the Shared Data content, and download result files.</p>
+					    </div>
+					</div>
+                
+	                <div class="row toShow" style="display:none;">
+						<div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+							<div class="panel panel-default  resources-panel ip_data">
+						        <div class="panel-heading text-center">
+						        	<i class="fa fa-database homeIcon" aria-hidden="true" style="font-size:40px; height: 50px;"></i>
+						          	&nbsp;&nbsp;
+						         	<i class="fa fa-file-text-o homeIcon" aria-hidden="true" style="font-size:40px; height: 50px;"></i>
+						        </div>
+						        <div class="panel-body text-center">
+						        	<span class="tools-heading">ImmPort and ImmPort Data</span><br />
+						        </div>
+						    </div>
+						</div>
+	                </div>
+                
+					<div class="row">
+                  		<div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+                    		<div class="panel panel-default resources-panel prog_basics">
+                      			<div class="panel-heading  text-center">
+                        			<img src="/images/tuto/binary_base.png" style="height:50px;" />
+                     		 	</div>
+		                    	<div class="panel-body text-center">
+		                        	<span class="tools-heading">Basics of Programming</span><br />
+		                    	</div>
+                    		</div>
+                  		</div>
+		                <div class="col-md-6 col-xs-12 sideTextDiv toHideL">
+		                    <p>Useful links and tutorials exploring basics of programming, with a focus on Python, Jupyter Notebooks and R.</p>
+		                </div>
+		            </div>
+
+	                <div class="row toShow" style="display:none;">
+						<div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+							<div class="panel panel-default resources-panel data_analysis">
+						    	<div class="panel-heading  text-center">
+						    		<img src="/images/tuto/analysis-icon.png" style="height:50px;" />
+						    	</div>
+						    	<div class="panel-body text-center">
+						      		<span class="tools-heading">Data Analysis</span><br />
+						    	</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+					    	<div class="panel panel-default resources-panel galaxy">
+					        	<div class="panel-heading  text-center">
+					           		<img src="/images/tuto/immport-data-analysis-icon-nobg.png" style="height:50px;" />
+					          	</div>
+					          	<div class="panel-body text-center">
+					            	<span class="tools-heading">Using ImmPort Galaxy</span><br />
+					          	</div>
+					    	</div>
+					    </div>
+					    <div class="col-md-6 col-xs-12 sideTextDiv toHideL">
+					    	<p>Still missing the old ImmPort Data Analysis interface? Here are some tips that might help you get used to the new ImmPort Data Analysis platform, ImmPort Galaxy.</p>
+					    </div>
+					</div>
+
+	                <div class="row toShow" style="display:none;">
+						<div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+							<div class="panel panel-default resources-panel data_upload">
+						    	<div class="panel-heading  text-center">
+						        	<i class="fa fa-file-text-o homeIcon" aria-hidden="true" style="font-size:40px; height: 50px;"></i>
+									&nbsp;&nbsp;
+									<i class="fa fa-upload homeIcon" aria-hidden="true" style="font-size:40px; height: 50px;"></i>
+								</div>
+								<div class="panel-body text-center">
+									<span class="tools-heading">Preparing Data Upload</span><br />
+								</div>
+						    </div>
+						</div>
+					</div>
+	            </div>
+
+				<div class="col-md-9 col-xs-18 tutoList" style="display:none;">
+					<div class="tutorialsListing">
+						<div class="row text-center tutoTitle">
+						placeholder title
+						</div>
+						<hr />
+						<div class="tutoText">
+						<p>some text here</p>
+						</div>
+					</div>
+				</div>
+
+	            <div class="col-md-6 col-xs-12 toHide">
+	            	<div class="row">
+	                	<div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+	                    	<div class="panel panel-default  resources-panel ip_data">
+	                        	<div class="panel-heading text-center">
+		                        	<i class="fa fa-database homeIcon" aria-hidden="true" style="font-size:40px; height: 50px;"></i>
+		                           	&nbsp;&nbsp;
+		                          	<i class="fa fa-file-text-o homeIcon" aria-hidden="true" style="font-size:40px; height: 50px;"></i>
+	                          	</div>
+		                        <div class="panel-body text-center">
+		                            <span class="tools-heading">ImmPort and ImmPort Data</span><br />
+		                        </div>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12 sideTextDiv">
+			            	<p>Here are some resources to help understand the ImmPort data model, explore data in ImmPort and get started with your own re-analysis.</p>
+			            </div>
+					</div>
+
+	                <div class="row">
+						<div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+							<div class="panel panel-default resources-panel data_analysis">
+						    	<div class="panel-heading  text-center">
+						    		<img src="/images/tuto/analysis-icon.png" style="height:50px;" />
+						    	</div>
+						    	<div class="panel-body text-center">
+						      		<span class="tools-heading">Data Analysis</span><br />
+						    	</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12 sideTextDiv">
+						  	<p>You have data, now what? Here are some data analysis tutorials in Python and R based on ImmPort data.</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 col-xs-12 applicationDiv resourcesDiv tutDiv">
+							<div class="panel panel-default resources-panel data_upload">
+						    	<div class="panel-heading  text-center">
+						        	<i class="fa fa-file-text-o homeIcon" aria-hidden="true" style="font-size:40px; height: 50px;"></i>
+									&nbsp;&nbsp;
+									<i class="fa fa-upload homeIcon" aria-hidden="true" style="font-size:40px; height: 50px;"></i>
+								</div>
+								<div class="panel-body text-center">
+									<span class="tools-heading">Preparing Data Upload</span><br />
+								</div>
+						    </div>
+						</div>
+						<div class="col-md-6 col-xs-12 sideTextDiv">
+							<p>Uploading data to ImmPort doesn't have to be a challenge. Here are some resources to help you get started.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<br />
+        </div>
+    </body>
+</html>

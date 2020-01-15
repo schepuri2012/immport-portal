@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="hideApplicationHeader = 'true'">
+
+<!-- <script src="/resources/js/IP/common/ItemSet.js" />" type="text/javascript"></script>
+<script src="/resources/js/IP/home/-home.js" />"type="text/javascript"></script>
+<script src="/resources/external/handlebars/handlebars-v1.3.0.js" />" type="text/javascript"></script> -->
+
+<script id="carousel-indicator-template" type="text/x-handlebars-template">
+	<li data-target="{{ itemTarget }}" data-slide-to="{{ itemIndex }}" class="{{ itemActiveText }}"></li>
+</script>
+
+<!-- <script>
+(function() {
+    function checkCondition(v1, operator, v2) {
+        switch(operator) {
+            case '==':
+                return (v1 == v2);
+            case '===':
+                return (v1 === v2);
+            case '!==':
+                return (v1 !== v2);
+            case '<':
+                return (v1 < v2);
+            case '<=':
+                return (v1 <= v2);
+            case '>':
+                return (v1 > v2);
+            case '>=':
+                return (v1 >= v2);
+            case '&&':
+                return (v1 && v2);
+            case '||':
+                return (v1 || v2);
+            default:
+                return false;
+        }
+    }
+
+    Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+        return checkCondition(v1, operator, v2)
+                    ? options.fn(this)
+                    : options.inverse(this);
+    });
+}());
+</script> -->
+
+<script id="carousel-item-template" type="text/x-handlebars-template">
+    <div class="item carousel-item-{{ itemIndex }} {{ itemActiveText }}">
+		<div class="carousel-item-title" style="display:none;">{{{ title }}}</div>
+		{{#ifCond itemIndex "==" 0}}
+	        <div class="col-md-6 carousel-item-left">
+				{{#if paragraph1}}<p class="text-justify">{{{ paragraph1 }}}</p>{{/if}}
+				{{#if paragraph2}}<p class="text-justify">{{ paragraph2 }}</p>{{/if}}
+				{{#if paragraph3}}<p class="text-justify">{{ paragraph3 }}</p>{{/if}}
+				{{#if paragraph4}}<p class="text-justify">{{ paragraph4 }}</p>{{/if}}
+				<p>{{{ link }}}</p>
+        	</div>
+        <!--	<div class="col-md-6 carousel-item-right">
+				{{#if image1}}<img class="carousel-item-image" src="<c:url value="/resources/images/carousel/{{ image1 }}" />" />{{/if}}
+				{{#if image2}}<img class="carousel-item-image" src="<c:url value="/resources/images/carousel/{{ image2 }}" />" />{{/if}}
+				{{#if image3}}<img class="carousel-item-image" src="<c:url value="/resources/images/carousel/{{ image3 }}" />" />{{/if}}
+			</div>	-->
+		{{else}}
+	        <div class="col-md-5 carousel-item-left">
+				{{#if paragraph1}}<p class="text-justify">{{{ paragraph1 }}}</p>{{/if}}
+				{{#if paragraph2}}<p class="text-justify">{{ paragraph2 }}</p>{{/if}}
+				{{#if paragraph3}}<p class="text-justify">{{ paragraph3 }}</p>{{/if}}
+				{{#if paragraph4}}<p class="text-justify">{{ paragraph4 }}</p>{{/if}}
+				<p>{{{ link }}}</p>
+        	</div>
+        <!--	<div class="col-md-7 carousel-item-right">
+				{{#if image1}}<img class="carousel-item-image" src="<c:url value="/resources/images/carousel/{{ image1 }}" />" />{{/if}}
+				{{#if image2}}<img class="carousel-item-image" src="<c:url value="/resources/images/carousel/{{ image2 }}" />" />{{/if}}
+				{{#if image3}}<img class="carousel-item-image" src="<c:url value="/resources/images/carousel/{{ image3 }}" />" />{{/if}}
+			</div>	-->
+		{{/ifCond}}
+    </div>
+</script>
+
+<script type="text/javascript">
+	function preventDefaultAction(e){
+		e.preventDefault();
+	}
+
+	setTimeout(function() {
+    	$('#messageDiv').fadeOut('slow'); 
+	}, 10000);
+</script>
+					
+<style>
+#dataTreemap {
+	min-height:500px;
+}
+.right-info-panels {
+	margin-top: 5px;
+}
+.right-info-panels .panel-heading {
+	padding: 5px 10px 5px 10px;
+}
+.right-info-panels .panel-body {
+	padding: 5px 10px 5px 10px;
+	margin-bottom: 15px;
+	max-height: 204px;
+	overflow-y: scroll;
+}
+.right-info-panels .panel-body .info-block {
+	padding: 8px 5px 23px 5px;
+}
+.right-info-panels .panel-body .info-block:hover {
+	background-color: #f2f2f2;
+}
+.form-study-search {
+	margin-top: 2px;
+	margin-bottom: 0px;
+	padding-right: 0px;
+}
+
+#facet-container .panel {
+    margin-bottom: 10px;
+}
+#facet-container .panel-heading {
+    padding: 5px 10px;
+    background-color: #E8DFD7;
+}
+#facet-container .panel-heading .panel-title {
+    font-size: 14px;
+}
+#facet-container .panel-body {
+   	padding: 5px 10px;
+}
+
+.carousel-container {
+	padding-bottom: 10px;
+	min-height: 350px;
+}
+
+.applicationDiv .logo-panel .panel-link-list {
+	margin-top: 20px;
+	text-align: left;
+	list-style-type:none;
+}
+
+</style>
+<body>
+<div layout:fragment="content" class="container">
+    
+    <div th:if="${alert_message != null}" class="row" style="margin-top: -20px; padding-bottom: 20px;">
+    	<div class="alert alert-dismissible" th:classappend="${alert_class}" >
+    	  	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    		<span class="fa" th:classappend="${alert_icon}"></span> &nbsp;
+	    	<span th:text="${alert_message}"></span>     	
+    	</div>
+    </div>
+    
+    <div class="row logo-panel">
+	    	    
+		<div class="col-md-7">	  
+    		<div class="immport-about">
+    			<p>
+            		<img class="img-fluid" src="/images/home/immport-main-icon.png" style="margin-top: 20px;max-width: 500px;height:auto;"></img>
+            	</p>
+		    <p class="immport-banner text-justify">
+	            <a th:href="${@ecosystemProperties.getHomeUrl()}">ImmPort-Portal SCHEPURI-EKS-CD</a> is funded by the NIH, NIAID and DAIT in support of the NIH mission to share data with the public.   Data shared through ImmPort has been provided by NIH-funded programs, other research organizations and individual scientists  ensuring these discoveries will be the foundation of future research.
+	        </p>
+
+			</div>
+	    </div>
+		<div class="col-md-5">	        
+    		<div class="immport-about" style="float:right;">
+    			<p>
+            		<img class="img-fluid"  src="/images/home/whatIsImmPort.jpg" style="margin-top: 25px;max-width: 100%;height:auto;"></img>
+            	</p>
+			</div>
+	    </div>
+ 
+	        
+    </div>
+    
+    <div class="row" >
+		<div class="col-sm-8" style="padding-left: 0px;">
+	    	<div class="col-sm-6 applicationDiv" style="padding-left: 0px;">
+	    		<div class="panel panel-default logo-panel orange-logo-panel">
+					<div class="panel-heading logo-panel-heading text-center">
+						<a th:href="${@ecosystemProperties.getPrivateDataUrl()}"  target="_blank"><img style="height:98px;" src="/images/home/immport-icon-orange.png"/></a>
+					</div>
+					<div class="panel-body text-center">
+						<span class="home-heading"><a th:href="${@ecosystemProperties.getPrivateDataUrl()}"  target="_blank">Private Data</a></span><br/>	
+							<a th:href="${@ecosystemProperties.getPrivateDataUrl()+ '/upload/data/uploadDataMain'}"  target="_blank">Upload</a> <br/>
+							<a th:href="${@ecosystemProperties.getDataUploadValidatorDocumentationUrl()}"  target="_blank">Validator</a> <br/>
+							<a th:href="${@ecosystemProperties.getPrivateDataUrl()+ '/research/study/studysearchmain#/studysearch'}"  target="_blank">Search</a> <br/>
+					</div>
+	    		</div>		
+	    	</div>	
+	    	<div class="col-sm-6 applicationDiv">
+	    		<div class="panel panel-default logo-panel blue-logo-panel">
+					<div class="panel-heading logo-panel-heading text-center">
+						<a th:href="${@ecosystemProperties.getSharedDataUrl()}"  target="_blank"><img style="height:98px;" src="/images/home/immport-icon-blue.png"/></a>
+					</div>
+					<div class="panel-body text-center">
+						<span class="home-heading"><a th:href="${@ecosystemProperties.getSharedDataUrl()}"  target="_blank">Shared Data</a></span><br/>
+							<a th:href="${@ecosystemProperties.getDataUploadDataModelViewerUrl()}"  target="_blank">Data Model</a> <br/>
+							<a th:href="${@ecosystemProperties.getSharedDataStudySearchUrl()}"  target="_blank">Search/Download</a> <br/>
+							<a th:href="${@ecosystemProperties.getSharedDataGeneListsUrl()}"  target="_blank">Gene Lists</a> <br/>
+					</div>
+				</div>
+	    	</div>
+			
+	    	<div class="col-sm-6 applicationDiv" style="padding-left: 0px;">
+	    		<div class="panel panel-default logo-panel green-logo-panel">
+					<div class="panel-heading logo-panel-heading text-center">
+						<a th:href="${@ecosystemProperties.getDataAnalysisUrl()}"  target="_blank"><img style="height:98px;" src="/images/home/immport-icon-green.png"/></a>
+	 				</div>
+					<div class="panel-body text-center">
+						<span class="home-heading"><a th:href="${@ecosystemProperties.getDataAnalysisUrl()}" target="_blank">Data Analysis</a></span><br/>
+							<a th:href="${@ecosystemProperties.getDataAnalysisUrl() + '/workflow/list_published'}"  target="_blank">Analysis Workflow</a> <br/>
+							<a th:href="${@ecosystemProperties.getDataAnalysisUrl()}"  target="_blank">Automated Clustering</a> <br/>
+							<a th:href="${@ecosystemProperties.getDataAnalysisTutorialsUrl()}" target="_blank">Tutorials</a> <br/>
+					</div>
+	    		</div>
+	    	</div>
+			    	
+	    	<div class="col-sm-6 applicationDiv">
+	    		<div class="panel panel-default logo-panel purple-logo-panel">
+					<div class="panel-heading logo-panel-heading text-center">
+						<a th:href="${@ecosystemProperties.getResourcesUrl()}"  target="_blank"><img style="height:98px;" src="/images/home/immport-icon-purple.png"/></a>
+	 				</div>
+					<div class="panel-body text-center">
+						<span class="home-heading"><a th:href="${@ecosystemProperties.getResourcesUrl()}"  target="_blank">Resources</a></span><br/>
+							<a th:href="${@ecosystemProperties.getResourcesTutorialsUrl()}"  target="_blank">Tutorials</a> <br/>							
+							<a th:href="${@ecosystemProperties.getDocumentationUrl()}"  target="_blank">Documentation</a> <br/>
+							<a th:href="${@ecosystemProperties.getPublicationsUrl()}"  target="_blank">Publications</a> <br/>
+					</div>
+	    		</div>
+	    	</div>		    	
+
+		</div>
+		<div class="col-sm-4 applicationDiv" style="padding-left: 0px; padding-right: 0px; padding-top: 0px;">
+	   		<div class="panel panel-default logo-panel">
+				<a class="twitter-timeline" data-width="400" data-height="900" data-chrome="noheader nofooter noborders" data-theme="light" data-link-color="#337ab7" href="https://twitter.com/ImmPortDB?ref_src=twsrc%5Etfw">Tweets by ImmPortDB</a> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	    	</div>
+		</div>
+		    	
+    </div>    
+<br/><br/><br/>
+ </div>
+
+</body>
+</html>

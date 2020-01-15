@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="layout" th:with="applicationHeader = 'resources'">
+
+    <head>
+        <title>Human Immunology Project Consortium (HIPC)</title>
+        <script type="text/javascript" src="/js/BigPicture.min.js"></script>
+        
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css"/>
+        
+        <script th:inline="javascript">
+    		var sharedDataStudyDetailUrl = [[${@ecosystemProperties.getSharedDataStudyDetailUrl()}]];
+    		var immportS3ApiBaseUrl = [[${@ecosystemProperties.getImmportS3ApiBaseUrl()}]];
+    		var useLocalFileSystemForS3Data = [[${@ecosystemProperties.getUseLocalFileSystemForS3Data()}]];    		
+		</script>
+        
+        <script type="text/javascript" src="/js/hipcDataSets.js"></script>
+       
+        <script type="text/javascript" src="/js/hipcDataCenters.js"></script> 
+
+    <script>  
+    		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    	  ga('create', 'UA-59005155-1', 'auto');
+    	  ga('send', 'pageview');
+	</script>
+        
+        <script>
+        
+/*         $(document).ready(function() {
+            $('#hipcDataSet').DataTable();
+        } ); */
+         
+        
+        
+        
+
+        
+        </script>
+
+        <script type="text/javascript" src="/js/script.js"></script>
+
+        
+    </head>
+
+    <body>
+        <div layout:fragment="content">
+        		<br/><br/><br/>
+				<div class="col-md-12 col-xs-12">
+						<h2 class="text-center">Human Immunology Project Consortium (HIPC) </h2><h3 class="text-center"><i>Powered by <img src="/images/mod/immport-logo-image-32.png" height="20"></img>ImmPort</i></h3>
+				</div>
+			<br/><br/><br/>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-newspaper-o"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${contractStudyCnt}" data-speed="2000"></span>
+						<span class="number-label">Studies</span>
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-flask"></i>
+						</div>
+						<span id="measuretechcntSpan" class="number-big count timer" data-from="0" th:attr="data-to=${expMeasureTechCnt}" data-speed="2000"></span>
+						<span class="number-label">Types of Measurements </span> 
+					</div>
+					<div class="col-md-2 col-xs-4 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-user"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${subjectCnt}" data-speed="2000"></span>
+						<span class="number-label">Participants</span>
+					</div>
+					<div class="col-md-2 col-xs-6 counters" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-search"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" th:attr="data-to=${expSmplCnt}" data-speed="2000"></span>
+						<span class="number-label">Experimental Samples</span>
+					</div>
+					<div class="col-md-2 col-xs-6" style="min-height:165px;">
+						<div class="number-img">
+								<i class="fa fa-download"></i>
+						</div>
+						<span class="number-big count timer" data-from="0" data-to="15159" data-speed="2000"></span>
+						<span class="number-label">Downloads</span>
+					</div>
+					<div class="col-md-1">
+					</div>
+				</div>
+			</div>
+				<br/><br/>
+
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<div class="col-sm-4"></div>
+						<div class="col-sm-4 applicationDiv">
+							<div class="panel panel-default resources-panel">
+									<div class="panel-heading text-center">
+										<a href="#HIPC_datasets">
+												<i class="fa fa-files-o homeIcon" aria-hidden="true" style="font-size:35px"></i>
+										</a>
+									</div>
+									<div class="panel-body panel-body-prc text-center">
+											<a href="#HIPC_datasets">
+													<span class="home-heading">HIPC Datasets</span><br />
+											</a>
+									</div>
+							</div>
+						</div>
+						<div class="col-sm-4"></div>
+				
+				
+					</div>
+.
+				</div>
+
+				<br/>
+
+				<div class="row text-justify" style="margin-right: 6px; margin-left: 6px;">
+					<div class="col-md-12 col-xs-12"><br />
+						<p>The Human Immunology Project Consortium (HIPC) program was established in 2010 by the NIAID Division of Allergy, Immunology, and Transplantation as part of the overall NIAID focus on human immunology. Since its inception, 13 HIPC centers have been awarded, with 9 of these sites currently active. The goal of HIPC is to provide a comprehensive understanding of the human immune system and its regulation by revealing novel associations between components of the immune system and other biological systems, identifying novel immune mediators and pathways, establishing predictors of vaccine safety in different populations, and enabling the rapid evaluation of different vaccine formulations and administration regimens in human populations. Well-characterized human cohorts are studied (in the context of infection, vaccination, and immune-mediated diseases) using a variety of modern analytic tools, including multiplex transcriptional, cytokine, metabolomic, and proteomic assays; multiparameter phenotyping of immune cell subsets; assessment of immune cell functional status; and multiple computational methods.</p>
+						<p>Through the <a href="https://www.immuneprofiling.org/hipc/page/show?pg=home"> HIPC program</a>, centralized research resources including access to all of the data generated through the program, the development of <a target="_blank" href="https://www.immunespace.org/project/home/begin.view?pageId=HIPC%20Standards">Data Standards</a> for human immunology studies, and <a href="https://www.immunespace.org/">ImmuneSpace</a> for integrative modeling of human immunology data are available for use by the greater scientific community.</p>
+					</div>
+				</div>
+				<br />
+
+				<div class="row justify-content-md-center">
+					<div class="col-md-12">
+						<div class="col-md-4 applicationDiv resourcesDiv">
+									<div class="panel-heading panel-heading-prc text-center">
+										<a href="https://www.immuneprofiling.org/hipc/page/show" target="_blank">
+											<img src="/images/hipc/HIPC_1.png" style="height:200px;" />
+										</a>
+									</div>
+						</div>
+
+						<div class="col-md-4 applicationDiv resourcesDiv">
+									<div class="panel-heading panel-heading-prc text-center">
+										<a href="https://www.immunespace.org/project/home/begin.view?pageId=HIPC%20Standards" target="_blank">
+											<img src="/images/hipc/HIPC_DataStandards1.png" style="height:200px;" />
+										</a>
+							        </div>
+						</div>
+						
+							<div class="col-md-4 applicationDiv resourcesDiv">
+									<div class="panel-heading panel-heading-prc text-center">
+										<a href="https://www.immunespace.org/" target="_blank">
+											<img src="/images/hipc/HIPC3.png" style="height:200px;" />
+										</a>							
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<br /><br /><br />
+
+				<div class="row" style="margin-right: 6px; margin-left: 6px;">
+					<h3 class="text-center">HIPC Centers</h3><br />
+				</div>
+
+				<br />
+				
+				<div class="">
+					<table id="hipcDataCenters" class="table table-hover table-bordered table-sm mod-margin-left">
+						<thead>
+							<tr >
+								<th>HIPC Center</th>
+								<th>Description</th>
+								<th>Project Dates</th>
+								<th>Shared Studies</th>		
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				<br />
+
+				<div class="mod-margin-left" style="background-color:white;">
+		
+				<div class="row" id="HIPC_datasets" style="margin-right: 6px; margin-left: 6px;"><br /><br /><br />
+					<h3 class="text-center">HIPC Shared Data<br /></h3><h4 class="text-center"><i>Powered by <img src="/images/mod/immport-logo-image-32.png" height="20"></img>ImmPort</i></h4>
+				</div>
+				<br />
+                      <p> Download the <a th:href="${@ecosystemProperties.getImmportS3ApiBaseUrl() +'/resources/portal/hipcStudies?download=true'}" onclick="javascript:ga('send', 'event', 'hipc2', 'click', 'download');">HIPC Data Sets Summary</a> </p>
+				<br /><br />
+				
+
+				<div class="">
+					<table id="hipcDataSet" class="table table-hover table-bordered table-sm mod-margin-left mod-table">
+						<thead>
+							<tr >
+								<th>Supporting Data</th>
+								<th>Study Title</th>
+								<th>Num of Subjects</th>
+								<th>Experiment Measurement Techniques</th>
+								<th>PIs</th>
+								<th>Publications</th>
+								<th>Pubmed ID</th>
+							</tr>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				
+				<div class="mod-margin-left" style="background-color:white;">
+				
+				<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+				<br /><br />
+
+		        </div>
+			</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,196 @@
+Example re-analysis of HAI (hemagglutination inhibition) data from one influenza vaccination study (SDY212) from ImmPort in R
+========================================================
+
+## Introduction
+In this tutorial we will show how to re-analyze the hemagglutination inhibition (HAI) assay data from one study in ImmPort using *R*.
+
+The data stored in ImmPort can be viewed and accessed through [the web site](https://immport.niaid.nih.gov/). The database content is also available for download in MySQL and Tab Separated Value (TSV) files. To download data from ImmPort you must first register for a free account.
+
+### The study
+In ImmPort, each study has a study accession beginning with the letters SDY, followed by a number. For this example, we will focus on the study SDY212.
+
+**Study accession** SDY212
+
+**Title:** Apoptosis and other immune biomarkers predict influenza vaccine responsiveness
+
+**Principal Investigator:** Mark M. Davis
+
+**Description:** In an effort to identify benchmarks of immunological health, influenza vaccination was used in 30 young (20 to 30 years) and 59 older subjects (60 to 89 years) as models for strong and weak immune responses, respectively. 
+
+The data from this study can be downloaded [here](http://immport.org/immport-open/public/study/study/displayStudyDetail/SDY212). If the page opens with an error, please make sure to log into ImmPort.
+
+### Influenza hemagglutination inhibition assay
+The hemagglutination inhibition (HAI) assay can be used to determine the level of antibodies to influenza virus in a serum sample.
+
+A good explanation of the HAI assay is available on the [virology blog](http://www.virology.ws/2009/05/27/influenza-hemagglutination-inhibition-assay/). In short, a fixed amount of virus is added to each well of a 96-well plate. From each serum sample a two-fold dilution series is prepared and the series is added to the plate. A fixed amount of red blood cells are then added and the plate is incubated. In the absence of viral antibodies, the virus will cross-link the cells and form a visible agglutination. Antibodies to the virus present in the serum will prevent the virus from attaching to the red blood cells and this inhibition of hemagglutination is used to quantify the antiviral antibodies. The weakest dilution of serum that produces hemagglutination is used as the measure of antibody concentration. If 1:40 is the weakest dilution that prevents hemagglutination, the HAI titer is 40.
+
+### Influenza vaccine
+Seasonal influenza vaccine contains antigens representing three (trivalent vaccine) or four (quadrivalent vaccine) influenza virus strains:
+* Influenza type A subtype H1N1 virus strain
+* Influenza type A subtype H3N2 virus strain
+* One or two influenza type B virus strains
+
+
+### Seroprotection and seroconversion
+A hemagglutination inhibition assay (HAI) antibody titer of 40 or more is generally associated with a 50% reduction in risk of influenza illness. The World Health Organization defines effective and seropositive influenza vaccine responses as a 28-day post-vaccine antibody HAI titer greater than or equal to 40. The seroprotection rate is defined as the proportion of participants with HAI titers of 40 or more.
+
+Seroconversion/Seroresponders are defined as subjects with a fourfold or greater increase in antibody titer after vaccination. Consequently, the Seroconversion rate is the proportion of subjects with a fourfold or greater increase in HAI antibody titer after vaccination relative to pre-vaccination.
+
+
+## Analysis
+
+### Load *R* libraries used for this analysis
+Libraries that are not available yet in the *R* distribution need to be installed first. In the following commands, three required libraries are installed. Run these 3 lines if you need to install these packages.
+
+install.packages("scales")  
+install.packages("ggplot2")  
+install.packages("reshape")  
+
+The three libraries then need to be loaded as in the following code snippet.
+```{r}
+library(scales)
+library(ggplot2)
+library(reshape)
+```
+
+
+### Loading in the information from TSV files and merging the contents
+The data we will be using for this tutorial is contained in the SDY212-DR12_Tab.zip file. The text files in this zip file organize the data based on the ImmPort MySQL schema. Each text file represents a table in the MySQL schema. Details on the tables is available in the [Table Definitions](http://immport.org/immport-open/public/schema/schemaDefinition/study).
+
+If you would like to use MySQL data, there is a second version of this analysis that uses MySQL rather than the Tab delimited files.
+
+The following files will be used:
+* subjects.txt - general subject demographic information.
+* arm_2_subject.txt - mapping from subjects to study arms/cohorts.
+* arm_or_cohort.txt - study arm names and descriptions
+
+#### Reading in the raw information from TSV files
+ If your path is not correct you will get an error message "No such file or directory". If you receive this error message running the below code you have two options. You can modify the path ("./Data/SDY212/Tab") within the code to agree with your directory structure. Conversely, you can modify your directory structure to agree with the code. 
+```{r}
+subject <- read.table(file=paste(getwd(),"/Data/SDY212/Tab/subject.txt",sep=""), header=TRUE, sep="\t", stringsAsFactors=FALSE)
+arm_2_subject <- read.table(file=paste(getwd(),"/Data/SDY212/Tab/arm_2_subject.txt",sep="") ,header=TRUE, sep="\t", stringsAsFactors=FALSE)
+arm_or_cohort <- read.table(file=paste(getwd(),"/Data/SDY212/Tab/arm_or_cohort.txt",sep=""), header=TRUE, sep="\t", stringsAsFactors=FALSE)
+```
+View the first 3 rows of each table that was read in to understand what information they contain.
+```{r}
+subject[1:3,]
+arm_2_subject[1:3,]
+arm_or_cohort
+```
+
+Check if the age unit is the same for all subjects. It is uniquely 'Years' for all subjects in this study.
+```{r}
+unique(arm_2_subject[,"AGE_UNIT"])
+```
+
+#### Merge the subject, arm_2_subjects and arm_or_cohort information into one table
+We can merge the information from these three tables into one data frame because the first two tables that get combined (arm_or_cohort and arm_2_subject) both contain the ARM_ACCESSION column. The last table (subject) can be merged with the result of the merging of the first two tables using the SUBJECT_ACCESSION and WORKSPACE_ID columns.
+```{r}
+merged1 <- merge(arm_or_cohort, arm_2_subject, by=intersect(colnames(arm_or_cohort),colnames(arm_2_subject)),all=TRUE)
+subjects.merged <- merge(merged1, subject, by=c("SUBJECT_ACCESSION","WORKSPACE_ID"),all=TRUE)
+```
+Next, we drop columns not needed for further analysis at this time. Also, a column with shorter arm names is added.
+```{r}
+subjects.merged <- subjects.merged[,c('SUBJECT_ACCESSION', 'ARM_ACCESSION', 'DESCRIPTION.x', 'GENDER', 'RACE', 'MIN_SUBJECT_AGE')]
+subjects.merged <- cbind(subjects.merged,ARM_NAME=NA)
+subjects.merged[which(subjects.merged$ARM_ACCESSION == "ARM894"),"ARM_NAME"] <- "Young"
+subjects.merged[which(subjects.merged$ARM_ACCESSION == "ARM895"),"ARM_NAME"] <- "Old"
+```
+
+#### Read in the hai_result.txt data and merge with the subject information
+```{r}
+hai_result <- read.table(file=paste(getwd(), "/Data/SDY212/Tab/hai_result.txt",sep=""), header=TRUE, sep="\t", stringsAsFactors=FALSE)
+head(hai_result)
+```
+
+Drop columns not necessary for this analysis and merge in information from the subjects data frame.
+```{r}
+hai.result.subset <- hai_result[,c("ARM_ACCESSION", "SUBJECT_ACCESSION", "STUDY_TIME_COLLECTED", "VALUE_PREFERRED", "VIRUS_STRAIN_REPORTED")]
+hai.result.merged <- merge(hai.result.subset, subjects.merged, by=c("SUBJECT_ACCESSION","ARM_ACCESSION"))
+hai.results <- cast(hai.result.merged, SUBJECT_ACCESSION + MIN_SUBJECT_AGE + GENDER + RACE + VIRUS_STRAIN_REPORTED + ARM_ACCESSION + ARM_NAME ~ STUDY_TIME_COLLECTED, value='VALUE_PREFERRED')
+colnames(hai.results)[which(colnames(hai.results)=="0")] <- "Day0"
+colnames(hai.results)[which(colnames(hai.results)=="28")] <- "Day28"
+```
+
+Add column with fold change values: Day 28 HAI titer / Day 0 HAI titer. These fold change values represents the "HAI response" of each subject to each of the three virus strains.
+```{r}
+hai.results.SDY212 <- cbind(hai.results, fold.change= hai.results[,"Day28"] / hai.results[,"Day0"])
+```
+
+### Explore the study data
+When working with a new data set, it is usefull to get an overview of the data. Now that we built our data table, we will look first at the subject data. We show some descriptive statistics and some simple plots of the data, just to get a feel for the distribution of age, gender and race. Plotting is done using the ggplot2 package, which is based on the Grammar of Graphics (by Leland Wilkinson) to describe data graphics. A great page to learn about ggplot2 and as a look-up resource can be found in the [Cookbook for R](http://www.cookbook-r.com/Graphs/).
+
+#### Table of subjects with HAI data
+We are intersted in the subjects for which HAI results are available. If we would use the `subjects.merged` table, we would get an overview of all subjects in the study but two of these subjects don't have HAI data. This can be seen by counting how many unique subjects (SUBJECT_ACCESSION) are in each of the data tables.
+```{r}
+length(unique(subjects.merged[,"SUBJECT_ACCESSION"]))
+length(unique(hai.results.SDY212[,"SUBJECT_ACCESSION"]))
+```
+So, we should use the `hai.results.SDY212` table to explore the subject characteristics in this study. However, `hai.results.SDY212` contains three rows per subject, one for each virus strain. So, we create a new matrix containing only one row for each subject.
+```{r}
+subjects.HAI <- unique(hai.results.SDY212[,c("SUBJECT_ACCESSION", "MIN_SUBJECT_AGE", "GENDER", "RACE","ARM_NAME")])
+```
+
+#### Descriptive statistics
+First, we get an overview of how many subjects per categorical variable (arm, gender, race) we have in our data set.
+```{r}
+table(subjects.HAI$ARM_NAME)
+table(subjects.HAI$GENDER)
+table(subjects.HAI$RACE)
+```
+#### Chart descriptive statistics
+As a second step, we create a few plots that show us the demographic data visually. 
+```{r fig.width=7, fig.height=5}
+ggplot(data=subjects.HAI, aes(x=ARM_NAME,fill=GENDER)) + geom_bar(stat="count", position=position_dodge(), colour="black")
+ggplot(data=subjects.HAI, aes(x=ARM_NAME,fill=RACE)) + geom_bar(stat="count", position=position_dodge(), colour="black")
+ggplot(data=subjects.HAI, aes(x=GENDER,y=MIN_SUBJECT_AGE)) + geom_boxplot() + geom_point(aes(color=RACE),position=position_jitter(width=0.25,height=.1)) + theme(axis.text.x=element_text(angle=50, vjust=1.2,hjust=1.2)) + facet_wrap(~ ARM_NAME,ncol=2)
+```
+
+### Analyzing the HAI results
+
+
+#### Initial plotting of data
+Plot of post (Day 28) vs. pre (Day 0) vaccination HAI titer. Colored by virus strain.
+
+This plot shows the typical triangular shape. If a subject already has a certain HAI titer for one strain before vaccination (x axis), it will most likely not go down after vaccination (y axis). This produces the triangular shape seen in this plot.
+```{r fig.width=6.8, fig.height=5}
+ggplot(hai.results.SDY212, aes(x=Day0, y=Day28, color=VIRUS_STRAIN_REPORTED)) + 
+    	scale_y_continuous(trans=log2_trans()) + scale_x_continuous(trans=log2_trans()) +
+			geom_point(position=position_jitter(width=0.1,height=.1)) +
+			ylab("HAI titer post vaccination") + xlab("HAI titer pre vaccination")
+```
+
+Plot of HAI response (fold change) vs. pre (Day 0) vaccination HAI titer.
+```{r fig.width=6.8, fig.height=5}
+ggplot(hai.results.SDY212, aes(x=Day0, y=fold.change, color=VIRUS_STRAIN_REPORTED)) + 
+    	scale_y_continuous(trans=log2_trans()) + scale_x_continuous(trans=log2_trans()) +
+			geom_point(position=position_jitter(width=0.1,height=.1)) +
+			geom_hline(aes(yintercept=4), colour="#BB0000", linetype="dashed") +
+			ylab("HAI response (post/pre)") + xlab("HAI titer pre vaccination") +
+  	  annotate("text", label = "High responders", x = 900, y = 5, size = 3.5) + annotate("text", label = "Low responders", x = 900, y = 3.1, size = 3.5)
+```
+
+#### Examining if subject age and virus strain influence the influenza vaccine response
+Plotting boxplots of the HAI responses by virus strain, we can see that the response varies by virus type.
+```{r fig.width=4, fig.height=4}
+ggplot(hai.results.SDY212, aes(x=VIRUS_STRAIN_REPORTED, y=fold.change)) + geom_boxplot() + xlab("") + theme(legend.position="none") + geom_point(aes(color=VIRUS_STRAIN_REPORTED),position=position_jitter(width=0.25,height=.2)) + scale_y_continuous(trans=log2_trans())+ ylab("HAI response (Post vaccination/Pre vaccination)")
+```
+
+Showing the response data per age group (arm) points to the idea that the HAI response also varies by arm.
+```{r fig.width=4, fig.height=4}
+ggplot(hai.results.SDY212, aes(x=ARM_NAME, y=fold.change)) + geom_boxplot() + xlab("") + theme(legend.position="none") + geom_point(aes(color=ARM_NAME),position=position_jitter(width=0.25,height=.2)) + scale_y_continuous(trans=log2_trans())+ ylab("HAI response (Post vaccination/Pre vaccination)")
+```
+
+Next, we focussed on the combination of these two factors. Do young people have a higher response for each of the three virus strains?
+```{r fig.width=6, fig.height=4}
+ggplot(hai.results.SDY212, aes(x=ARM_NAME, y=fold.change)) + geom_boxplot() + xlab("") + theme(legend.position="none") + geom_point(aes(color=VIRUS_STRAIN_REPORTED),position=position_jitter(width=0.25,height=.2)) + scale_y_continuous(trans=log2_trans())+ ylab("HAI response (Post vaccination/Pre vaccination)") + facet_wrap(~ VIRUS_STRAIN_REPORTED)
+```
+
+In this figure, it appears that the response to the H3N2 strain is independent of age. However, for the H1N1 and B strains, younger subjects respond stronger than older subjects. To test this, we run Wilcoxon rank sum tests.
+```{r }
+wilcox.test(hai.results.SDY212[which(hai.results.SDY212[,"VIRUS_STRAIN_REPORTED"]=="B" & hai.results.SDY212[,"ARM_NAME"]=="Young"),"fold.change"],	hai.results.SDY212[which(hai.results.SDY212[,"VIRUS_STRAIN_REPORTED"]=="B" & hai.results.SDY212[,"ARM_NAME"]=="Old"),"fold.change"])
+wilcox.test(hai.results.SDY212[which(hai.results.SDY212[,"VIRUS_STRAIN_REPORTED"]=="H1N1" & hai.results.SDY212[,"ARM_NAME"]=="Young"),"fold.change"],  hai.results.SDY212[which(hai.results.SDY212[,"VIRUS_STRAIN_REPORTED"]=="H1N1" & hai.results.SDY212[,"ARM_NAME"]=="Old"),"fold.change"])
+wilcox.test(hai.results.SDY212[which(hai.results.SDY212[,"VIRUS_STRAIN_REPORTED"]=="H3N2" & hai.results.SDY212[,"ARM_NAME"]=="Young"),"fold.change"],  hai.results.SDY212[which(hai.results.SDY212[,"VIRUS_STRAIN_REPORTED"]=="H3N2" & hai.results.SDY212[,"ARM_NAME"]=="Old"),"fold.change"])
+```
+The results of these statistical tests shows that the HAI response is significantly different between the age groups for the B and H1N1 strains, however not for the H3N2 strain.
+
