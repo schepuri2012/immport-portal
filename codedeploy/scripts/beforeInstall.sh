@@ -22,7 +22,7 @@ if [ -L ${APPLICATION_NAME} ] ; then
         mv "${target_file}" "${target_file}.bkp" 
 
         echo "Back up previous git.properties"
-        mv git.properties git.properties.bkp" 
+        mv git.properties git.properties.bkp 
     fi
 fi
 
