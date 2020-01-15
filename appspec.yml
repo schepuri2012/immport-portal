@@ -4,7 +4,7 @@ os: linux
 files:
   - source: ./build/distributions
     destination: /home/ec2-user/apps/
-  - source: ./build/resources/main/git.properties
+  - source: ./build/resources/main/*.git.properties
     destination: /home/ec2-user/apps/    
 
 permissions:
