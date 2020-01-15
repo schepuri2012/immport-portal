@@ -42,7 +42,7 @@ targetCompatibility = 1.8
 def bomVersion = "Edgware.RELEASE"
 
 group = "org.immport.portal"
-version = "1.2.7.RELEASE"
+version = "1.2.8.RELEASE"
 
 springBoot {
     backupSource = false // do not backup original jar to *.original
