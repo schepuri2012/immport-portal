@@ -24,28 +24,28 @@ if cd /home/$APP_USER/apps/; then
                 set -e
                 echo "Reading the target file of the current symbolic link"
                 target_file=`readlink -f $APPLICATION_NAME` 
-                echo $target_file
+                echo "Current symbolic link is pointing to $target_file"
 
                 echo "Stop the application, if the application is running"
                 /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME stop
                 
-                echo "Remove previous backup application zip file"
                 if [ -f "${target_file}.zip.bkp" ]; then
+                    echo "Remove previous backup application zip file: ${target_file}.zip.bkp"
                     rm -f "${target_file}.zip.bkp"
                 fi
 
-                echo "Remove previous backup application folder"
                 if [ -d "${target_file}.bkp" ]; then
+                    echo "Remove previous backup application folder: ${target_file}.bkp"
                     rm -rf "${target_file}.bkp"
                 fi
 
-                echo "Back up current application zip file"
                 if [ -f "${target_file}.zip" ]; then
+                    echo "Back up current application zip file: ${target_file}.zip"
                     mv "${target_file}.zip" "${target_file}.zip.bkp"
                 fi
 
-                echo "Back up current application folder"
                 if [ -d "${target_file}" ]; then
+                    echo "Back up current application folder: ${target_file}"
                     mv "${target_file}" "${target_file}.bkp" 
                 fi
                 
