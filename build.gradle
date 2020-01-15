@@ -16,9 +16,14 @@ buildscript {
     }
 }
 
+def repositoryBaseUrl = "https://repo.immport.org/repository"
+def defaultRepositoryUrl = "${repositoryBaseUrl}/maven-public/"
+def snapshotRepositoryUrl = "${repositoryBaseUrl}/maven-snapshots/"
+def releaseRepositoryUrl = "${repositoryBaseUrl}/maven-releases/"
+
 repositories {
     mavenLocal()
-    maven { url "https://repo.immport.org/repository/maven-public/" }
+    maven { url "${defaultRepositoryUrl}" }
 }
 
 apply plugin: 'com.gorylenko.gradle-git-properties'  // generate file git.properties during the build
@@ -41,6 +46,7 @@ targetCompatibility = 1.8
 // }
 
 def bomVersion = "Edgware.RELEASE"
+
 
 group = "org.immport.portal"
 version = "1.2.9.RELEASE"
