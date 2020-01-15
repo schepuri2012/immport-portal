@@ -31,12 +31,12 @@ pipeline {
                 sh './gradlew --no-daemon test'
             }
         }        
-        stage('Publish to Nexus') {
-            steps {
-                sh './gradlew --no-daemon publishArtifactPublicationToRemoteRepository'
-                sh 'printenv'
-            }
-        }
+        // stage('Publish to Nexus') {
+        //     steps {
+        //         sh './gradlew --no-daemon publishArtifactPublicationToRemoteRepository'
+        //         sh 'printenv'
+        //     }
+        // }
         stage('AWS Codedeploy') {
             steps {
                 sh 'printenv'
