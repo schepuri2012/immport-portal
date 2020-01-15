@@ -3,9 +3,7 @@ os: linux
 
 files:
   - source: ./build/distributions/
-    destination: /home/ec2-user/codedeploy/
-  - source: ./build/resources/main/git.properties
-    destination: /home/ec2-user/codedeploy/    
+    destination: /home/ec2-user/codedeploy_work_dir/  
 
 # permissions:
 #   - object: /home/ec2-user/apps/

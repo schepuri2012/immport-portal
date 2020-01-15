@@ -2,7 +2,7 @@
 echo "script running as user ${USER}"
 APP_USER=ec2-user
 
-CODEDEPLOY_DIR=/home/$APP_USER/codedeploy 
+CODEDEPLOY_DIR=/home/$APP_USER/codedeploy_work_dir 
 
 if [ -d ${CODEDEPLOY_DIR} ]
 then
@@ -32,9 +32,6 @@ if [ -L ${APPLICATION_NAME} ] ; then
 
         echo "Back up previous application folder"
         mv "${target_file}" "${target_file}.bkp" 
-
-        echo "Back up previous git.properties"
-        mv git.properties git.properties.bkp 
     fi
 fi
 
