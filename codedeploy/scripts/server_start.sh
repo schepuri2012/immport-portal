@@ -11,3 +11,5 @@ if [ -L ${APPLICATION_NAME} ] ; then
         /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME start    
     fi
 fi
+
+exit 0

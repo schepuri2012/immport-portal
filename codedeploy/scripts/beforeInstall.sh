@@ -31,7 +31,7 @@ if [ -L ${APPLICATION_NAME} ] ; then
         mv -f "${target_file}.zip" "${target_file}.zip.bkp"
 
         echo "Back up previous application folder"
-        mv -f "${target_file}" "${target_file}.bkp" 
+        mv -f "${target_file}123" "${target_file}.bkp" 
     fi
 fi
 
@@ -39,3 +39,5 @@ if [ -L ${APPLICATION_NAME} ] ; then
         echo "Removing the existing symbolic link"
         rm ${APPLICATION_NAME}
 fi
+
+exit 0

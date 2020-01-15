@@ -23,3 +23,5 @@ if [ -f "$ZIP_FILE" ]; then
     echo "Creating a symbolic link "${APPLICATION_NAME}" to ${ZIP_FILE%.*}"
     ln -s ${ZIP_FILE%.*} ${APPLICATION_NAME}
 fi
+
+exit 0
