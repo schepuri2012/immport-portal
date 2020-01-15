@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER=`id | sed -e 's/^[^(]*(\([^(]*\)).*$/\1/'`
-APP_USER=immport
+APP_USER=ec2-user
 if
     [ "$USER" = "root" ]
 then

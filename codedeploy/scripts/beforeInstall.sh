@@ -7,9 +7,10 @@ CODEDEPLOY_DIR=/home/$APP_USER/codedeploy
 if [ -d ${CODEDEPLOY_DIR} ]
 then
     cd ${CODEDEPLOY_DIR}
-    rm *
+    rm -rf ${CODEDEPLOY_DIR}
+    mkdir ${CODEDEPLOY_DIR}
 else
-    mkdir -p ${CODEDEPLOY_DIR}
+    mkdir ${CODEDEPLOY_DIR}
 fi 
 
 echo "cd to the apps directory"

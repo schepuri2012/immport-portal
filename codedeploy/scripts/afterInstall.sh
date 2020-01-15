@@ -3,7 +3,6 @@ APP_USER=ec2-user
 CODEDEPLOY_DIR=/home/$APP_USER/codedeploy
 APPS_DIR=/home/$APP_USER/apps
 
-
 if [ -d ${CODEDEPLOY_DIR} ] ; then
     if [ "$(ls -A ${CODEDEPLOY_DIR})" ]; then
         ZIP_FILE = $(basename "${CODEDEPLOY_DIR}/*.zip") 
