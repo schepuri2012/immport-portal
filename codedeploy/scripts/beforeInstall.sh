@@ -35,7 +35,7 @@ if cd /home/$APP_USER/apps/; then
                 fi
 
                 echo "Remove previous backup application folder"
-                if [ -f "${target_file}.bkp" ]; then
+                if [ -d "${target_file}.bkp" ]; then
                     rm -rf "${target_file}.bkp"
                 fi
 
