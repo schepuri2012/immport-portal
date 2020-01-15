@@ -40,10 +40,15 @@ if cd /home/$APP_USER/apps/; then
                 fi
 
                 echo "Back up current application zip file"
-                mv "${target_file}.zip" "${target_file}.zip.bkp"
+                if [ -f "${target_file}.zip" ]; then
+                    mv "${target_file}.zip" "${target_file}.zip.bkp"
+                fi
 
                 echo "Back up current application folder"
-                mv "${target_file}" "${target_file}.bkp" 
+                if [ -d "${target_file}" ]; then
+                    mv "${target_file}" "${target_file}.bkp" 
+                fi
+                
             }
             
         fi
