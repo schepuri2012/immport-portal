@@ -29,11 +29,21 @@ if cd /home/$APP_USER/apps/; then
                 echo "Stop the application, if the application is running"
                 /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME stop
                 
-                echo "Back up previous application zip file"
-                mv -f "${target_file}.zip" "${target_file}.zip.bkp"
+                echo "Remove previous backup application zip file"
+                if [ -f "${target_file}.zip.bkp" ]; then
+                    rm -f "${target_file}.zip.bkp"
+                fi
 
-                echo "Back up previous application folder"
-                mv -f "${target_file}" "${target_file}.bkp" 
+                echo "Remove previous backup application folder"
+                if [ -f "${target_file}.bkp" ]; then
+                    rm -rf "${target_file}.bkp"
+                fi
+
+                echo "Back up current application zip file"
+                mv "${target_file}.zip" "${target_file}.zip.bkp"
+
+                echo "Back up current application folder"
+                mv "${target_file}" "${target_file}.bkp" 
             }
             
         fi
