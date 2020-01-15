@@ -9,15 +9,12 @@ if [ -d ${CODEDEPLOY_DIR} ] ; then
         ZIP_FILE=`ls -t *.zip | head -1`
         echo $ZIP_FILE
         mv ${ZIP_FILE} ${APPS_DIR}/.
+        chown $APP_USER:$APP_USER ${APPS_DIR}/${ZIP_FILE}
     fi
 fi 
 
 echo "cd to the apps directory"
 cd ${APPS_DIR}
-
-# echo "Reading the latest Zip filename"
-# LATEST_ZIP=`ls -t *.zip | head -1`
-# echo $LATEST_ZIP
 
 if [ -f "$ZIP_FILE" ]; then
     echo "$ZIP_FILE exist"

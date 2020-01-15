@@ -1,7 +1,7 @@
 #!/bin/bash
-echo "script running as user ${USER}"
-APP_USER=ec2-user
+echo "AWS CodeDeploy ${LIFECYCLE_EVENT} script running as user ${USER}"
 
+APP_USER=ec2-user
 CODEDEPLOY_DIR=/home/$APP_USER/codedeploy_work_dir 
 
 if [ -d ${CODEDEPLOY_DIR} ]
