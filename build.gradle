@@ -145,6 +145,10 @@ task unpackImmportDataDownloadTool(type: Sync) {
 }
 
 jar {
+    version = null
+}
+
+jar {
     from {
         [ "$buildDir/immport-data-upload-documentation-templates/src/main/resources", "$buildDir/immport-data-upload-example-packages/src/main/resources", "$buildDir/immport-data-download-tool/src/main/resources" ]
     }
