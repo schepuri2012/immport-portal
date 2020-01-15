@@ -16,7 +16,7 @@ pipeline {
     options { disableConcurrentBuilds() }
     
     stages {
-        stage('clean') {
+        stage('Clean') {
             steps {
                 sh './gradlew --no-daemon clean'
             }
@@ -26,17 +26,17 @@ pipeline {
                 sh './gradlew --no-daemon build -x test'
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         sh './gradlew --no-daemon test'
-        //     }
-        // }        
-        // stage('Publish to Nexus') {
-        //     steps {
-        //         sh './gradlew --no-daemon publishArtifactPublicationToRemoteRepository'
-        //         sh 'printenv'
-        //     }
-        // }
+        stage('Test') {
+            steps {
+                sh './gradlew --no-daemon test'
+            }
+        }        
+        stage('Publish to Nexus') {
+            steps {
+                sh './gradlew --no-daemon publishArtifactPublicationToRemoteRepository'
+                sh 'printenv'
+            }
+        }
         stage('AWS Codedeploy') {
             steps {
                 sh 'printenv'

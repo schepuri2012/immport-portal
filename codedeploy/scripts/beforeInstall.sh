@@ -16,10 +16,8 @@ fi
 
 echo "cd to the apps directory"
 if cd /home/$APP_USER/apps/; then
-
     if [ -L ${APPLICATION_NAME} ] ; then
         if [ -e ${APPLICATION_NAME} ] ; then
-
             {
                 set -e
                 echo "Reading the target file of the current symbolic link"
@@ -48,9 +46,7 @@ if cd /home/$APP_USER/apps/; then
                     echo "Back up current application folder: ${target_file}"
                     mv "${target_file}" "${target_file}.bkp" 
                 fi
-                
             }
-            
         fi
     fi
 else 
