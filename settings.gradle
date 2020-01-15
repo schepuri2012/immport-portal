@@ -1,1 +1,3 @@
 rootProject.name = 'immport-portal'
+enableFeaturePreview('STABLE_PUBLISHING')    // enable removal of deferred configuration behavior
+enableFeaturePreview('IMPROVED_POM_SUPPORT') // separate compile and runtime scope of modules
