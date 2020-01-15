@@ -1,5 +1,5 @@
 #!/bin/bash
-APP_USER=schepuri
+APP_USER=ec2-user
 CODEDEPLOY_DIR=/home/$APP_USER/codedeploy_work_dir
 APPS_DIR=/home/$APP_USER/apps
 
