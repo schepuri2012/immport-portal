@@ -152,6 +152,34 @@ jar {
 
 jar.dependsOn = [ classes, unpackImmportDataUploadDocumentationTemplates, unpackImmportDataUploadExamplePackages, unpackImmportDataDownloadTool ]
 
+task zipFile(type: Zip) {
+
+    // from("$projectDir") {
+    //     include 'appSpec.yaml'
+    //     into "/"
+    // }
+
+    def zipFileRootDirectory = "${project.name}-" + "${project.version}"
+
+    def directory = "src/main/bin"
+    if (new File(directory).isDirectory()) {
+        from("$directory") {
+            fileMode = 0755
+            into "$zipFileRootDirectory/bin"
+        }
+    }
+
+    from("$buildDir/libs") {
+        include '*.jar'
+        into "$zipFileRootDirectory/lib"
+    }
+
+}
+
+zipFile.dependsOn(jar)
+build.dependsOn(zipFile)
+
+
 // integrationTest {
 //     /*
 //      * Activate the 'integration-test' profile
