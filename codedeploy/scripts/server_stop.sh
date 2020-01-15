@@ -1,7 +1,12 @@
 #!/bin/bash
 
 APP_USER=ec2-user
-APP_NAME=immport-portal
 
 cd /home/$APP_USER/apps/ 
-./$APP_NAME/bin/$APP_NAME stop
+
+if [ -L ${APPLICATION_NAME} ] ; then
+    if [ -e ${APPLICATION_NAME} ] ; then
+        /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME status
+        /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME stop
+    fi
+fi

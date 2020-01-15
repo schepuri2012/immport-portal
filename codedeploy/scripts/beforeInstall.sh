@@ -12,8 +12,8 @@ if [ -L ${APPLICATION_NAME} ] ; then
 
         echo "if the applicatio is running"
         echo "Stop the application"
-        ./$APPLICATION_NAME/bin/$APPLICATION_NAME status
-        ./$APPLICATION_NAME/bin/$APPLICATION_NAME stop
+        /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME status
+        /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME stop
         
         echo "Back up previous application zip file"
         mv "${target_file}.zip" "${target_file}.zip.bkp"
