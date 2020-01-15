@@ -1,7 +1,7 @@
 #!/bin/bash
 APP_USER=ec2-user
 APP_NAME=immport-portal
-
+printenv
 echo "cd to the apps directory"
 cd /home/$APP_USER/apps/
 
