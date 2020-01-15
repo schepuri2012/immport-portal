@@ -6,38 +6,54 @@ CODEDEPLOY_DIR=/home/$APP_USER/codedeploy_work_dir
 
 if [ -d ${CODEDEPLOY_DIR} ]
 then
-    cd ${CODEDEPLOY_DIR}
+    echo "Clearing/Deleting AWS CodeDeploy work directory"    
     rm -rf ${CODEDEPLOY_DIR}
+    echo "Creating AWS CodeDeploy work directory"    
     mkdir ${CODEDEPLOY_DIR}
 else
     mkdir ${CODEDEPLOY_DIR}
 fi 
 
 echo "cd to the apps directory"
-cd /home/$APP_USER/apps/
+if cd /home/$APP_USER/apps/; then
 
-if [ -L ${APPLICATION_NAME} ] ; then
-    if [ -e ${APPLICATION_NAME} ] ; then
-        echo "Reading the target file of the current symbolic link"
-        target_file=`readlink -f $APPLICATION_NAME` 
-        echo $target_file
+    if [ -L ${APPLICATION_NAME} ] ; then
+        if [ -e ${APPLICATION_NAME} ] ; then
 
-        echo "if the applicatio is running"
-        echo "Stop the application"
-        /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME status
-        /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME stop
-        
-        echo "Back up previous application zip file"
-        mv -f "${target_file}.zip" "${target_file}.zip.bkp"
+            {
+                set -e
+                echo "Reading the target file of the current symbolic link"
+                target_file=`readlink -f $APPLICATION_NAME` 
+                echo $target_file
 
-        echo "Back up previous application folder"
-        mv -f "${target_file}123" "${target_file}.bkp" 
+                echo "Stop the application, if the application is running"
+                /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME stop
+                
+                echo "Back up previous application zip file"
+                mv -f "${target_file}.zip" "${target_file}.zip.bkp"
+
+                echo "Back up previous application folder"
+                mv -f "${target_file}" "${target_file}.bkp" 
+            }
+            
+        fi
     fi
+else 
+    error_exit "Cannot change directory!  Aborting."
 fi
 
 if [ -L ${APPLICATION_NAME} ] ; then
+    {
+        set -e
         echo "Removing the existing symbolic link"
         rm ${APPLICATION_NAME}
+    }
 fi
+
+error_exit()
+{
+	echo "$1" 1>&2
+	exit 1
+}
 
 exit 0
