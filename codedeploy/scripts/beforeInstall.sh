@@ -1,5 +1,7 @@
 #!/bin/bash
+echo "script running as user ${USER}"
 APP_USER=ec2-user
+
 
 echo "cd to the apps directory"
 cd /home/$APP_USER/apps/

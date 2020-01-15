@@ -200,5 +200,5 @@ build.dependsOn(zipFile)
 
 gitProperties {
     customProperty 'git.build.project.name', { project.name }
-    gitPropertiesName = "${project.name}." + "git.properties"
+    // gitPropertiesName = "${project.name}." + "git.properties"
 }
