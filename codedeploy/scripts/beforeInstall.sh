@@ -28,10 +28,10 @@ if [ -L ${APPLICATION_NAME} ] ; then
         /bin/bash ./$APPLICATION_NAME/bin/$APPLICATION_NAME stop
         
         echo "Back up previous application zip file"
-        mv "${target_file}.zip" "${target_file}.zip.bkp"
+        mv -f "${target_file}.zip" "${target_file}.zip.bkp"
 
         echo "Back up previous application folder"
-        mv "${target_file}" "${target_file}.bkp" 
+        mv -f "${target_file}" "${target_file}.bkp" 
     fi
 fi
 
