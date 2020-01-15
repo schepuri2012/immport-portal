@@ -198,7 +198,7 @@ build.dependsOn(zipFile)
 //     }
 // }
 
-
 gitProperties {
-    customProperty 'project_version', { project.version } // closure
+    customProperty 'git.build.project.name', { project.name }
+    gitPropertiesName = "${project.name}." + "git.properties"
 }
