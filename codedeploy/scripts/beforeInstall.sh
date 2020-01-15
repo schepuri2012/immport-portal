@@ -2,6 +2,15 @@
 echo "script running as user ${USER}"
 APP_USER=ec2-user
 
+CODEDEPLOY_DIR=/home/$APP_USER/codedeploy 
+
+if [ -d ${CODEDEPLOY_DIR} ]
+then
+    cd ${CODEDEPLOY_DIR}
+    rm *
+else
+    mkdir -p ${CODEDEPLOY_DIR}
+fi 
 
 echo "cd to the apps directory"
 cd /home/$APP_USER/apps/

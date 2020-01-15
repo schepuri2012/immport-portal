@@ -1,8 +1,20 @@
 #!/bin/bash
 APP_USER=ec2-user
+CODEDEPLOY_DIR=/home/$APP_USER/codedeploy
+APPS_DIR=/home/$APP_USER/apps
+
+
+if [ -d ${CODEDEPLOY_DIR} ] ; then
+    if [ "$(ls -A ${CODEDEPLOY_DIR})" ]; then
+        ZIP_FILE = $(basename "${CODEDEPLOY_DIR}/*.zip") 
+        echo "ZIP FILE"
+        echo $ZIP_FILE
+        mv ${CODEDEPLOY_DIR}/*.zip ${APPS_DIR}/.
+    fi
+fi 
 
 echo "cd to the apps directory"
-cd /home/$APP_USER/apps/
+cd ${APPS_DIR}
 
 echo "Reading the latest Zip filename"
 LATEST_ZIP=`ls -t *.zip | head -1`
