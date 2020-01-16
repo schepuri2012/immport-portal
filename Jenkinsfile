@@ -21,27 +21,27 @@ pipeline {
                 sh './gradlew --no-daemon clean'
             }
         }
-        stage('Build') {
-            steps {
-                sh './gradlew --no-daemon build -x test'
-                sh '''
-                    IMMPORT_BUILD_NAME=`cat build/resources/main/META-INF/build-info.properties | grep "build.name" | cut -d= -f2`
-                    IMMPORT_BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`
-                    echo "${IMMPORT_BUILD_NAME}-${IMMPORT_BUILD_VERSION}" >> revisionVersion.txt
-                '''
-            }
-        }
         stage('Test') {
             steps {
                 sh './gradlew --no-daemon test'
             }
-        }        
-        stage('Publish to Nexus') {
+        }            
+        stage('Build') {
             steps {
-                sh './gradlew --no-daemon publishArtifactPublicationToRemoteRepository'
-                sh 'printenv'
+                sh './gradlew --no-daemon build -x test'
+                sh '''
+                    IMMPORT_BUILD_PROJECT_NAME=`cat build/resources/main/META-INF/build-info.properties | grep "build.name" | cut -d= -f2`
+                    IMMPORT_BUILD_PROJECT_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`
+                    echo "${IMMPORT_BUILD_PROJECT_NAME}-${IMMPORT_BUILD_PROJECT_VERSION}" >> revisionVersion.txt
+                '''
             }
-        }
+        }    
+        // stage('Publish to Nexus') {
+        //     steps {
+        //         sh './gradlew --no-daemon publishArtifactPublicationToRemoteRepository'
+        //         sh 'printenv'
+        //     }
+        // }
         stage('AWS Codedeploy') {
             steps {
                 script {
