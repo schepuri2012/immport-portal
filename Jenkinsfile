@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh './gradlew --no-daemon build -x test'
                 sh 'printenv'
-                sh 'env.BUILD_DISPLAY_NAME=immport-portal'
+                sh 'export BUILD_DISPLAY_NAME=immport-portal'
                 sh 'echo 1.2.9.RELEASE >> build_version.txt'
             }
         }
