@@ -24,8 +24,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew --no-daemon build -x test'
-                sh 'IMMPORT_BUILD_NAME=`cat build/resources/main/META-INF/build-info.properties | grep "build.name" | cut -d= -f2`'
-                sh 'IMMPORT_BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`'
+                def IMMPORT_BUILD_NAME=`cat build/resources/main/META-INF/build-info.properties | grep "build.name" | cut -d= -f2`
+                def IMMPORT_BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`
                 echo "${IMMPORT_BUILD_NAME}-${IMMPORT_BUILD_VERSION} >> revisionVersion.txt"
                 sh 'cat revisionVersion.txt'
             }
