@@ -25,6 +25,8 @@ pipeline {
             steps {
                 sh './gradlew --no-daemon build -x test'
                 sh 'echo immport-portal-1.2.9.RELEASE >> build_version.txt'
+                sh 'echo build_version.txt'
+                sh 'cat build_version.txt'
             }
         }
         stage('Test') {
