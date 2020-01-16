@@ -16,11 +16,11 @@ pipeline {
     options { disableConcurrentBuilds() }
     
     stages {
-        // stage('Clean') {
-        //     steps {
-        //         sh './gradlew --no-daemon clean'
-        //     }
-        // }
+        stage('Clean') {
+            steps {
+                sh './gradlew --no-daemon clean'
+            }
+        }
         stage('Build') {
             steps {
                 sh './gradlew --no-daemon build -x test'
@@ -28,57 +28,56 @@ pipeline {
                     IMMPORT_BUILD_NAME=`cat build/resources/main/META-INF/build-info.properties | grep "build.name" | cut -d= -f2`
                     IMMPORT_BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`
                     echo "${IMMPORT_BUILD_NAME}-${IMMPORT_BUILD_VERSION}" >> revisionVersion.txt
-                    cat revisionVersion.txt
                 '''
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         sh './gradlew --no-daemon test'
-        //     }
-        // }        
-        // stage('Publish to Nexus') {
-        //     steps {
-        //         sh './gradlew --no-daemon publishArtifactPublicationToRemoteRepository'
-        //         sh 'printenv'
-        //     }
-        // }
-        // stage('AWS Codedeploy') {
-        //     steps {
-        //         script {
-        //             def props = readProperties file:'build/resources/main/git.properties';
-        //             env.IMMPORT_JENKINS_PROJECT_NAME = props['project_name'];
-        //             env.IMMPORT_JENKINS_PROJECT_VERSION = props['project_version'];
-        //         }
-		// 	    withCredentials([
-        //             string(credentialsId: 'JENKINS_IMMPORT_AWS_ACCESS_KEY', variable: 'codeDeployAccessKey'),
-        //             string(credentialsId: 'JENKINS_IMMPORT_AWS_SECRET_KEY', variable: 'codeDeploySecretKey')]) {
+        stage('Test') {
+            steps {
+                sh './gradlew --no-daemon test'
+            }
+        }        
+        stage('Publish to Nexus') {
+            steps {
+                sh './gradlew --no-daemon publishArtifactPublicationToRemoteRepository'
+                sh 'printenv'
+            }
+        }
+        stage('AWS Codedeploy') {
+            steps {
+                script {
+                    def props = readProperties file:'build/resources/main/git.properties';
+                    env.IMMPORT_JENKINS_PROJECT_NAME = props['project_name'];
+                    env.IMMPORT_JENKINS_PROJECT_VERSION = props['project_version'];
+                }
+			    withCredentials([
+                    string(credentialsId: 'JENKINS_IMMPORT_AWS_ACCESS_KEY', variable: 'codeDeployAccessKey'),
+                    string(credentialsId: 'JENKINS_IMMPORT_AWS_SECRET_KEY', variable: 'codeDeploySecretKey')]) {
 
-        //             step([
-        //                 $class: 'AWSCodeDeployPublisher', 
-        //                 applicationName: 'immport-portal', 
-        //                 awsAccessKey: codeDeployAccessKey, 
-        //                 awsSecretKey: codeDeploySecretKey, 
-        //                 credentials: 'awsAccessKey', 
-        //                 deploymentConfig: 'CodeDeployDefault.OneAtATime', 
-        //                 deploymentGroupAppspec: false, 
-        //                 deploymentGroupName: 'immport-portal-devGrp', 
-        //                 excludes: '', 
-        //                 iamRoleArn: '', 
-        //                 includes: '**', 
-        //                 proxyHost: '', 
-        //                 proxyPort: 0, 
-        //                 region: 'us-east-2', 
-        //                 s3bucket: 'cicdstackdemo-codedeploybucket-1xm7w2kefj6ku', 
-        //                 s3prefix: 'immport-codedeploy', 
-        //                 subdirectory: '', 
-        //                 versionFileName: 'revisionVersion.txt', 
-        //                 waitForCompletion: true
-        //             ])		
+                    step([
+                        $class: 'AWSCodeDeployPublisher', 
+                        applicationName: 'immport-portal', 
+                        awsAccessKey: codeDeployAccessKey, 
+                        awsSecretKey: codeDeploySecretKey, 
+                        credentials: 'awsAccessKey', 
+                        deploymentConfig: 'CodeDeployDefault.OneAtATime', 
+                        deploymentGroupAppspec: false, 
+                        deploymentGroupName: 'immport-portal-devGrp', 
+                        excludes: '', 
+                        iamRoleArn: '', 
+                        includes: '**', 
+                        proxyHost: '', 
+                        proxyPort: 0, 
+                        region: 'us-east-2', 
+                        s3bucket: 'cicdstackdemo-codedeploybucket-1xm7w2kefj6ku', 
+                        s3prefix: 'immport-codedeploy', 
+                        subdirectory: '', 
+                        versionFileName: 'revisionVersion.txt', 
+                        waitForCompletion: true
+                    ])		
 
-		//         }
-        //     }
-        // }
+		        }
+            }
+        }
     }
     post { 
         always { 
