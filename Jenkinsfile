@@ -25,9 +25,10 @@ pipeline {
             steps {
                 sh './gradlew --no-daemon build -x test'
                 script {
-                    BUILD_NAME=cat build/resources/main/META-INF/build-info.properties | grep build.name | cut -d= -f2
-                    BUILD_VERSION=cat build/resources/main/META-INF/build-info.properties | grep build.version | cut -d= -f2
+                    BUILD_NAME=`cat build/resources/main/META-INF/build-info.properties | grep build.name | cut -d= -f2`
+                    BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep build.version | cut -d= -f2`
                     echo $BUILD_NAME-$BUILD_VERSION >> revisionVersion.txt
+                    cat revisionVersion.txt
                 }
                 // sh ''
                 // sh 'BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`'
