@@ -16,11 +16,11 @@ pipeline {
     options { disableConcurrentBuilds() }
     
     stages {
-        stage('Clean') {
-            steps {
-                sh './gradlew --no-daemon clean'
-            }
-        }
+        // stage('Clean') {
+        //     steps {
+        //         sh './gradlew --no-daemon clean'
+        //     }
+        // }
         stage('Build') {
             steps {
                 sh './gradlew --no-daemon build -x test'
