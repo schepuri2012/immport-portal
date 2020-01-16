@@ -24,9 +24,14 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew --no-daemon build -x test'
-                sh 'BUILD_NAME=`cat build/resources/main/META-INF/build-info.properties | grep "build.name" | cut -d= -f2`'
-                sh 'BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`'
-                sh 'echo `$BUILD_NAME-$BUILD_VERSION` >> revisionVersion.txt'
+                script {
+                    BUILD_NAME=cat build/resources/main/META-INF/build-info.properties | grep "build.name" | cut -d= -f2
+                    BUILD_VERSION=cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2
+                    echo $BUILD_NAME-$BUILD_VERSION >> revisionVersion.txt
+                }
+                // sh ''
+                // sh 'BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`'
+                // sh 'echo $BUILD_NAME-$BUILD_VERSION >> revisionVersion.txt'
             }
         }
         stage('Test') {
