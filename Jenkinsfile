@@ -24,9 +24,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew --no-daemon build -x test'
-                sh 'PROJECT_NAME=`cat git.properties | grep "git.build.project.name" | cut -d'=' -f2`'
-                sh 'PROJECT_VERSION=`cat git.properties | grep "git.build.version" | cut -d'=' -f2`'
-                sh 'echo $PROJECT_NAME-$PROJECT_VERSION >> build_version.txt'
+                sh 'BUILD_NAME=`cat build/resources/main/META-INF/build-info.properties | grep "build.name" | cut -d= -f2`'
+                sh 'BUILD_VERSION=`cat build/resources/main/META-INF/build-info.properties | grep "build.version" | cut -d= -f2`'
+                sh 'echo $BUILD_NAME-$BUILD_VERSION >> revisionVersion.txt'
             }
         }
         stage('Test') {
@@ -42,6 +42,11 @@ pipeline {
         // }
         stage('AWS Codedeploy') {
             steps {
+                script {
+                    def props = readProperties file:'build/resources/main/git.properties';
+                    env.IMMPORT_JENKINS_PROJECT_NAME = props['project_name'];
+                    env.IMMPORT_JENKINS_PROJECT_VERSION = props['project_version'];
+                }
 			    withCredentials([
                     string(credentialsId: 'JENKINS_IMMPORT_AWS_ACCESS_KEY', variable: 'codeDeployAccessKey'),
                     string(credentialsId: 'JENKINS_IMMPORT_AWS_SECRET_KEY', variable: 'codeDeploySecretKey')]) {
@@ -64,7 +69,7 @@ pipeline {
                         s3bucket: 'cicdstackdemo-codedeploybucket-1xm7w2kefj6ku', 
                         s3prefix: 'immport-codedeploy', 
                         subdirectory: '', 
-                        versionFileName: 'build_version.txt', 
+                        versionFileName: 'revisionVersion.txt', 
                         waitForCompletion: true
                     ])		
 
