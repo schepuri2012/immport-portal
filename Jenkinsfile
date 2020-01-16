@@ -25,8 +25,7 @@ pipeline {
             steps {
                 sh './gradlew --no-daemon build -x test'
                 sh 'printenv'
-                sh 'export BUILD_DISPLAY_NAME=immport-portal'
-                sh 'echo 1.2.9.RELEASE >> build_version.txt'
+                sh 'echo immport-portal-1.2.9.RELEASE >> build_version.txt'
             }
         }
         stage('Test') {
@@ -42,6 +41,7 @@ pipeline {
         // }
         stage('AWS Codedeploy') {
             steps {
+                sh 'export BUILD_DISPLAY_NAME=immport-portal'
                 sh 'printenv'
                 script {
                     def props = readProperties file:'build/resources/main/git.properties';
