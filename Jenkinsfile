@@ -24,7 +24,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew --no-daemon build -x test'
-                sh 'printenv'
                 sh 'echo immport-portal-1.2.9.RELEASE >> build_version.txt'
             }
         }
@@ -41,8 +40,6 @@ pipeline {
         // }
         stage('AWS Codedeploy') {
             steps {
-                sh 'export BUILD_DISPLAY_NAME=immport-portal'
-                sh 'printenv'
                 script {
                     def props = readProperties file:'build/resources/main/git.properties';
                     env.IMMPORT_JENKINS_PROJECT_NAME = props['project_name'];
