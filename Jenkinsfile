@@ -24,7 +24,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew --no-daemon build -x test'
-                printenv
+                sh 'printenv'
                 sh 'echo 1.2.9.RELEASE >> build_version.txt'
             }
         }
