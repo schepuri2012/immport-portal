@@ -24,6 +24,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh './gradlew --no-daemon build -x test'
+                printenv
+                sh 'echo 1.2.9.RELEASE >> build_version.txt'
             }
         }
         stage('Test') {
@@ -67,7 +69,7 @@ pipeline {
                         s3bucket: 'cicdstackdemo-codedeploybucket-1xm7w2kefj6ku', 
                         s3prefix: 'immport-codedeploy', 
                         subdirectory: '', 
-                        versionFileName: 'schepuri', 
+                        versionFileName: 'build_version.txt', 
                         waitForCompletion: true
                     ])		
 
